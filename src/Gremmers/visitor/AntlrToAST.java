@@ -184,7 +184,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ArrayVarInt aarvarint = new ArrayVarInt();
         for(int i=0 ; i< ctx.NUM().size(); i++){
             if(ctx.NUM(i) != null){
-            aarvarint.addChild(Integer.parseInt(ctx.NUM().get(i).getText()));
+            aarvarint.addChild((ctx.NUM(i).toString()));
         }}
         return aarvarint;
     }
@@ -623,12 +623,12 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ForLoop fo = new ForLoop();
         fo.setForf(ctx.FOR().toString().trim());
         fo.setVarr(ctx.VAR().toString().trim());
-        fo.setId(ctx.ID(3).toString().trim());
+        fo.setId(ctx.getChild(3).toString().trim());
         fo.setNum(ctx.NUM().toString().trim());
-        fo.setId1(ctx.ID(7).toString().trim());
+        fo.setId1(ctx.getChild(7).toString().trim());
         fo.setSingl(ctx.SINGLS().toString().trim());
-        fo.setId2(ctx.ID(9).toString().trim());
-        fo.setId3(ctx.ID(11).toString().trim());
+        fo.setId2(ctx.getChild(9).toString().trim());
+        fo.setId3(ctx.getChild(11).toString().trim());
         fo.setPlmi(ctx.PLUSORMINUS().toString().trim());
         for(int i=0;i<ctx.inputI().size() ; i++){
             if(ctx.inputI(i) != null){
@@ -643,12 +643,12 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ForLoop fo = new ForLoop();
         fo.setForf(ctx.FOR().toString().trim());
         fo.setVarr(ctx.INT().toString().trim());
-        fo.setId(ctx.ID(3).toString().trim());
+        fo.setId(ctx.getChild(3).toString().trim());
         fo.setNum(ctx.NUM().toString().trim());
-        fo.setId1(ctx.ID(7).toString().trim());
+        fo.setId1(ctx.getChild(7).toString().trim());
         fo.setSingl(ctx.SINGLS().toString().trim());
-        fo.setId2(ctx.ID(9).toString().trim());
-        fo.setId3(ctx.ID(11).toString().trim());
+        fo.setId2(ctx.getChild(9).toString().trim());
+        fo.setId3(ctx.getChild(11).toString().trim());
         fo.setPlmi(ctx.PLUSORMINUS().toString().trim());
         for(int i=0;i<ctx.inputI().size() ; i++){
             if(ctx.inputI(i) != null){

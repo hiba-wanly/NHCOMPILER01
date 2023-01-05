@@ -33,6 +33,6 @@ public class Main {
 //            throw new RuntimeException(e);
         }
 
-        System.out.println("Hello world!");
+//        System.out.println("Hello world!");
     }
 }

@@ -46,11 +46,13 @@ public class ArrayType extends AST {
 
     @Override
     public String toString() {
+        if (this.arrayint!=null) {
+            return "\n ArrayVar{"+arrayint+"} \n";
+        }
         if(this.arrayvar!=null)
             return "\n ArrayVar{"+arrayvar+"} \n";
-        else if (this.arrayint!=null) {
-            return "\n ArrayVar{"+arrayint+"} \n";
-        } else if (this.arraystring!=null) {
+
+        if (this.arraystring!=null) {
             return "\n ArrayVar{"+arraystring+"} \n";
         }
         return "\n ArrayVar{"+arrayfloat+"} \n";

@@ -137,7 +137,7 @@ IMAGE_INPUT_ASSET : '"' 'assets/'ID'.jpg' '"'      |'"' 'assets/'ID'.png''"'
                    ;
 
 //mode ARRAYSEMI;
-//SEMECOLONS : ' '* SEMECOLON ' '*-> popMode;
+//SEMECOLONS : ' '* SEMECOLON ' ';//*-> popMode;
 //mode CLASS_MODE;
 //CURLERIGHT :' '*  '}' ' '* -> popMode;
 //

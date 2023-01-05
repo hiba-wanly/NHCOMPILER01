@@ -21,10 +21,10 @@ arrayType : array_var
           | array_float
           ;
 
-array_var : VAR namen EQUAL ARRAYLEFT arraybody ARRAYRIGHT SEMECOLONS;
-array_int : INT namen EQUAL ARRAYLEFT arrayINT ARRAYRIGHT SEMECOLONS;
-array_string : STRING namen EQUAL ARRAYLEFT arraySTRING ARRAYRIGHT SEMECOLONS;
-array_float : FLOAT namen EQUAL ARRAYLEFT arrayFLOAT ARRAYRIGHT SEMECOLONS;
+array_var : VAR namen EQUAL ARRAYLEFT arraybody ARRAYRIGHT SEMECOLON;
+array_int : INT namen EQUAL ARRAYLEFT arrayINT ARRAYRIGHT SEMECOLON;
+array_string : STRING namen EQUAL ARRAYLEFT arraySTRING ARRAYRIGHT SEMECOLON;
+array_float : FLOAT namen EQUAL ARRAYLEFT arrayFLOAT ARRAYRIGHT SEMECOLON;
 
 arraybody : arrayINT | arraySTRING | arrayFLOAT
            ;

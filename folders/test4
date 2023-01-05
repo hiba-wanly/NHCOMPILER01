@@ -1,18 +1,25 @@
 void fff(){
-final j;
-var k = 9;
-if(k<11){
-break;}
-for(int i=0;i<9;i++){
-var k=8;
+var a=1;
+var b=4+7;
+var c;
+var d="ddd";
+const e=9;
+const f=1+1;
+const g;
+const h="kkk";
+dynamic j=4;
+dynamic k=4+7;
+dynamic l;
+final q="kkk";
+final w;
+final r=9;
+final t=1+4;
+String y="lll";
+String u="77";
+int i=9;
+int o=1/8;
+int p;
+float kk=1.4;
+bool bb=true;
 }
-do{int j=9;}
-while(h==2){
-var j=9;
-}
-print("hfhf 888");
 
-}
-}
-}
-}
