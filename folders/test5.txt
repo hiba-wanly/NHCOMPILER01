@@ -8,11 +8,10 @@ final j;
 ************
 
 
-
 void fff(){
 final j;
 var k = 9;
-if((k<11) || (f==2)){
+if(k<11){
 break;}
 for(int i=0;i<9;i++){
 var k=8;

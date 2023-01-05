@@ -683,12 +683,12 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ForLoop fo = new ForLoop();
         fo.setForf(ctx.FOR().toString().trim());
         fo.setVarr(ctx.INT().toString().trim());
-        fo.setId(ctx.ID(3).toString().trim());
-        fo.setNum(ctx.NUM(5).toString().trim());
-        fo.setId1(ctx.ID(7).toString().trim());
+        fo.setId(ctx.getChild(3).toString().trim());
+        fo.setNum(ctx.getChild(5).toString().trim());
+        fo.setId1(ctx.getChild(7).toString().trim());
         fo.setSingl(ctx.SINGLS().toString().trim());
-        fo.setId2(ctx.NUM(9).toString().trim());
-        fo.setId3(ctx.ID(11).toString().trim());
+        fo.setId2(ctx.getChild(9).toString().trim());
+        fo.setId3(ctx.getChild(11).toString().trim());
         fo.setPlmi(ctx.PLUSORMINUS().toString().trim());
         for(int i=0;i<ctx.inputI().size() ; i++){
             if(ctx.inputI(i) != null){
