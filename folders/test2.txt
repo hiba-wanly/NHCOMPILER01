@@ -1,0 +1,347 @@
+void ii (){
+var p =9 ;
+String kk = "hh";
+}
+int ii (){
+var p =9 ;
+String kk = "hh";
+return 3 ;
+}
+String ii (){
+var p =9 ;
+String kk = "hh";
+return a;
+}
+double ii (){
+var p =9 ;
+String kk = "hh";
+return 4.8;
+}
+float ii (){
+var p =9 ;
+String kk = "hh";
+return 8.5;
+}
+
+void ii (var w,int 9,String k){
+var j =9;
+}
+int ii (var w,int 9,String k){
+var p =9 ;
+String kk = "hh";
+return 3 ;
+}
+String ii (var w,int 9,String k){
+var p =9 ;
+String kk = "hh";
+return a;
+}
+double ii (var w,int 9,String k){
+var p =9 ;
+String kk = "hh";
+return 4.8;
+}
+float ii (var w,int 9,String k){
+var p =9 ;
+String kk = "hh";
+return 8.5;
+}
+
+class eee{
+var f=8;
+bool s=true;
+if(j==5)break;
+for(var j=0;j<9;i++){
+var f=8;
+String kk = "hh";
+if(h==8 && h==7 || (d==41))break;
+print("jj 99");
+}
+}
+
+float fff(){
+var i=9;
+for(var i=9 ; i<6 ; i++){
+var g=9;
+}
+return q;
+}
+
+
+
+***************************
+void dd(){
+String k ="fff";
+dynamic g=9+9;
+if(g==8 || g <= 8){
+var f=9;
+}
+if(g==1)break;
+for(var d=8;d => 2;d++){
+var aa = 7;
+}
+do{
+var h=9;
+}
+while(s==8){
+int f=9;
+}
+print("Aaaa 222");
+print("111");
+
+array(4,7);
+array(4.8,7.5);
+
+switch (h){
+case "s" : {
+var j=7;
+}break;
+case 8 : {
+var j=8;
+}break;
+default:{
+var j= 9;
+
+}break;
+}
+}
+***********************
+////////////////////////
+********************
+class dd{
+for(int i=10;i>0;i--){
+var i=2;
+}
+try{
+var j;
+var k;
+}catch(d){
+var k;
+int o=9;
+}
+}
+
+*****************
+
+class Test extends StatelessWidget {
+@override
+Widget build(BuildContext context){
+return Scaffold (
+appBar : AppBar(
+
+title : Text(" I am here "),
+backgroundColor : Colors.red,
+),
+body : Row(
+          children :[
+          Text(" hello senyorina "),
+          SizedBox( width : 6.9,),
+          TextButton(
+          child : Text ("hello again"),
+          onPressed :(){}
+          ),
+          ]
+          ),
+    )
+   }
+}
+
+**************************
+
+void ii (){
+var p =9 ;
+String kk = "hh";
+}
+int ii (){
+var p =9 ;
+String kk = "hh";
+return 3 ;
+}
+String ii (){
+var p =9 ;
+String kk = "hh";
+return a;
+}
+double ii (){
+var p =9 ;
+String kk = "hh";
+return 4.8;
+}
+float ii (){
+var p =9 ;
+String kk = "hh";
+return 8.5;
+}
+
+void ii (var w,int i,String k ,){
+var j =9;
+}
+int ii (var w,int u,String k ,){
+var p =9 ;
+String kk = "hh";
+return 3 ;
+}
+String ii (var w,int u,String k ,){
+var p =9 ;
+String kk = "hh";
+return a;
+}
+double ii (var w,int u,String k ,){
+var p =9 ;
+String kk = "hh";
+return 4.8;
+}
+float ii (var w,int u,String k ,){
+var p =9 ;
+String kk = "hh";
+return 8.5;
+}
+
+class eee{
+var f=8;
+bool s=true;
+if(j==5){break;}
+for(var j=0;j<9;i++){
+var f=8;
+String kk = "hh";
+if((h==8)&&(h==7) || (d==41)){break;}
+print("jj 99");
+}
+}
+
+float fff(){
+var i=9;
+for(var i=9 ; i<6 ; i++){
+var g=9;
+}
+return q;
+}
+
+
+
+*****************************
+
+void dd(){
+String k ="fff";
+dynamic g=9+9;
+if(g==8){
+var f=9;
+}
+else if(k==9){break;}
+else {break;}
+if(g==1){break;}
+for(var d=8;d => 2;d++){
+var aa = 7;
+}
+do{
+var h=9;
+}
+while(s==8){
+int f=9;
+}
+print("Aaaa 222");
+print("111");
+
+switch (h){
+case "s" : {
+var j=7;
+}break;
+case 8 : {
+var j=8;
+}break;
+default:{
+var j= 9;
+
+}break;
+}
+}
+
+******************
+void ii (){
+var p =9 ;
+String kk = "hh";
+}
+int ii (){
+var p =9 ;
+String kk = "hh";
+return 3 ;
+}
+String ii (){
+var p =9 ;
+String kk = "hh";
+return a;
+}
+double ii (){
+var p =9 ;
+String kk = "hh";
+return 4.8;
+}
+float ii (){
+var p =9 ;
+String kk = "hh";
+return 8.5;
+}
+
+void ii (var w,int o,String k,){
+var j =9;
+}
+int ii (var w,int o,String k,){
+var p =9 ;
+String kk = "hh";
+return 3 ;
+}
+String ii (var w,int i,String k,){
+var p =9 ;
+String kk = "hh";
+return a;
+}
+double ii (var w,int o,String k,){
+var p =9 ;
+String kk = "hh";
+return 4.8;
+}
+float ii (var w,int k,String k,){
+var p =9 ;
+String kk = "hh";
+return 8.5;
+}
+
+class eee{
+var f=8;
+bool s=true;
+if(j==5){break;}
+for(var j=0;j<9;i++){
+var f=8;
+String kk = "hh";
+if(i==o){
+var j=9;
+var i=9;
+if(i==9){break;}
+}
+print("jj 99");
+}
+}
+
+float fff(){
+var i=9;
+for(var i=9 ; i<6 ; i++){
+var g=9;
+}
+return q;
+}
+
+
+*******************
+/////////////
+******************
+class eee{
+var f=8;
+bool s=true;
+if(j==5){break;}
+for(var j=0;j<9;i++){
+var f=8;
+String kk = "hh";
+if((h==8+4)){break;}
+print("jj 99");
+}
+}

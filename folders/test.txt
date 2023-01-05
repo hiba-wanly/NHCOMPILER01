@@ -1,0 +1,281 @@
+/*************************************************** Project Test Here *************************************/
+class nan extends StateFullWidget {
+
+@override
+Widget build(BuildContext context){
+return Scaffold (
+
+body : Column(
+children:[
+
+Column (children :[
+
+Container (child : Column (children :[
+
+Text("Product 1"),
+SizedBox(hight: 4.1,),
+Image(image :AssetImage("assets/pro1.jpg")),
+SizedBox(hight: 4.1,),
+Text(" this  "),
+
+ ]),
+
+),
+
+]),
+
+Column(
+children :[
+
+Row (children:[
+Text( " 1 "),
+SizedBox( hight : 6.6, ),
+Image ( image: AssetImage ("assets/pro1.jpg")),
+
+
+]),
+Row (children:[
+Text( "product2"),
+SizedBox( hight : 6.6, ),
+Image ( image: AssetImage ("assets/pro2.jpg")),
+
+]),
+Row (children:[
+
+Text( "product3"),
+SizedBox( hight : 6.6, ),
+Image ( image: AssetImage ("assets/pro3.jpg")),
+]),
+
+
+]),
+
+
+
+]),
+)
+
+}
+}
+
+
+/*************************************************** Project Test Here *************************************/
+
+
+                                               /* start Test1 */
+class bb {
+
+var i=9;
+var k=8;
+if(i==9)break;
+if(i==8){
+var g =33;
+}
+final k=8;
+do{var i=9;}while(i==8){
+var k=8;
+}
+var kffff=8;
+while(i==8){
+var k=8;
+}
+print(k);
+var o=7;
+
+for(var i = 9 ;i <= 99 ; i++){
+if(l <= 8)continue;
+const kj = "uu" ;
+print(k);
+
+}
+
+}
+
+<<<<<<< HEAD
+class aa (
+var y =8 ;
+int u=3;
+for (var jj =0 ; i< n ; i++){}
+)
+***************************
+class aa (
+for (var jj =0 ; i< n ; i++){}
+)
+***************************
+class bb (
+while (u == 0){
+}
+for (var jj =0 ; i< n ; i++){}
+)
+***************************
+do {
+var i =9 ;
+}
+while(y=8){}
+var d = "new";
+var d = "098";
+String u = "nn";
+String u = "88";
+float nn = 9.5;
+**************************
+class aa extends bb {}
+class aa extends bb {
+var i = 9 ;
+const t=8;
+for (var y =0 ; y<8 ; i++)
+{
+print (y);
+}
+=======
+
+
+                                                        /* end Test1 */
+                                                        /* Test2 */
+
+void ii (){
+
+var u =0;
+print ("u");
+return u ;
+}
+
+
+                                                            /* Test 2 */
+
+
+
+/* Test 3 nema */
+
+void fun (var i , var t , String p){
+
+var i=9;
+return i ;
+}
+
+void fun (var i , var t , String p){
+
+var i=9;
+return " hello " ;
+}
+
+
+
+
+ /* Test 3  */
+
+ /* Test 4  */
+
+
+
+
+
+
+ int fun (var i ){
+
+ var i=9;
+ String n = "NNN";
+ print(n);
+
+ return i ;
+ }
+
+
+
+
+
+
+  /* Test 4  */
+****************************
+class nan extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+      body : Column(
+          children :[
+              Padding( padding : const EdgeInsets.all(12.0),
+              child: Row (
+                children :[
+                    Expanded(
+                    child: Column(
+                        children: [
+                            Column(children: [
+                            Text("Product 5"),
+                            SizedBox(height: 8.9,),
+                            Image(image :AssetImage("assets/burger.jpg"),
+                                width: 70,
+                                height: 60,
+                              ),
+                            SizedBox(height: 15.0,),
+                            Padding(
+                              padding : const EdgeInsets.all(25.0),
+                              child : Text(" ty ouoiu iiillllllllllllllllllllllllllllliiiii"),
+                            ),
+                          ]
+                          ),
+                        ]
+                        ),
+                    ),
+                    SizedBox(
+                      width: 50.8,
+                    ),
+                  Column(
+                        children :[
+                          TextButton(
+                            child: Column (children:[
+                              Text( "Product 1 "),
+                              SizedBox( height : 6.6, ),
+                              Container(child: Image (
+                                  image: AssetImage ("assets/burger.jpg" ),
+                                  width: 70,
+                                  height: 60,
+                                  fit : BoxFit.fill,
+                               ),
+                              ),
+                            ]
+                            ),
+                            onPressed: (){}
+                          ),
+                         SizedBox(
+                            height: 55.0,
+                          ),
+                          TextButton(
+                            child: Column (children:[
+                              Text( "Product 2"),
+                              SizedBox( height : 6.6, ),
+                              Container(child: Image (
+                                  image: AssetImage ("assets/burger.jpg" ),
+                                  width: 70,
+                                  height: 60,
+                                  fit : BoxFit.fill,
+                                 ),
+                              ),
+                            ]),
+                            onPressed: (){}
+                          ),
+                          SizedBox(
+                            height: 55.9,
+                          ),
+                          TextButton(
+                            child: Column (children:[
+                              Text( "Product 3"),
+                              SizedBox( height : 6.6, ),
+                              Container(child: Image (
+                                  image: AssetImage ("assets/burger.jpg" ),
+                                  width: 70,
+                                  height: 60,
+                                  fit : BoxFit.fill,
+                                 ),
+                              ),
+                            ]),
+                            onPressed: (){}
+                          ),
+                          ]),
+                ]),
+              ),
+         ]
+      ),
+      )
+  }
+}
+
+****************************

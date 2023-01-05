@@ -1,0 +1,33 @@
+class b{
+int i=9;
+var k=9;
+void fff(){
+final j;
+}
+
+************
+
+
+
+void fff(){
+final j;
+var k = 9;
+if((k<11) || (f==2)){
+break;}
+for(int i=0;i<9;i++){
+var k=8;
+}
+do{int j=9;}
+while(h==2){
+var j=9;
+}
+print("hfhf 888");
+
+}
+}
+}
+}
+
+
+
+****************
