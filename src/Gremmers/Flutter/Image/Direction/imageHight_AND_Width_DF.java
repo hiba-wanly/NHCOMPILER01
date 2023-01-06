@@ -3,24 +3,16 @@ package Gremmers.Flutter.Image.Direction;
 import Gremmers.AST;
 
 public class imageHight_AND_Width_DF extends AST {
-    private String HIGHT ;
-    private String WIDTH;
+
+    private String type ;
     private String NUM_FLOAT;
 
-    public String getHIGHT() {
-        return HIGHT;
+    public String getType() {
+        return type;
     }
 
-    public void setHIGHT(String HIGHT) {
-        this.HIGHT = HIGHT;
-    }
-
-    public String getWIDTH() {
-        return WIDTH;
-    }
-
-    public void setWIDTH(String WIDTH) {
-        this.WIDTH = WIDTH;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getNUM_FLOAT() {
@@ -34,8 +26,7 @@ public class imageHight_AND_Width_DF extends AST {
     @Override
     public String toString() {
         return "imageHight_AND_Width_DF{" +
-                "HIGHT='" + HIGHT + '\'' +
-                ", WIDTH='" + WIDTH + '\'' +
+                "type='" + type + '\'' +
                 ", NUM_FLOAT='" + NUM_FLOAT + '\'' +
                 '}';
     }

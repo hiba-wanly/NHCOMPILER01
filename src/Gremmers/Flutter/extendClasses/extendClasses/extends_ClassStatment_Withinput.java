@@ -11,6 +11,7 @@ public class extends_ClassStatment_Withinput extends AST {
 
     private String CLASS ;
     private NameN ID ;
+    private String EXTENDS;
     private String ID_ID;
     private List<InputClasses> inputclasses = new ArrayList<InputClasses>();
 
@@ -28,6 +29,14 @@ public class extends_ClassStatment_Withinput extends AST {
 
     public void setID(NameN ID) {
         this.ID = ID;
+    }
+
+    public String getEXTENDS() {
+        return EXTENDS;
+    }
+
+    public void setEXTENDS(String EXTENDS) {
+        this.EXTENDS = EXTENDS;
     }
 
     public String getID_ID() {
@@ -51,6 +60,7 @@ public class extends_ClassStatment_Withinput extends AST {
         return "extends_ClassStatment_Withinput{" +
                 "CLASS='" + CLASS + '\'' +
                 ", ID='" + ID + '\'' +
+                ", extends " + EXTENDS + '\'' +
                 ", ID_ID='" + ID_ID + '\'' +
                 ", inputclasses=" + inputclasses +
                 '}';

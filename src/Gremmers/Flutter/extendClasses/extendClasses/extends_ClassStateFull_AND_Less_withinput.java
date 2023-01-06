@@ -13,8 +13,8 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
 
     private String CLASS ;
     private NameN ID ;
-    private String STATEFULLWIDGET;
-    private String STATELESSWIDGET ;
+    private String EXTENDS;
+    private String type;
     private String OVERRIDE;
     private String BUILD_WIDGET;
     private String RETURN;
@@ -39,20 +39,20 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
         this.ID = ID;
     }
 
-    public String getSTATEFULLWIDGET() {
-        return STATEFULLWIDGET;
+    public String getEXTENDS() {
+        return EXTENDS;
     }
 
-    public void setSTATEFULLWIDGET(String STATEFULLWIDGET) {
-        this.STATEFULLWIDGET = STATEFULLWIDGET;
+    public void setEXTENDS(String EXTENDS) {
+        this.EXTENDS = EXTENDS;
     }
 
-    public String getSTATELESSWIDGET() {
-        return STATELESSWIDGET;
+    public String getType() {
+        return type;
     }
 
-    public void setSTATELESSWIDGET(String STATELESSWIDGET) {
-        this.STATELESSWIDGET = STATELESSWIDGET;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getOVERRIDE() {
@@ -116,8 +116,8 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
         return "extends_ClassStateFull_AND_Less_withinput{" +
                 "CLASS='" + CLASS + '\'' +
                 ", ID='" + ID + '\'' +
-                ", STATEFULLWIDGET='" + STATEFULLWIDGET + '\'' +
-                ", STATELESSWIDGET='" + STATELESSWIDGET + '\'' +
+                ", extends " + EXTENDS + '\'' +
+                ", type ='" + type + '\'' +
                 ", OVERRIDE='" + OVERRIDE + '\'' +
                 ", BUILD_WIDGET='" + BUILD_WIDGET + '\'' +
                 ", RETURN='" + RETURN + '\'' +

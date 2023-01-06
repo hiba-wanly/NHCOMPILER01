@@ -8,6 +8,7 @@ public class extends_ClassStatment_Withoutinput extends AST {
 
     private String CLASS ;
     private NameN ID ;
+    private String EXTENDS;
     private String ID_ID;
 
     public String getCLASS() {
@@ -26,6 +27,14 @@ public class extends_ClassStatment_Withoutinput extends AST {
         this.ID = ID;
     }
 
+    public String getEXTENDS() {
+        return EXTENDS;
+    }
+
+    public void setEXTENDS(String EXTENDS) {
+        this.EXTENDS = EXTENDS;
+    }
+
     public String getID_ID() {
         return ID_ID;
     }
@@ -39,6 +48,7 @@ public class extends_ClassStatment_Withoutinput extends AST {
         return "extends_ClassStatment_Withoutinput{" +
                 "CLASS='" + CLASS + '\'' +
                 ", ID='" + ID + '\'' +
+                ", extends " + EXTENDS + '\'' +
                 ", ID_ID='" + ID_ID + '\'' +
                 '}';
     }

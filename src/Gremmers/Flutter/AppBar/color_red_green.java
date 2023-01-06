@@ -4,7 +4,6 @@ import Gremmers.AST;
 
 public class color_red_green extends AST {
 
-
     private String RED;
     private String GREEN;
 

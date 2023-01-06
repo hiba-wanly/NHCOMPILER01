@@ -8,7 +8,7 @@ public class widthHight_SizedBox extends AST {
     private String WIDTH;
     private String NUM_FLOAT_WIDTH;
     private String HIGHT;
-    public String NUM_FLOAT_HIGHT;
+    public  String NUM_FLOAT_HIGHT;
 
     public void setSIZEDBOX(String SIZEDBOX) {
         this.SIZEDBOX = SIZEDBOX;

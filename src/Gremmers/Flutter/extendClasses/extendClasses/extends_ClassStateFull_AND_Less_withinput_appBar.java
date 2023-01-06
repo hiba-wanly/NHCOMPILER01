@@ -12,8 +12,8 @@ import java.util.List;
 public class extends_ClassStateFull_AND_Less_withinput_appBar extends AST {
     private String CLASS ;
     private NameN ID ;
-    private String STATEFULLWIDGET;
-    private String STATELESSWIDGET ;
+    private String EXTENDS;
+    private String type;
     private List<InputClasses> inputClasses = new ArrayList<InputClasses>();
     private String OVERRIDE;
     private String BUILD_WIDGET;
@@ -41,20 +41,12 @@ public class extends_ClassStateFull_AND_Less_withinput_appBar extends AST {
         this.ID = ID;
     }
 
-    public String getSTATEFULLWIDGET() {
-        return STATEFULLWIDGET;
+    public String getType() {
+        return type;
     }
 
-    public void setSTATEFULLWIDGET(String STATEFULLWIDGET) {
-        this.STATEFULLWIDGET = STATEFULLWIDGET;
-    }
-
-    public String getSTATELESSWIDGET() {
-        return STATELESSWIDGET;
-    }
-
-    public void setSTATELESSWIDGET(String STATELESSWIDGET) {
-        this.STATELESSWIDGET = STATELESSWIDGET;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public List<InputClasses> getInputClasses() {
@@ -137,13 +129,21 @@ public class extends_ClassStateFull_AND_Less_withinput_appBar extends AST {
         this.flutterWidget = flutterWidget;
     }
 
+    public String getEXTENDS() {
+        return EXTENDS;
+    }
+
+    public void setEXTENDS(String EXTENDS) {
+        this.EXTENDS = EXTENDS;
+    }
+
     @Override
     public String toString() {
         return "extends_ClassStateFull_AND_Less_withinput_appBar{" +
                 "CLASS='" + CLASS + '\'' +
                 ", ID='" + ID + '\'' +
-                ", STATEFULLWIDGET='" + STATEFULLWIDGET + '\'' +
-                ", STATELESSWIDGET='" + STATELESSWIDGET + '\'' +
+                ", extends " + EXTENDS + '\'' +
+                ", type ='" + type + '\'' +
                 ", inputClasses=" + inputClasses +
                 ", OVERRIDE='" + OVERRIDE + '\'' +
                 ", BUILD_WIDGET='" + BUILD_WIDGET + '\'' +
