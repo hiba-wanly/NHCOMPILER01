@@ -57,10 +57,14 @@ import Gremmers.var.SwitchStatement.SwitchWithID;
 import Gremmers.var.SwitchStatement.SwitchWithNUM;
 import Gremmers.var.TryCatchStatement.TryCatchStatement;
 import Gremmers.var.WhileStatement.WhileStatement;
+import symbol.SymbolRow;
+import symbol.SymbolTable;
 import syntax.projectParser;
 import syntax.projectParserBaseVisitor;
 
 public class AntlrToAST extends projectParserBaseVisitor<AST> {
+
+    SymbolTable symbolTable = new SymbolTable();
 
     @Override
     public Prog visitProg(projectParser.ProgContext ctx) {
@@ -73,6 +77,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 pp.getElements().add(visitElement(ctx.element(i)));
             }
         }
+        createSymbolRow("prog","progname","progvalue",ctx.start.getLine());
         return  pp ;
     }
 
@@ -2899,5 +2904,22 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         nam.setNam(ctx.ID().toString().trim());
         return nam;
     }
+
+
+
+
+    private SymbolRow createSymbolRow(String type,String name,String value,int numline){
+        SymbolRow symbolRow = new SymbolRow();
+        symbolRow.setType(type);
+        symbolRow.setType(name);
+        symbolRow.setValue(value);
+        symbolRow.setNumline(numline);
+        System.out.println(symbolRow.getName()+" - "+symbolRow.getType()+" - "+symbolRow.getValue()+" - "+symbolRow.getNumline());
+        symbolTable.getSymbolRows().add(symbolRow);
+        return symbolRow;
+    }
+
+
+
 }
 

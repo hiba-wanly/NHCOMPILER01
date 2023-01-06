@@ -4,6 +4,8 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
+import symbol.SymbolRow;
+import symbol.SymbolTable;
 import syntax.projectLexer;
 import syntax.projectParser;
 
@@ -12,6 +14,7 @@ import java.io.IOException;
 
 
 public class Main {
+
     public static void main(String[] args) {
         try {
             String source = "folders/test4";
@@ -25,8 +28,10 @@ public class Main {
 
 //            Prog prog = (Prog) new AntlrToAST().visit(dartAST);
             System.out.println(prog);
-//            System.out.println("hiiii");
+            System.out.println("hiiiiiiiiiiiiiiiii");
 //            System.out.println("hii");
+            SymbolTable symbolTable = new SymbolTable();
+           symbolTable.print();
 
         } catch (IOException e) {
             e.printStackTrace();
