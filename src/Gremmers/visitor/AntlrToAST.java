@@ -78,6 +78,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow("prog","progname","progvalue",ctx.start.getLine());
+//        this.symbolTable.printSymbol();
         return  pp ;
     }
 

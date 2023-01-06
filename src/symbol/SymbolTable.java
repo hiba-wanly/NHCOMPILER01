@@ -17,8 +17,10 @@ public class SymbolTable {
     }
 
 
-    public void print(){
+    public void printSymbol(){
+       System.out.println("sumbolllllllllllllllllll");
         for(int i=0;i<symbolRows.size();i++){
+            System.out.println("forrrrrrrrrrrrrrr");
             if(symbolRows.get(i)!=null){
                 System.out.print("Symbol Name:  "+symbolRows.get(i).getName() + "  ");
                 System.out.print("Symbol Type: "+symbolRows.get(i).getType()+ "  ");

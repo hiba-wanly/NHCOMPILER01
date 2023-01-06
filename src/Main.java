@@ -15,6 +15,7 @@ import java.io.IOException;
 
 public class Main {
 
+//    public static SymbolTable symbolTable = new SymbolTable();
     public static void main(String[] args) {
         try {
             String source = "folders/test4";
@@ -30,8 +31,8 @@ public class Main {
             System.out.println(prog);
             System.out.println("hiiiiiiiiiiiiiiiii");
 //            System.out.println("hii");
-            SymbolTable symbolTable = new SymbolTable();
-           symbolTable.print();
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -39,5 +40,7 @@ public class Main {
         }
 
 //        System.out.println("Hello world!");
+        SymbolTable symbolTable = new SymbolTable();
+        symbolTable.printSymbol();
     }
 }
