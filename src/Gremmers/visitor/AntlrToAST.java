@@ -2917,6 +2917,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         symbolRow.setName(name);
         symbolRow.setValue(value);
         symbolRow.setNumline(numline);
+
 //        System.out.println(symbolRow.getName()+" - "+symbolRow.getType()+" - "+symbolRow.getValue()+" - "+symbolRow.getNumline());
         symbolTable.getSymbolRows().add(symbolRow);
         return symbolRow;
