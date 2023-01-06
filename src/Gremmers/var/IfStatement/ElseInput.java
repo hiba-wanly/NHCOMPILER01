@@ -27,6 +27,6 @@ public class ElseInput extends AST {
         return "ElseInput{" +
                 "elsee='" + elsee + '\'' +
                 ", ifif=" + ifif +
-                '}';
+                "} \n";
     }
 }

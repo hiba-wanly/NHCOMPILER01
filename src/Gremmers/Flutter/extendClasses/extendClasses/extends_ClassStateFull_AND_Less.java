@@ -113,6 +113,6 @@ public class extends_ClassStateFull_AND_Less extends AST {
                 ", SCAFFOLD='" + SCAFFOLD + '\'' +
                 ", BODY='" + BODY + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

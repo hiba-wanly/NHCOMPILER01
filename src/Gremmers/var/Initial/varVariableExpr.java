@@ -42,6 +42,6 @@ public class varVariableExpr extends AST {
                 "type='" + type + '\'' +
                 ", id='" + id + '\'' +
                 ", expr=" + expr +
-                '}';
+                "} \n";
     }
 }

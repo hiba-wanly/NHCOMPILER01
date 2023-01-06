@@ -44,6 +44,6 @@ public class Column extends AST {
                 "COLUMN='" + COLUMN + '\'' +
                 ", CHILDREN='" + CHILDREN + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

@@ -34,6 +34,6 @@ public class AbstractStatment extends AST {
                 "abstr='" + abstr + '\'' +
                 ", clas='" + clas + '\'' +
                 ", id='" + id + '\'' +
-                '}';
+                "} \n";
     }
 }

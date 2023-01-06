@@ -27,10 +27,10 @@ public class NumbersIF extends AST {
     public String toString() {
         if(this.ii!=null){
             return "NumbersIF{" +
-                    "ii=" + ii +'}';
+                    "ii=" + ii +"} \n";
         }
         return "NumbersIF{" +
                 "ff=" + ff +
-                '}';
+                "} \n";
     }
 }

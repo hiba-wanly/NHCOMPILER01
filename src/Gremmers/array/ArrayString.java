@@ -35,6 +35,6 @@ public class ArrayString extends AST {
                 "string='" + string + '\'' +
                 ", id='" + id + '\'' +
                 ", arrayVarString=" + arrayVarString +
-                '}';
+                "} \n";
     }
 }

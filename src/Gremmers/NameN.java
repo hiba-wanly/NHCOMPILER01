@@ -15,6 +15,6 @@ public class NameN extends AST{
     public String toString() {
         return "NameN{" +
                 "nam='" + nam + '\'' +
-                '}';
+                "\n";
     }
 }

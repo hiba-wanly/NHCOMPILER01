@@ -27,10 +27,10 @@ public class SizedBoxClasses extends AST {
     public String toString() {
         if(this.attr_widthHight_SizedBox != null){
             return "SizedBoxClasses{" +
-                    "attr_widthHight_SizedBox=" + attr_widthHight_SizedBox + "}";
+                    "attr_widthHight_SizedBox=" + attr_widthHight_SizedBox + "}\n";
         }
         return "SizedBoxClasses{" +
                 "attr_hight_AND_widthSizedBox=" + attr_hight_AND_widthSizedBox +
-                '}';
+                "} \n";
     }
 }

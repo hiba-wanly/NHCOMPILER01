@@ -25,6 +25,6 @@ public class PrintIdNum extends AST {
         return "PrintIdNum{" +
                 "prin='" + prin + '\'' +
                 ", world='" + world + '\'' +
-                '}';
+                "} \n";
     }
 }

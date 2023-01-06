@@ -46,18 +46,18 @@ public class direction extends AST {
         if(this.directions_direction_FLOAT!=null)
             return "direction{" +
                     "directions_direction_FLOAT=" + directions_direction_FLOAT +
-                    '}';
+                    "} \n";
         if(this.directions_direction_NUM!=null)
             return "direction{" +
                     ", directions_direction_NUM=" + directions_direction_NUM +
-                    '}';
+                    "} \n";
         if(this.directions_direction_FLOAT_D!=null)
             return "direction{" +
                     ", directions_direction_FLOAT_D=" + directions_direction_FLOAT_D+
-                    '}';
+                    "} \n";
         return "direction{" +
 
                 ", directions_direction_NUM_D=" + directions_direction_NUM_D +
-                '}';
+                "} \n";
     }
 }

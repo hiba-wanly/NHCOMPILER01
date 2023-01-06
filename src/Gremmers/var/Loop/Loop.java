@@ -16,6 +16,6 @@ public class Loop extends AST {
     public String toString() {
         return "Loop{" +
                 "forloop=" + forloop +
-                '}';
+                "} \n";
     }
 }

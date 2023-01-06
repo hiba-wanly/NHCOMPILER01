@@ -54,7 +54,7 @@ public class Expression extends AST {
     public String toString() {
         if(this.numbers!=null){
             return "Expression{" +
-                    "numbers=" + numbers +'}';
+                    "numbers=" + numbers +"} \n";
         }
         if(this.var!=null){
             return "Expression{" +
@@ -62,15 +62,15 @@ public class Expression extends AST {
         }
         if(this.boolean_p!=null){
             return "Expression{" +
-                    "boolean_p=" + boolean_p+'}';
+                    "boolean_p=" + boolean_p+"} \n";
         }
         if(this.math!=null){
             return "Expression{" +
-                    "math=" + math+'}';
+                    "math=" + math+"} \n";
         }
 
         return "Expression{" +
                 "expression=" + expression +
-                '}';
+                "} \n";
     }
 }

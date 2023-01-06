@@ -59,6 +59,6 @@ public class input_4AppBar extends AST {
                 ", color=" + color +
                 ", TITLE='" + TITLE + '\'' +
                 ", textClasses=" + textClasses +
-                '}';
+                "} \n";
     }
 }

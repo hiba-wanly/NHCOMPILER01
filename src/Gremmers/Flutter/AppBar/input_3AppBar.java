@@ -59,6 +59,6 @@ public class input_3AppBar extends AST {
                 ", BACHCOLOR='" + BACHCOLOR + '\'' +
                 ", COLOR='" + COLOR + '\'' +
                 ", color=" + color +
-                '}';
+                "} \n";
     }
 }

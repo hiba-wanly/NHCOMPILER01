@@ -39,6 +39,6 @@ public class hight_AND_widthSizedBox extends AST {
                 "SIZEDBOX='" + SIZEDBOX + '\'' +
                 ", type ='" + type + '\'' +
                 ", NUM_FLOAT='" + NUM_FLOAT + '\'' +
-                '}';
+                "} \n";
     }
 }

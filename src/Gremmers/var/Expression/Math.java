@@ -58,26 +58,26 @@ public class Math extends AST {
                     "var1=" + var1 +
                     ", operation=" + operation +
                     ", var2=" + var2 +
-                    '}';
+                    "} \n";
         }
         if(this.numbers1!=null && this.numbers2!=null){
             return "Math{" +
                     "numbers1=" + numbers1 +
                     ", operation=" + operation +
                     ", numbers2=" + numbers2 +
-                    '}';
+                    "} \n";
         }
         if(this.var1!=null && this.numbers2!=null){
             return "Math{" +
                     "var1=" + var1 +
                     ", operation=" + operation +
                     ", numbers2=" + numbers2 +
-                    '}';
+                    "} \n";
         }
         return "Math{" +
                 ", numbers1=" + numbers1 +
                 ", operation=" + operation +
                 ", var2=" + var2 +
-                '}';
+                "} \n";
     }
 }

@@ -42,6 +42,6 @@ public class Directions_direction_NUM_D extends AST {
                 "type=" + type + '\'' +
                 "NUM='" + NUM + '\'' +
                 ", direction=" + direction +
-                '}';
+                "} \n";
     }
 }

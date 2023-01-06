@@ -18,6 +18,6 @@ public class Identifier extends AST {
     public String toString() {
         return "Identifier{" +
                 "id='" + id + '\'' +
-                '}';
+                "} \n";
     }
 }

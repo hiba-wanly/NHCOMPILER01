@@ -73,35 +73,35 @@ public class Input extends AST {
     public String toString() {
         if(this.initial!=null){
             return "Input{" +
-                    "initial=" + initial +'}';
+                    "initial=" + initial + "\n";
         }
         if(this.ifStatment!=null){
             return "Input{" +
-                    ", ifStatment=" + ifStatment +'}';
+                    ", ifStatment=" + ifStatment + "\n";
         }
         if(this.loop!=null){
             return "Input{" +
-                    ", loop=" + loop +'}';
+                    ", loop=" + loop + "\n";
         }
         if(this.doWhileStatement!=null){
             return "Input{" +
-                    ", doWhileStatement=" + doWhileStatement +'}';
+                    ", doWhileStatement=" + doWhileStatement + "\n";
         }
         if(this.whileStatement!=null){
             return "Input{" +
-                    ", whileStatement=" + whileStatement +'}';
+                    ", whileStatement=" + whileStatement + "\n";
         }
         if(this.printStatement!=null){
             return "Input{" +
-                    ", printStatement=" + printStatement +'}';
+                    ", printStatement=" + printStatement + "\n";
         }
         if(this.switchStatement!=null){
             return "Input{" +
-                    ", switchStatement=" + switchStatement +'}';
+                    ", switchStatement=" + switchStatement + "\n";
         }
         return "Input{" +
                 "initial=" + initial +
                 ", tryCatchStatement=" + tryCatchStatement +
-                '}';
+                "\n";
     }
 }

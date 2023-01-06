@@ -51,6 +51,6 @@ public class SwitchWithID extends AST {
                 ", id='" + id + '\'' +
                 ", casestat=" + casestat +
                 ", def=" + def +
-                '}';
+                "\n";
     }
 }

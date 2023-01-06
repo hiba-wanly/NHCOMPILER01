@@ -51,6 +51,6 @@ public class SwitchWithNUM extends AST {
                 ", numm='" + numm + '\'' +
                 ", casestat=" + casestat +
                 ", def=" + def +
-                '}';
+                "\n";
     }
 }

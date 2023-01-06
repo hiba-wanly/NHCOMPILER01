@@ -21,6 +21,6 @@ public class ArrayVarInt extends AST {
     public String toString() {
         return "ArrayVarInt{" +
                 "integers=" + integers +
-                '}';
+                "} \n";
     }
 }

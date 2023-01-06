@@ -17,6 +17,6 @@ public class Float extends AST{
     public String toString() {
         return "Float{" +
                 "FLOAT='" + FLOAT + '\'' +
-                '}';
+                "\n";
     }
 }

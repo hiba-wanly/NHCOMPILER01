@@ -48,6 +48,6 @@ public class imageHightWidth_Reverse_DN extends AST {
                 ", WIDTH='" + WIDTH + '\'' +
                 ", NUM_HIGHT='" + NUM_HIGHT + '\'' +
                 ", NUM_WIDTH='" + NUM_WIDTH + '\'' +
-                '}';
+                "} \n";
     }
 }

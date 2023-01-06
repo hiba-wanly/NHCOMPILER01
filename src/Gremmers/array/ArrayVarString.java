@@ -19,6 +19,6 @@ public class ArrayVarString extends AST {
     public String toString() {
         return "ArrayVarString{" +
                 "STRINGS=" + STRINGS +
-                '}';
+                "} \n";
     }
 }

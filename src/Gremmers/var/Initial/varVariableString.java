@@ -45,6 +45,6 @@ public class varVariableString extends AST {
                 "type='" + type + '\'' +
                 ", id='" + id + '\'' +
                 ", rule=" + rule +
-                '}';
+                "} \n";
     }
 }

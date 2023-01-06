@@ -61,6 +61,6 @@ public class TryCatchStatement extends AST {
                 ", catchh='" + catchh + '\'' +
                 ", idd='" + idd + '\'' +
                 ", inp2=" + inp2 +
-                '}';
+                "\n";
     }
 }

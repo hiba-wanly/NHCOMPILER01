@@ -40,6 +40,6 @@ public class ClassStatement extends AST {
                 "clas='" + clas + '\'' +
                 ", id='" + id + '\'' +
                 ", inputclasses=" + inputclasses +
-                '}';
+                "} \n";
     }
 }

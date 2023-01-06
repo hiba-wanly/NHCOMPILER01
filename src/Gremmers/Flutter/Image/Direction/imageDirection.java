@@ -35,14 +35,14 @@ public class imageDirection extends AST {
     public String toString() {
         if(this.attr_imageHight_AND_Width_DF != null){
             return "imageDirection{" +
-                    "attr_imageHight_AND_Width_DF=" + attr_imageHight_AND_Width_DF +"}";
+                    "attr_imageHight_AND_Width_DF=" + attr_imageHight_AND_Width_DF +"}\n";
         }
         if(this.attr_imageHightWidth_Reverse_DN != null){
             return "imageDirection{" +
-                    " attr_imageHightWidth_Reverse_DN=" + attr_imageHightWidth_Reverse_DN + "}";
+                    " attr_imageHightWidth_Reverse_DN=" + attr_imageHightWidth_Reverse_DN + "}\n";
         }
         return "imageDirection{" +
                 "attr_imageHightWidth_Reverse_DN=" + attr_imageHightWidth_Reverse_DF +
-                '}';
+                "} \n";
     }
 }

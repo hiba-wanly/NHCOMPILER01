@@ -62,6 +62,6 @@ public class padding_all extends AST {
                 ", NUM_FLOAT='" + NUM_FLOAT + '\'' +
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

@@ -43,6 +43,6 @@ public class WhileStatement extends AST {
                 "whilee='" + whilee + '\'' +
                 ", cond=" + cond +
                 ", ifif=" + ifif +
-                '}';
+                "\n";
     }
 }

@@ -20,6 +20,6 @@ public class Prog extends AST{
     public String toString() {
         return "Prog{" +
                 "elements=" + elements +
-                '}';
+                "} \n";
     }
 }

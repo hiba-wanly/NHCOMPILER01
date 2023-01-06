@@ -125,6 +125,6 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
                 ", BODY='" + BODY + '\'' +
                 ", flutterWidget=" + flutterWidget +
                 ", inputClasses=" + inputClasses +
-                '}';
+                "} \n";
     }
 }

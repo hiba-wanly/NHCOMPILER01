@@ -63,6 +63,6 @@ public class FunWithArg extends AST {
                 ", argumentFunctionTypes=" + argumentFunctionTypes +
                 ", inputs=" + inputs +
                 ", returnStatement=" + returnStatement +
-                '}';
+                "} \n";
     }
 }

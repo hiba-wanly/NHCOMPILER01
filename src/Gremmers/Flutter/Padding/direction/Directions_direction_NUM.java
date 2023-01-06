@@ -28,6 +28,6 @@ public class Directions_direction_NUM extends AST {
         return "Directions_direction_NUM{" +
                 "NUM='" + NUM + '\'' +
                 ", type ='" + type + '\'' +
-                '}';
+                "} \n";
     }
 }

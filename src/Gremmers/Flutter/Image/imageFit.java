@@ -38,6 +38,6 @@ public class imageFit extends AST {
                 "FIT='" + FIT + '\'' +
                 ", BOXFIT='" + BOXFIT + '\'' +
                 ", FILL='" + FILL + '\'' +
-                '}';
+                "} \n";
     }
 }

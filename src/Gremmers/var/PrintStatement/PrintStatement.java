@@ -23,10 +23,10 @@ public class PrintStatement extends AST {
     public String toString() {
         if(this.prindidnum!=null){
             return "PrintStatement{" +
-                    "prindidnum=" + prindidnum + '}';
+                    "prindidnum=" + prindidnum + "} \n";
         }
         return "PrintStatement{" +
                 ", printtext=" + printtext +
-                '}';
+                "} \n";
     }
 }

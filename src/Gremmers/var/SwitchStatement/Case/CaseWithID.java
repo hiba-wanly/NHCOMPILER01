@@ -51,6 +51,6 @@ public class CaseWithID extends AST {
                 ", inputt='" + inputt + '\'' +
                 ", inp=" + inp +
                 ", breakk='" + breakk + '\'' +
-                '}';
+                "\n";
     }
 }

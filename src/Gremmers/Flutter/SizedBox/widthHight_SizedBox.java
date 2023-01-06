@@ -58,6 +58,6 @@ public class widthHight_SizedBox extends AST {
                 ", NUM_FLOAT_WIDTH='" + NUM_FLOAT_WIDTH + '\'' +
                 ", HIGHT='" + HIGHT + '\'' +
                 ", NUM_FLOAT_HIGHT='" + NUM_FLOAT_HIGHT + '\'' +
-                '}';
+                "} \n";
     }
 }

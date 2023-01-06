@@ -42,6 +42,6 @@ public class IFIF extends AST {
                 "inp=" + inp +
                 ", brek='" + brek + '\'' +
                 ", cont='" + cont + '\'' +
-                '}';
+                "} \n";
     }
 }

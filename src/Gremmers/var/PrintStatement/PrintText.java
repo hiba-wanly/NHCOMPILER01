@@ -29,6 +29,6 @@ public class PrintText extends AST {
         return "PrintText{" +
                 "prin='" + prin + '\'' +
                 ", rules=" + rules +
-                '}';
+                "} \n";
     }
 }

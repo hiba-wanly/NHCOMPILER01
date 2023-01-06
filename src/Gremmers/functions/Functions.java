@@ -46,18 +46,18 @@ public class Functions extends AST {
     public String toString() {
         if(this.funWithArg!=null){
             return "Functions{" +
-                    "funWithArg=" + funWithArg +'}';
+                    "funWithArg=" + funWithArg +"} \n";
         }
         if(this.funWithoutArg!=null){
             return "Functions{" +
-                    ", funWithoutArg=" + funWithoutArg +'}';
+                    ", funWithoutArg=" + funWithoutArg +"} \n";
         }
         if(this.voidWithArg!=null){
             return "Functions{" +
-                    "voidWithArg=" + voidWithArg +'}';
+                    "voidWithArg=" + voidWithArg +"} \n";
         }
         return "Functions{" +
                 ", voidWithoutArg=" + voidWithoutArg +
-                '}';
+                "} \n";
     }
 }

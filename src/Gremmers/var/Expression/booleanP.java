@@ -28,10 +28,10 @@ public class booleanP extends AST {
     public String toString() {
         if(this.TRUE!=null){
             return "booleanP{" +
-                    "TRUE='" + TRUE + '\'' +'}';
+                    "TRUE='" + TRUE + '\'' +"} \n";
         }
         return "booleanP{" +
                 ", FALSE='" + FALSE + '\'' +
-                '}';
+                "} \n";
     }
 }

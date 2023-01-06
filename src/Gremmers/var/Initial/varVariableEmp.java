@@ -30,6 +30,6 @@ public class varVariableEmp extends AST {
         return "varVariableEmp{" +
                 "type='" + type + '\'' +
                 ", id='" + id + '\'' +
-                '}';
+                "} \n";
     }
 }

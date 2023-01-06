@@ -27,6 +27,6 @@ public class NestedLogic2 extends AST {
         return "NestedLogic2{" +
                 "LOGIC_SIGNS='" + LOGIC_SIGNS + '\'' +
                 ", logic=" + logic +
-                '}';
+                "} \n";
     }
 }

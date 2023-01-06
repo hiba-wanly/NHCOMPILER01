@@ -64,6 +64,6 @@ public class padding_sym_horisantal_num_numFloat extends AST {
                 ", NUM='" + NUM + '\'' +
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

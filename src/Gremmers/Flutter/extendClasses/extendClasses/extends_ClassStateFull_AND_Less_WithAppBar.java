@@ -143,6 +143,6 @@ public class extends_ClassStateFull_AND_Less_WithAppBar extends AST {
                 ", attr_input_AppBar=" + attr_input_AppBar +
                 ", BODY='" + BODY + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

@@ -51,6 +51,6 @@ public class CaseWithNUM extends AST {
                 ", numm='" + numm + '\'' +
                 ", inp=" + inp +
                 ", beakk='" + beakk + '\'' +
-                '}';
+                "\n";
     }
 }

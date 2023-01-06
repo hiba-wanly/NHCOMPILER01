@@ -28,6 +28,6 @@ public class imageHight_AND_Width_DF extends AST {
         return "imageHight_AND_Width_DF{" +
                 "type='" + type + '\'' +
                 ", NUM_FLOAT='" + NUM_FLOAT + '\'' +
-                '}';
+                "} \n";
     }
 }

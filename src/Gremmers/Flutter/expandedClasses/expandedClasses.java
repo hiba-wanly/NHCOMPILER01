@@ -18,6 +18,6 @@ public class expandedClasses extends AST {
     public String toString() {
         return "expandedClasses{" +
                 "attr_expanded_withCol_withRow=" + attr_expanded_withCol_withRow +
-                '}';
+                "} \n";
     }
 }

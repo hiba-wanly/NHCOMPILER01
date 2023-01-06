@@ -43,12 +43,12 @@ public class BoolExpresions extends AST {
     @Override
     public String toString() {
         if(this.boolExpresion!=null){
-            return "BoolExpresions{boolExpresion" +boolExpresion+'}';
+            return "BoolExpresions{boolExpresion" +boolExpresion+"} \n";
         }
         return "BoolExpresions{" +
                 "expression1=" + expression1 +
                 ", BOOLEAN_SIGNS='" + BOOLEAN_SIGNS + '\'' +
                 ", expression2=" + expression2 +
-                '}';
+                "} \n";
     }
 }

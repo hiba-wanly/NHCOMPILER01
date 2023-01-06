@@ -36,6 +36,6 @@ public class ArrayInt extends AST {
                 "intt='" + intt + '\'' +
                 ", id='" + id + '\'' +
                 ", arrayVarInt=" + arrayVarInt +
-                '}';
+                "} \n";
     }
 }

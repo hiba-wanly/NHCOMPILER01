@@ -19,6 +19,6 @@ public class ArrayVarFloat extends AST {
     public String toString() {
         return "ArrayVarFloat{" +
                 "FLOAT=" + FLOAT +
-                '}';
+                "} \n";
     }
 }

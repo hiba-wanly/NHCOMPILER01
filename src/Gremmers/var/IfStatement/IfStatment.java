@@ -41,13 +41,13 @@ public class IfStatment extends AST {
                 "ifin=" + ifin +
                 ", elseifin=" + elseifin +
                 ", elsein=" + elsein +
-                '}';
+                   "} \n";
            }
         if(this.ifin!=null && this.elseifin !=null){
             return "IfStatment{" +
                     "ifin=" + ifin +
                     ", elseifin=" + elseifin +
-                    '}';
+                    "} \n";
         }
 //        if(this.ifin!=null && this.elsein!=null){
 //
@@ -55,6 +55,6 @@ public class IfStatment extends AST {
         return "IfStatment{" +
                 "ifin=" + ifin +
                 ", elsein=" + elsein +
-                '}';
+                "} \n";
     }
 }

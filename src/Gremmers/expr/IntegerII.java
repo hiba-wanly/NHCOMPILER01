@@ -17,6 +17,6 @@ public class IntegerII extends AST {
     public String toString() {
         return "Integer{" +
                 "num=" + num +
-                '}';
+                "} \n";
     }
 }

@@ -46,19 +46,19 @@ public class paddingClasses extends AST {
     public String toString() {
         if(this.attr_padding_all != null){
             return "paddingClasses{" +
-                    "attr_padding_all=" + attr_padding_all + "}";
+                    "attr_padding_all=" + attr_padding_all + "}\n";
         }
         if(this.attr_padding_only != null){
             return "paddingClasses{" +
-                    " attr_padding_only=" + attr_padding_only +"}";
+                    " attr_padding_only=" + attr_padding_only +"}\n";
         }
         if(this.attr_padding_sym_horisantal_num_numFloat != null){
             return "paddingClasses{" +
-                    " attr_padding_sym_horisantal_num_numFloat=" + attr_padding_sym_horisantal_num_numFloat +  "}";
+                    " attr_padding_sym_horisantal_num_numFloat=" + attr_padding_sym_horisantal_num_numFloat +  "}\n";
         }
         return "paddingClasses{" +
                 "attr_padding_sym_vertical_num_numFloat=" + attr_padding_sym_vertical_num_numFloat +
-                '}';
+                "} \n";
     }
 }
 

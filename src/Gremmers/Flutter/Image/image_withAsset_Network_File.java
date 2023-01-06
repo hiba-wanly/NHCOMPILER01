@@ -30,7 +30,7 @@ public class image_withAsset_Network_File extends AST {
         return "image_withAsset_Network_File{" +
                 "IMAGE='" + IMAGE + '\'' +
                 ", TYPE ='" + type + '\'' +
-                '}';
+                "} \n";
     }
 }
 

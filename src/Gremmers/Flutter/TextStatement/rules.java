@@ -28,9 +28,9 @@ public class rules extends AST {
     public String toString() {
         if(this.ID!=null)
             return "rules{" +
-                    "ID='" + ID + '\'' + '}';
+                    "ID='" + ID + '\'' + "} \n";
         return "rules{" +
                 ", NUM='" + NUM + '\'' +
-                '}';
+                "} \n";
     }
 }

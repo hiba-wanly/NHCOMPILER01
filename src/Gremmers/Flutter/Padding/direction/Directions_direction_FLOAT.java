@@ -28,6 +28,6 @@ public class Directions_direction_FLOAT extends AST {
         return "Directions_direction_FLOAT{" +
                 "NUM_FLOAT='" + NUM_FLOAT + '\'' +
                 ", type ='" + type + '\'' +
-                '}';
+                "} \n";
     }
 }

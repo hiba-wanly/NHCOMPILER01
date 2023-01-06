@@ -18,6 +18,6 @@ public class Var extends AST {
     public String toString() {
         return "Var{" +
                 "VARNAME='" + VARNAME + '\'' +
-                '}';
+                "} \n";
     }
 }

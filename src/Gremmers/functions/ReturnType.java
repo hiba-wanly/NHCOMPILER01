@@ -40,11 +40,11 @@ public class ReturnType extends AST {
         if(this.idd!=null){
             return "ReturnType{" +
                     "returnn='" + returnn + '\'' +
-                    ", idd='" + idd + '}' ;
+                    ", idd='" + idd + "} \n" ;
         }
         return "ReturnType{" +
                 "returnn='" + returnn + '\'' +
                 ", rules=" + rules +
-                '}';
+                "} \n";
     }
 }

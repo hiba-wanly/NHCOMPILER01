@@ -27,10 +27,10 @@ public class Conditions extends AST {
     public String toString() {
         if(this.boolExpresion!=null){
             return "Conditions{" +
-                    "boolExpresion=" + boolExpresion +'}';
+                    "boolExpresion=" + boolExpresion +"} \n";
         }
         return "Conditions{" +
                 ", logic=" + logic +
-                '}';
+                "} \n";
     }
 }

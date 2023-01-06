@@ -38,6 +38,6 @@ public class input_2AppBar extends AST {
                   "BACHCOLOR='" + BACHCOLOR + '\'' +
                   ", COLOR='" + COLOR + '\'' +
                   ", color=" + color +
-                  '}';
+                  "} \n";
      }
 }

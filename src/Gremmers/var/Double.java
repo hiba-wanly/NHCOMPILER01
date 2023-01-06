@@ -20,6 +20,6 @@ public class Double extends AST {
     public String toString() {
         return "Double{" +
                 "dou='" + dou + '\'' +
-                '}';
+                "\n";
     }
 }

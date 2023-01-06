@@ -42,6 +42,6 @@ public class DoWhileStatement extends AST {
                 "doo='" + doo + '\'' +
                 ", inn=" + inn +
                 ", whileStatement=" + whileStatement +
-                '}';
+                "} \n";
     }
 }

@@ -18,6 +18,6 @@ public class Color extends AST {
     public String toString() {
         return "Color{" +
                 "attr_color_red_green=" + attr_color_red_green +
-                '}';
+                "} \n";
     }
 }

@@ -41,6 +41,6 @@ public class IFInput extends AST {
                 "ifif='" + ifif + '\'' +
                 ", cond=" + cond +
                 ", ifatr=" + ifatr +
-                '}';
+                "} \n";
     }
 }

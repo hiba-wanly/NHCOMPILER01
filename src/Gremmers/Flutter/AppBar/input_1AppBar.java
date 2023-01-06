@@ -29,6 +29,6 @@ public class input_1AppBar extends AST {
         return "input_1AppBar{" +
                 "TITLE='" + TITLE + '\'' +
                 ", textClasses=" + textClasses +
-                '}';
+                "} \n";
     }
 }

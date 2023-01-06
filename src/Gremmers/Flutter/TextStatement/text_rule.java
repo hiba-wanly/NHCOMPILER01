@@ -32,6 +32,6 @@ public class text_rule extends AST {
         return "text_rule{" +
                 "TEXT='" + TEXT + '\'' +
                 ", rules=" + rules +
-                '}';
+                "} \n";
     }
 }

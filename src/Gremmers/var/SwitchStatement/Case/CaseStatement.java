@@ -26,10 +26,10 @@ public class CaseStatement extends AST {
     public String toString() {
         if(this.caseid!=null){
             return "CaseStatement{" +
-                    "caseid=" + caseid +  '}';
+                    "caseid=" + caseid +  "} \n";
         }
         return "CaseStatement{" +
                 ", casenum=" + casenum +
-                '}';
+                "} \n";
     }
 }

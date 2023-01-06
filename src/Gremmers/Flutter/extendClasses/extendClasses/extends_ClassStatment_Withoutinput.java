@@ -50,6 +50,6 @@ public class extends_ClassStatment_Withoutinput extends AST {
                 ", ID='" + ID + '\'' +
                 ", extends " + EXTENDS + '\'' +
                 ", ID_ID='" + ID_ID + '\'' +
-                '}';
+                "} \n";
     }
 }

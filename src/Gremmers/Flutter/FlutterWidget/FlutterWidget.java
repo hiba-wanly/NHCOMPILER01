@@ -90,28 +90,28 @@ public class FlutterWidget extends AST {
     @Override
     public String toString() {
         if(this.attr_imageClasses != null){
-            return "FlutterWidget{" + "attr_imageClasses=" + attr_imageClasses + "}";
+            return "FlutterWidget{" + "attr_imageClasses=" + attr_imageClasses + "}\n";
         }
         if(this.attr_paddingClasses != null){
-            return "FlutterWidget{" +" attr_paddingClasses=" + attr_paddingClasses + "}";
+            return "FlutterWidget{" +" attr_paddingClasses=" + attr_paddingClasses + "}\n";
         }
         if(this.attr_textButton != null){
-            return "FlutterWidget{" + " attr_textButton=" + attr_textButton + "}";
+            return "FlutterWidget{" + " attr_textButton=" + attr_textButton + "}\n";
         }
         if(this.attr_TextClasses != null){
-            return "FlutterWidget{" + " attr_TextClasses=" + attr_TextClasses + "}";
+            return "FlutterWidget{" + " attr_TextClasses=" + attr_TextClasses + "}\n";
         }
         if(this.attr_Column != null){
-            return "FlutterWidget{" + "attr_Column=" + attr_Column + "}";
+            return "FlutterWidget{" + "attr_Column=" + attr_Column + "}\n";
         }
         if(this.attr_Row != null){
-            return "FlutterWidget{" + " attr_Row=" + attr_Row + "}";
+            return "FlutterWidget{" + " attr_Row=" + attr_Row + "} \n";
         }
         if(this.attr_Container != null){
-            return "FlutterWidget{" +  "attr_Container=" + attr_Container +"}";
+            return "FlutterWidget{" +  "attr_Container=" + attr_Container +"} \n";
         }
         return "FlutterWidget{" +
                 "attr_SizedBoxClasses=" + attr_SizedBoxClasses +
-                '}';
+                "} \n";
     }
 }

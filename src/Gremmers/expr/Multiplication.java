@@ -35,6 +35,6 @@ public class Multiplication extends AST{
                 "num1='" + num1 + '\'' +
                 ", m='" + m + '\'' +
                 ", num2='" + num2 + '\'' +
-                '}';
+                "} \n";
     }
 }

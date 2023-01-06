@@ -52,6 +52,6 @@ public class VoidWithArg extends AST {
                 ", namee=" + namee +
                 ", argumentFunctionTypes=" + argumentFunctionTypes +
                 ", inputs=" + inputs +
-                '}';
+                "} \n";
     }
 }

@@ -28,6 +28,6 @@ public class ArgumentFunctionType extends AST {
         return "ArgumentFunctionType{" +
                 "typee='" + typee + '\'' +
                 ", namee=" + namee +
-                '}';
+                "} \n";
     }
 }

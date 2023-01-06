@@ -39,6 +39,6 @@ public class Directions_direction_FLOAT_D extends AST {
                 "type=" + type + '\'' +
                 "NUM_FLOAT='" + NUM_FLOAT + '\'' +
                 ", direction=" + direction +
-                '}';
+                "} \n";
     }
 }

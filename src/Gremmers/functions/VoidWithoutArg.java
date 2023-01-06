@@ -43,6 +43,6 @@ public class VoidWithoutArg extends AST {
                 "viodd='" + viodd + '\'' +
                 ", namee=" + namee +
                 ", inp=" + inp +
-                '}';
+                "} \n";
     }
 }

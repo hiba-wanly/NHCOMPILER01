@@ -35,6 +35,6 @@ public class ArrayFloat extends AST {
                 "flot='" + flot + '\'' +
                 ", id=" + id +
                 ", arrayVarFloat=" + arrayVarFloat +
-                '}';
+                "}\n";
     }
 }

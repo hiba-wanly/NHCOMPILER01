@@ -53,6 +53,6 @@ public class FunWithoutArg extends AST {
                 ", name=" + name +
                 ", inputs=" + inputs +
                 ", returnStatement=" + returnStatement +
-                '}';
+                "} \n";
     }
 }

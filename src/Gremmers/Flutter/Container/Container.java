@@ -42,6 +42,6 @@ public class Container extends AST {
                 "CONTAINER='" + CONTAINER + '\'' +
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

@@ -48,11 +48,11 @@ public class Logic extends AST {
         if(this.boolExpresion!=null){
             return "Logic{" +
                     "boolExpresion=" + boolExpresion +
-                    ", nestedLogics=" + nestedLogics +'}';
+                    ", nestedLogics=" + nestedLogics +"} \n";
         }
         return "Logic{" +
                 ", logic=" + logic +
                 ", nestedLogic2s=" + nestedLogic2s +
-                '}';
+                "} \n";
     }
 }

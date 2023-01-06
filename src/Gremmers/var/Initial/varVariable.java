@@ -44,6 +44,6 @@ public class varVariable extends AST {
                 "type='" + type + '\'' +
                 ", id='" + id + '\'' +
                 ", value='" + value + '\'' +
-                '}';
+                "} \n";
     }
 }

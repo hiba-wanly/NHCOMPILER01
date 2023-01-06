@@ -28,6 +28,6 @@ public class text_INPUT_D_Q_N extends AST {
         return "text_INPUT_D_Q_N{" +
                 "TEXT='" + TEXT + '\'' +
                 ", INPUT_D_Q_N='" + INPUT_D_Q_N + '\'' +
-                '}';
+                "} \n";
     }
 }

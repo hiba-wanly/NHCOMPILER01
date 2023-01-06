@@ -48,6 +48,6 @@ public class imageHightWidth_Reverse_DF extends AST {
                 ", WIDTH='" + WIDTH + '\'' +
                 ", NUM_FLOAT_HIGHT='" + NUM_FLOAT_HIGHT + '\'' +
                 ", NUM_FLOAT_WIDTH='" + NUM_FLOAT_WIDTH + '\'' +
-                '}';
+                "} \n";
     }
 }

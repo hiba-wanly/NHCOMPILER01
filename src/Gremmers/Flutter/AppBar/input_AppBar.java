@@ -45,16 +45,16 @@ public class input_AppBar extends AST {
     public String toString() {
         if(this.attr_input_1AppBar!=null)
             return "input_AppBar{" +
-                    "attr_input_1AppBar=" + attr_input_1AppBar + '}';
+                    "attr_input_1AppBar=" + attr_input_1AppBar + "} \n";
         if(this.attr_input_2AppBar!=null)
             return "input_AppBar{" +
-                    ", attr_input_2AppBar=" + attr_input_2AppBar + '}';
+                    ", attr_input_2AppBar=" + attr_input_2AppBar + "} \n";
 
        if(this.attr_input_3AppBar!=null)
            return "input_AppBar{" +
-                   ", attr_input_3AppBar=" + attr_input_3AppBar + '}';
+                   ", attr_input_3AppBar=" + attr_input_3AppBar + "} \n";
         return "input_AppBar{" +
                 ", attr_input_4AppBar=" + attr_input_4AppBar +
-                '}';
+                "} \n";
     }
 }

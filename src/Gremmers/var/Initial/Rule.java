@@ -25,10 +25,10 @@ public class Rule extends AST {
     public String toString() {
         if(this.id!=null){
             return "Rule{" +
-                    "id='" + id + '\'' + '}';
+                    "id='" + id + '\'' + "} \n";
         }
         return "Rule{" +
-                "id='" + id + '\'' +
-                '}';
+                "num='" + num + '\'' +
+                "} \n";
     }
 }

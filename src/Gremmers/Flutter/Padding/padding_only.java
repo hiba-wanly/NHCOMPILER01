@@ -61,6 +61,6 @@ public class padding_only extends AST {
                 ", attr_direction=" + attr_direction +
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

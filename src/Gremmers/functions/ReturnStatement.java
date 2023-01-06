@@ -17,6 +17,6 @@ public class ReturnStatement extends AST {
     public String toString() {
         return "ReturnStatement{" +
                 "returnType=" + returnType +
-                '}';
+                "} \n";
     }
 }

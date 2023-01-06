@@ -35,6 +35,6 @@ public class Addition extends AST {
                 "num1='" + num1 + '\'' +
                 ", num2='" + num2 + '\'' +
                 ", m='" + m + '\'' +
-                '}';
+                "} \n";
     }
 }

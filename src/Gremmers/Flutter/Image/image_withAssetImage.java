@@ -48,6 +48,6 @@ public class image_withAssetImage extends AST {
                 ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +
                 ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +
                 ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
-                '}';
+                "} \n";
     }
 }

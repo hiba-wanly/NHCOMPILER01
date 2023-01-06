@@ -41,6 +41,6 @@ public class DefaultStatement extends AST {
                 "def='" + def + '\'' +
                 ", inp=" + inp +
                 ", breakk='" + breakk + '\'' +
-                '}';
+                "\n";
     }
 }

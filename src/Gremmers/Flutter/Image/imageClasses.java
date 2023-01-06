@@ -45,16 +45,16 @@ public class imageClasses extends AST {
     public String toString() {
         if(this.attr_image_withAssetImage != null){
             return "imageClasses{" +
-            " attr_image_withAssetImage=" + attr_image_withAssetImage + "}";
+            " attr_image_withAssetImage=" + attr_image_withAssetImage + "}\n";
         }
         if(this.attr_image_withAsset_Network_File != null){
-            return "imageClasses{" + "attr_image_withAsset_Network_File=" + attr_image_withAsset_Network_File + "}";
+            return "imageClasses{" + "attr_image_withAsset_Network_File=" + attr_image_withAsset_Network_File + "}\n";
         }
         if(this.attr_image_withAssetImage_WithDirection != null){
-            return "imageClasses{" + " attr_image_withAssetImage_WithDirection=" + attr_image_withAssetImage_WithDirection + "}";
+            return "imageClasses{" + " attr_image_withAssetImage_WithDirection=" + attr_image_withAssetImage_WithDirection + "}\n";
         }
         return "imageClasses{" +
                 " attr_image_withAssetImage_WithDirection_fit=" + attr_image_withAssetImage_WithDirection_fit +
-                '}';
+                "} \n";
     }
 }

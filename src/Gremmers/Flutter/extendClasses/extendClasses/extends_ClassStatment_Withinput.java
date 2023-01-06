@@ -63,6 +63,6 @@ public class extends_ClassStatment_Withinput extends AST {
                 ", extends " + EXTENDS + '\'' +
                 ", ID_ID='" + ID_ID + '\'' +
                 ", inputclasses=" + inputclasses +
-                '}';
+                "} \n";
     }
 }

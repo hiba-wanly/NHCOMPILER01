@@ -41,6 +41,6 @@ public class ElseIfInput extends AST {
                 "elseif='" + elseif + '\'' +
                 ", cond=" + cond +
                 ", ifatr=" + ifatr +
-                '}';
+                "} \n";
     }
 }

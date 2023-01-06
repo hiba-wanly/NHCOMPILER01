@@ -26,10 +26,10 @@ public class SwitchStatement extends AST {
     public String toString() {
         if(this.switchid!=null){
             return "SwitchStatement{" +
-                    "switchid=" + switchid +   '}';
+                    "switchid=" + switchid +   "\n";
         }
         return "SwitchStatement{" +
                 ", switchnum=" + switchnum +
-                '}';
+                "\n";
     }
 }

@@ -42,6 +42,6 @@ public class Row extends AST {
                 "ROW='" + ROW + '\'' +
                 ", CHILDREN='" + CHILDREN + '\'' +
                 ", flutterWidget=" + flutterWidget +
-                '}';
+                "} \n";
     }
 }

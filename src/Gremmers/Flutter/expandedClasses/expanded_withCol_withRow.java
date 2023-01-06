@@ -50,12 +50,12 @@ public class expanded_withCol_withRow extends AST {
                  "EXPANDED='" + EXPANDED + '\'' +
                  ", CHILD='" + CHILD + '\'' +
                  ", column=" + column +
-                 '}';
+                    "} \n";
         return "expanded_withCol_withRow{" +
                 "EXPANDED='" + EXPANDED + '\'' +
                 ", CHILD='" + CHILD + '\'' +
                 ", row=" + row +
-                '}';
+                "} \n";
     }
 }
 

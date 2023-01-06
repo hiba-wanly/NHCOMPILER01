@@ -62,6 +62,6 @@ public class image_withAssetImage_WithDirection extends AST {
                 ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +
                 ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
                 ", attr_imageDirection=" + attr_imageDirection +
-                '}';
+                "} \n";
     }
 }

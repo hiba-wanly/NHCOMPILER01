@@ -52,6 +52,6 @@ public class textButton extends AST {
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
                 ", ONPRESSED='" + ONPRESSED + '\'' +
-                '}';
+                "} \n";
     }
 }

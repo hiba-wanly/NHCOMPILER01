@@ -96,6 +96,6 @@ public class ForLoop extends AST {
                 ", id3='" + id3 + '\'' +
                 ", plmi='" + plmi + '\'' +
                 ", inputs=" + inputs +
-                '}';
+                "} \n";
     }
 }

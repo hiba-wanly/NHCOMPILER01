@@ -17,7 +17,7 @@ public class Element extends AST{
     public String toString() {
         return "Element{" +
                 "body=" + body +
-                '}';
+                "} \n";
     }
 
 }

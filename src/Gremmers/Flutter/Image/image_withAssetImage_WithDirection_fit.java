@@ -72,6 +72,6 @@ public class image_withAssetImage_WithDirection_fit extends AST {
                 ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
                 ", attr_imageDirection=" + attr_imageDirection +
                 ", imageFit=" + imageFit +
-                '}';
+                "} \n";
     }
 }

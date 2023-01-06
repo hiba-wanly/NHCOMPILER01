@@ -36,14 +36,14 @@ public class TextClasses extends AST {
     public String toString() {
         if(this.attr_text_INPUT_D_Q_I != null){
             return "TextClasses{" +
-                    "attr_text_INPUT_D_Q_I=" + attr_text_INPUT_D_Q_I + "}";
+                    "attr_text_INPUT_D_Q_I=" + attr_text_INPUT_D_Q_I + "}\n";
         }
         if(this.attr_text_INPUT_D_Q_N != null){
             return "TextClasses{" +
-                    "attr_text_INPUT_D_Q_N=" + attr_text_INPUT_D_Q_N +"}";
+                    "attr_text_INPUT_D_Q_N=" + attr_text_INPUT_D_Q_N +"}\n";
         }
         return "TextClasses{" +
                 " attr_text_rule=" + attr_text_rule +
-                '}';
+                "} \n";
     }
 }

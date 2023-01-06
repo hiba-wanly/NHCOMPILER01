@@ -44,18 +44,18 @@ public class Operations extends AST {
     public String toString() {
         if(this.PLUS!=null){
             return "Operations{" +
-                    "PLUS='" + PLUS + '\'' +'}';
+                    "PLUS='" + PLUS + '\'' +"} \n";
         }
         if(this.MINUS!=null){
             return "Operations{" +
-                    "MINUS='" + MINUS + '\'' +'}';
+                    "MINUS='" + MINUS + '\'' +"} \n";
         }
         if(this.MULTI!=null){
             return "Operations{" +
-                    ", MULTI='" + MULTI + '\'' +'}';
+                    ", MULTI='" + MULTI + '\'' +"} \n";
         }
         return "Operations{" +
                 ", DIVIDE='" + DIVIDE + '\'' +
-                '}';
+                "} \n";
     }
 }

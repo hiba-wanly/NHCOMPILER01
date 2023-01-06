@@ -17,6 +17,6 @@ public class IntI extends AST {
     public String toString() {
         return "IntI{" +
                 "intt='" + intt + '\'' +
-                '}';
+                "\n";
     }
 }
