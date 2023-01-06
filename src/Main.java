@@ -15,7 +15,6 @@ import java.io.IOException;
 
 public class Main {
 
-//    public static SymbolTable symbolTable = new SymbolTable();
     public static void main(String[] args) {
         try {
             String source = "folders/test4";
@@ -28,9 +27,11 @@ public class Main {
             Prog prog = (Prog) programVisitor.visit(dartAST);
 
 //            Prog prog = (Prog) new AntlrToAST().visit(dartAST);
+            System.out.println("Prog:  ");
             System.out.println(prog);
-            System.out.println("hiiiiiiiiiiiiiiiii");
-//            System.out.println("hii");
+
+            System.out.println("SymbolTable:  ");
+            programVisitor.symbolTable.printSymbol();
 
 
 
@@ -40,7 +41,7 @@ public class Main {
         }
 
 //        System.out.println("Hello world!");
-        SymbolTable symbolTable = new SymbolTable();
-        symbolTable.printSymbol();
+//        SymbolTable symbolTable = new SymbolTable();
+//        symbolTable.printSymbol();
     }
 }

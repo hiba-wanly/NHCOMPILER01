@@ -64,7 +64,8 @@ import syntax.projectParserBaseVisitor;
 
 public class AntlrToAST extends projectParserBaseVisitor<AST> {
 
-    SymbolTable symbolTable = new SymbolTable();
+    public SymbolTable symbolTable = new SymbolTable();
+
 
     @Override
     public Prog visitProg(projectParser.ProgContext ctx) {
@@ -2915,7 +2916,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         symbolRow.setType(name);
         symbolRow.setValue(value);
         symbolRow.setNumline(numline);
-        System.out.println(symbolRow.getName()+" - "+symbolRow.getType()+" - "+symbolRow.getValue()+" - "+symbolRow.getNumline());
+//        System.out.println(symbolRow.getName()+" - "+symbolRow.getType()+" - "+symbolRow.getValue()+" - "+symbolRow.getNumline());
         symbolTable.getSymbolRows().add(symbolRow);
         return symbolRow;
     }
