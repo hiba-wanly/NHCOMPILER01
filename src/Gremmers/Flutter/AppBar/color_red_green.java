@@ -4,33 +4,20 @@ import Gremmers.AST;
 
 public class color_red_green extends AST {
 
-    private String RED;
-    private String GREEN;
+    private String color_type;
 
-    public String getRED() {
-        return RED;
+    public String getColor_type() {
+        return color_type;
     }
 
-    public void setRED(String RED) {
-        this.RED = RED;
+    public void setColor_type(String color_type) {
+        this.color_type = color_type;
     }
-
-    public String getGREEN() {
-        return GREEN;
-    }
-
-    public void setGREEN(String GREEN) {
-        this.GREEN = GREEN;
-    }
-
 
     @Override
     public String toString() {
-        if(this.RED!=null)
-            return "color_red_green{" +
-                    "RED='" + RED + '\'' +'}';
         return "color_red_green{" +
-                ", GREEN='" + GREEN + '\'' +
+                ", color name='" + color_type + '\'' +
                 '}';
     }
 }

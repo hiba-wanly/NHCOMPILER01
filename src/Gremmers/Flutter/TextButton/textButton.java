@@ -11,8 +11,7 @@ public class textButton extends AST {
     private String TEXTBUTTON;
     private String CHILD ;
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
-
-    public String ONPRESSED;
+    private String ONPRESSED;
 
     public String getTEXTBUTTON() {
         return TEXTBUTTON;
