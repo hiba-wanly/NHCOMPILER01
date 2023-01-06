@@ -1,6 +1,29 @@
 package Gremmers.visitor;
 
 import Gremmers.AST;
+import Gremmers.Flutter.AppBar.*;
+import Gremmers.Flutter.Column.Column;
+import Gremmers.Flutter.Container.Container;
+import Gremmers.Flutter.FlutterWidget.FlutterWidget;
+import Gremmers.Flutter.Image.*;
+import Gremmers.Flutter.Image.Direction.imageDirection;
+import Gremmers.Flutter.Image.Direction.imageHightWidth_Reverse_DF;
+import Gremmers.Flutter.Image.Direction.imageHightWidth_Reverse_DN;
+import Gremmers.Flutter.Image.Direction.imageHight_AND_Width_DF;
+import Gremmers.Flutter.Padding.*;
+import Gremmers.Flutter.Padding.direction.*;
+import Gremmers.Flutter.Row.Row;
+import Gremmers.Flutter.SizedBox.SizedBoxClasses;
+import Gremmers.Flutter.SizedBox.hight_AND_widthSizedBox;
+import Gremmers.Flutter.SizedBox.widthHight_SizedBox;
+import Gremmers.Flutter.TextButton.textButton;
+import Gremmers.Flutter.TextStatement.TextClasses;
+import Gremmers.Flutter.TextStatement.text_INPUT_D_Q_I;
+import Gremmers.Flutter.TextStatement.text_INPUT_D_Q_N;
+import Gremmers.Flutter.TextStatement.text_rule;
+import Gremmers.Flutter.expandedClasses.expandedClasses;
+import Gremmers.Flutter.expandedClasses.expanded_withCol_withRow;
+import Gremmers.Flutter.extendClasses.extendClasses.*;
 import Gremmers.NameN;
 import Gremmers.array.*;
 import Gremmers.classes.AbstractStatment;
@@ -906,7 +929,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         }}
         trystat.setCatchh(ctx.CATCH().toString().trim());
         trystat.setIdd(ctx.ID().toString().trim());
-        if(ctx.inputI(9) != null){
+        if(ctx.inputI() != null){
           for(int i=0;i<ctx.inputI().size();i++){
               if(ctx.inputI(i) != null){
              trystat.getInp().add((visitInputI(ctx.inputI(i))));
@@ -1490,234 +1513,795 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     @Override
     public ExtendsClass visitExtendsClass(projectParser.ExtendsClassContext ctx) {
         ExtendsClass extclas = new ExtendsClass();
-        /////////
+        if(ctx.extends_ClassStateFull() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less(visitExtends_ClassStateFull(ctx.extends_ClassStateFull()));
+        }
+        if(ctx.extends_ClassStateLess() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less(visitExtends_ClassStateLess(ctx.extends_ClassStateLess()));
+        }
+        if(ctx.extends_ClassStateFull_WithAppBar() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less_WithAppBar(visitExtends_ClassStateFull_WithAppBar(ctx.extends_ClassStateFull_WithAppBar()));
+        }
+        if(ctx.extends_ClassStateLess_WithAppBar() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less_WithAppBar(visitExtends_ClassStateLess_WithAppBar(ctx.extends_ClassStateLess_WithAppBar()));
+        }
+        if(ctx.extends_ClassStateFullwithinput() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less_withinput(visitExtends_ClassStateFullwithinput(ctx.extends_ClassStateFullwithinput()));
+        }
+        if(ctx.extends_ClassStateLesswithinput() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less_withinput(visitExtends_ClassStateLesswithinput(ctx.extends_ClassStateLesswithinput()));
+        }
+        if(ctx.extends_ClassStateFullwithinput_appBar() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less_withinput_appBar(visitExtends_ClassStateFullwithinput_appBar(ctx.extends_ClassStateFullwithinput_appBar()));
+        }
+        if(ctx.extends_ClassStateLesswithinput_appBar() != null){
+            extclas.setAttr_extends_ClassStateFull_AND_Less_withinput_appBar(visitExtends_ClassStateLesswithinput_appBar(ctx.extends_ClassStateLesswithinput_appBar()));
+        }
+        if(ctx.extends_ClassStateFullwithinput() != null){
+            extclas.setAttr_extends_ClassStatment_Withinput(visitExtends_ClassStatment_Withinput(ctx.extends_ClassStatment_Withinput()));
+        }
+        if(ctx.extends_ClassStatment_Withoutinput() != null){
+            extclas.setAttr_extends_ClassStatment_Withoutinput(visitExtends_ClassStatment_Withoutinput(ctx.extends_ClassStatment_Withoutinput()));
+        }
         return extclas;
     }
 
     @Override
-    public AST visitExtends_ClassStatment_Withinput(projectParser.Extends_ClassStatment_WithinputContext ctx) {
-        return super.visitExtends_ClassStatment_Withinput(ctx);
+    public extends_ClassStatment_Withinput visitExtends_ClassStatment_Withinput(projectParser.Extends_ClassStatment_WithinputContext ctx) {
+        extends_ClassStatment_Withinput ee = new extends_ClassStatment_Withinput();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setID_ID(ctx.ID().toString().trim());
+        for (int i=0 ; i< ctx.inputclass().size() ; i++ ){
+            if(ctx.inputclass(i) != null){
+                ee.getInputclasses().add((visitInputclass(ctx.inputclass(i))));
+            }
+        }
+        return ee;
     }
 
     @Override
-    public AST visitExtends_ClassStatment_Withoutinput(projectParser.Extends_ClassStatment_WithoutinputContext ctx) {
-        return super.visitExtends_ClassStatment_Withoutinput(ctx);
+    public extends_ClassStatment_Withoutinput visitExtends_ClassStatment_Withoutinput(projectParser.Extends_ClassStatment_WithoutinputContext ctx) {
+        extends_ClassStatment_Withoutinput ee = new extends_ClassStatment_Withoutinput();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setID_ID(ctx.ID().toString().trim());
+
+        return ee;
     }
 
     @Override
-    public AST visitExtends_ClassStateFull(projectParser.Extends_ClassStateFullContext ctx) {
-        return super.visitExtends_ClassStateFull(ctx);
+    public extends_ClassStateFull_AND_Less visitExtends_ClassStateFull(projectParser.Extends_ClassStateFullContext ctx) {
+        extends_ClassStateFull_AND_Less ee = new extends_ClassStateFull_AND_Less();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATEFULLWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return ee;
     }
 
     @Override
-    public AST visitExtends_ClassStateLess(projectParser.Extends_ClassStateLessContext ctx) {
-        return super.visitExtends_ClassStateLess(ctx);
+    public extends_ClassStateFull_AND_Less visitExtends_ClassStateLess(projectParser.Extends_ClassStateLessContext ctx) {
+        extends_ClassStateFull_AND_Less ee = new extends_ClassStateFull_AND_Less();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATELESSWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return ee;
     }
 
     @Override
-    public AST visitExtends_ClassStateFull_WithAppBar(projectParser.Extends_ClassStateFull_WithAppBarContext ctx) {
-        return super.visitExtends_ClassStateFull_WithAppBar(ctx);
+    public extends_ClassStateFull_AND_Less_WithAppBar visitExtends_ClassStateFull_WithAppBar(projectParser.Extends_ClassStateFull_WithAppBarContext ctx) {
+        extends_ClassStateFull_AND_Less_WithAppBar ee = new extends_ClassStateFull_AND_Less_WithAppBar();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATEFULLWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        ee.setAPPBAR(ctx.APPBAR().toString().trim());
+        ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
+        ee.setBODY(ctx.BODY().toString().trim());
+
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        for (int i =0 ; i< ctx.input_AppBar().size() ; i++){
+            if(ctx.input_AppBar(i) != null){
+                ee.getAttr_input_AppBar().add((visitInput_AppBar(ctx.input_AppBar(i))));
+            }
+        }
+
+        return ee;
     }
 
     @Override
-    public AST visitExtends_ClassStateLess_WithAppBar(projectParser.Extends_ClassStateLess_WithAppBarContext ctx) {
-        return super.visitExtends_ClassStateLess_WithAppBar(ctx);
+    public extends_ClassStateFull_AND_Less_WithAppBar visitExtends_ClassStateLess_WithAppBar(projectParser.Extends_ClassStateLess_WithAppBarContext ctx) {
+        extends_ClassStateFull_AND_Less_WithAppBar ee = new extends_ClassStateFull_AND_Less_WithAppBar();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATELESSWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        ee.setAPPBAR(ctx.APPBAR().toString().trim());
+        ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
+        ee.setBODY(ctx.BODY().toString().trim());
+
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        for (int i =0 ; i< ctx.input_AppBar().size() ; i++){
+            if(ctx.input_AppBar(i) != null){
+                ee.getAttr_input_AppBar().add((visitInput_AppBar(ctx.input_AppBar(i))));
+            }
+        }
+
+        return ee;    }
+
+    @Override
+    public extends_ClassStateFull_AND_Less_withinput visitExtends_ClassStateFullwithinput(projectParser.Extends_ClassStateFullwithinputContext ctx) {
+        extends_ClassStateFull_AND_Less_withinput ee = new extends_ClassStateFull_AND_Less_withinput();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATEFULLWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        ee.setBODY(ctx.BODY().toString().trim());
+
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        for (int i =0 ; i< ctx.inputclass().size() ; i++){
+            if(ctx.inputclass(i) != null){
+                ee. getInputClasses().add((visitInputclass(ctx.inputclass(i))));
+            }
+        }
+
+
+        return ee;    }
+
+    @Override
+    public extends_ClassStateFull_AND_Less_withinput visitExtends_ClassStateLesswithinput(projectParser.Extends_ClassStateLesswithinputContext ctx) {
+        extends_ClassStateFull_AND_Less_withinput ee = new extends_ClassStateFull_AND_Less_withinput();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATELESSWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        ee.setBODY(ctx.BODY().toString().trim());
+
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        for (int i =0 ; i< ctx.inputclass().size() ; i++){
+            if(ctx.inputclass(i) != null){
+                ee. getInputClasses().add((visitInputclass(ctx.inputclass(i))));
+            }
+        }
+
+
+        return ee;    }
+
+    @Override
+    public extends_ClassStateFull_AND_Less_withinput_appBar visitExtends_ClassStateFullwithinput_appBar(projectParser.Extends_ClassStateFullwithinput_appBarContext ctx) {
+        extends_ClassStateFull_AND_Less_withinput_appBar ee = new extends_ClassStateFull_AND_Less_withinput_appBar();
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATEFULLWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        ee.setBODY(ctx.BODY().toString().trim());
+        ee.setAPPBAR(ctx.APPBAR().toString().trim());
+        ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
+
+        for (int i =0 ; i< ctx.input_AppBar().size() ; i++){
+            if(ctx.input_AppBar(i) != null){
+                ee.getAttr_input_AppBar().add((visitInput_AppBar(ctx.input_AppBar(i))));
+            }
+        }
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        for (int i =0 ; i< ctx.inputclass().size() ; i++){
+            if(ctx.inputclass(i) != null){
+                ee. getInputClasses().add((visitInputclass(ctx.inputclass(i))));
+            }
+        }
+
+        return ee;    }
+
+    @Override
+    public extends_ClassStateFull_AND_Less_withinput_appBar visitExtends_ClassStateLesswithinput_appBar(projectParser.Extends_ClassStateLesswithinput_appBarContext ctx) {
+        extends_ClassStateFull_AND_Less_withinput_appBar  ee = new extends_ClassStateFull_AND_Less_withinput_appBar();
+
+        ee.setCLASS(ctx.CLASS().toString().trim());
+        ee.setID(visitNamen(ctx.namen()));
+        ee.setSTATEFULLWIDGET(ctx.STATELESSWIDGET().toString().trim());
+        ee.setOVERRIDE(ctx.OVERRIDE().toString().trim());
+        ee.setBUILD_WIDGET(ctx.BUILD_WIDGET().toString().trim());
+        ee.setRETURN(ctx.RETURN().toString().trim());
+        ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
+        ee.setBODY(ctx.BODY().toString().trim());
+        ee.setAPPBAR(ctx.APPBAR().toString().trim());
+        ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
+
+        for (int i =0 ; i< ctx.input_AppBar().size() ; i++){
+            if(ctx.input_AppBar(i) != null){
+                ee.getAttr_input_AppBar().add((visitInput_AppBar(ctx.input_AppBar(i))));
+            }
+        }
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        for (int i =0 ; i< ctx.inputclass().size() ; i++){
+            if(ctx.inputclass(i) != null){
+                ee. getInputClasses().add((visitInputclass(ctx.inputclass(i))));
+            }
+        }
+
+        return ee;    }
+
+    @Override
+    public input_AppBar visitInput_AppBar(projectParser.Input_AppBarContext ctx) {
+        input_AppBar input = new input_AppBar();
+        if(ctx.input_1AppBar() != null ){
+            input.setinput_1AppBar(visitInput_1AppBar(ctx.input_1AppBar()));
+        }
+        if(ctx.input_2AppBar() != null ){
+            input.setinput_2AppBar(visitInput_2AppBar(ctx.input_2AppBar()));
+        }
+        if(ctx.input_3AppBar() != null ){
+            input.setinput_3AppBar(visitInput_3AppBar(ctx.input_3AppBar()));
+        }
+        if(ctx.input_4AppBar() != null ){
+            input.setinput_4AppBar(visitInput_4AppBar(ctx.input_4AppBar()));
+        }
+
+        return input;    }
+
+    @Override
+    public Color visitColor(projectParser.ColorContext ctx) {
+        Color color = new Color();
+        if(ctx.color_red() != null){
+            color.setAttr_color_red_green(visitColor_red(ctx.color_red()));
+        }
+
+        if(ctx.color_green() != null){
+            color.setAttr_color_red_green(visitColor_green(ctx.color_green()));
+        }
+        return color;
+    }
+
+
+    @Override
+    public Row visitRowStatement(projectParser.RowStatementContext ctx) {
+        Row row = new Row();
+        row.setROW(ctx.ROW().toString().trim());
+        row.setCHILDREN(ctx.CHILDREN().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                row.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        return row;    }
+
+    @Override
+    public Column visitColStatemenst(projectParser.ColStatemenstContext ctx) {
+        Column c = new Column();
+        c.setCOLUMN(ctx.COLUMN().toString().trim());
+        c.setCHILDREN(ctx.CHILDREN().toString().trim());
+
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                c.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+
+        return c;    }
+
+    @Override
+    public TextClasses visitTexeStatement(projectParser.TexeStatementContext ctx) {
+        TextClasses t = new TextClasses();
+        if(ctx.text_INPUT_D_Q_I() != null ){
+            t.settext_INPUT_D_Q_I(visitText_INPUT_D_Q_I(ctx.text_INPUT_D_Q_I()));
+        }
+        if(ctx.text_INPUT_D_Q_N() != null){
+            t.settext_INPUT_D_Q_N(visitText_INPUT_D_Q_N(ctx.text_INPUT_D_Q_N()));
+        }
+        if(ctx.text_rule() != null){
+            t.settext_rule(visitText_rule(ctx.text_rule()));
+        }
+        return t;
     }
 
     @Override
-    public AST visitExtends_ClassStateFullwithinput(projectParser.Extends_ClassStateFullwithinputContext ctx) {
-        return super.visitExtends_ClassStateFullwithinput(ctx);
+    public text_INPUT_D_Q_N visitText_INPUT_D_Q_N(projectParser.Text_INPUT_D_Q_NContext ctx) {
+        text_INPUT_D_Q_N textInputDQN = new  text_INPUT_D_Q_N();
+        textInputDQN.setTEXT(ctx.TEXT().toString().trim());
+        textInputDQN.setTEXT(ctx.INPUT_D_Q_N().toString().trim());
+
+        return textInputDQN;    }
+
+    @Override
+    public text_INPUT_D_Q_I visitText_INPUT_D_Q_I(projectParser.Text_INPUT_D_Q_IContext ctx) {
+        text_INPUT_D_Q_I textInputDQN = new  text_INPUT_D_Q_I();
+        textInputDQN.setTEXT(ctx.TEXT().toString().trim());
+        textInputDQN.setTEXT(ctx.INPUT_D_Q_I().toString().trim());
+
+        return textInputDQN;    }
+
+    @Override
+    public text_rule visitText_rule(projectParser.Text_ruleContext ctx) {
+        text_rule textRule = new text_rule();
+        textRule.setTEXT(ctx.TEXT().toString().trim());
+        for (int i =0 ; i< ctx.rule_().size() ; i++){
+            if(ctx.rule_(i) != null){
+                textRule.getRules().add((visitRule(ctx.rule_(i))));
+            }
+        }
+        return textRule;    }
+
+    @Override
+    public SizedBoxClasses visitSizedBox(projectParser.SizedBoxContext ctx) {
+        SizedBoxClasses sized = new SizedBoxClasses();
+
+        if(ctx.hight_SizedBox() != null){
+            sized.sethight_AND_widthSizedBox(visitHight_SizedBox(ctx.hight_SizedBox()));
+        }
+        if(ctx.width_SizedBox() != null){
+            sized.sethight_AND_widthSizedBox(visitWidth_SizedBox(ctx.width_SizedBox()));
+        }
+        if(ctx.hightWidth_SizedBox() != null){
+            sized.setwidthHight_SizedBox(visitHightWidth_SizedBox(ctx.hightWidth_SizedBox()));
+        }
+        if(ctx.widthHight_SizedBox() != null){
+            sized.setwidthHight_SizedBox(visitWidthHight_SizedBox(ctx.widthHight_SizedBox()));
+        }
+        return sized;
     }
 
     @Override
-    public AST visitExtends_ClassStateLesswithinput(projectParser.Extends_ClassStateLesswithinputContext ctx) {
-        return super.visitExtends_ClassStateLesswithinput(ctx);
+    public hight_AND_widthSizedBox visitHight_SizedBox(projectParser.Hight_SizedBoxContext ctx) {
+        hight_AND_widthSizedBox hw = new hight_AND_widthSizedBox();
+        hw.setHIGHT(ctx.HIGHT().toString().trim());
+        hw.setSIZEDBOX(ctx.SIZEDBOX().toString().trim());
+        hw.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        return hw;    }
+
+    @Override
+    public hight_AND_widthSizedBox visitWidth_SizedBox(projectParser.Width_SizedBoxContext ctx) {
+        hight_AND_widthSizedBox hw = new hight_AND_widthSizedBox();
+
+        hw.setWIDTH(ctx.WIDTH().toString().trim());
+        hw.setSIZEDBOX(ctx.SIZEDBOX().toString().trim());
+        hw.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        return  hw;    }
+
+    @Override
+    public widthHight_SizedBox visitWidthHight_SizedBox(projectParser.WidthHight_SizedBoxContext ctx) {
+        widthHight_SizedBox widthHight_sizedBox = new widthHight_SizedBox();
+        widthHight_sizedBox.setWIDTH(ctx.WIDTH().toString().trim());
+        widthHight_sizedBox.setNUM_FLOAT_WIDTH(ctx.getChild(4).toString().trim());
+        widthHight_sizedBox.setHIGHT(ctx.HIGHT().toString().trim());
+        widthHight_sizedBox.setNUM_FLOAT_HIGHT(ctx.getChild(8).toString().trim());
+        return widthHight_sizedBox;    }
+
+    @Override
+    public widthHight_SizedBox visitHightWidth_SizedBox(projectParser.HightWidth_SizedBoxContext ctx) {
+        widthHight_SizedBox widthHight_sizedBox = new widthHight_SizedBox();
+        widthHight_sizedBox.setHIGHT(ctx.HIGHT().toString().trim());
+        widthHight_sizedBox.setNUM_FLOAT_HIGHT(ctx.getChild(4).toString().trim());
+        widthHight_sizedBox.setWIDTH(ctx.WIDTH().toString().trim());
+        widthHight_sizedBox.setNUM_FLOAT_WIDTH(ctx.getChild(8).toString().trim());
+        return widthHight_sizedBox;    }
+
+    @Override
+    public textButton visitTextButton(projectParser.TextButtonContext ctx) {
+        textButton tt = new textButton();
+        tt.setTEXTBUTTON(ctx.TEXTBUTTON().toString().trim());
+        tt.setCHILD(ctx.CHILD().toString().trim());
+        tt.setONPRESSED(ctx.ONPRESSED().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                tt.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return tt;    }
+
+    @Override
+    public imageClasses visitImageState(projectParser.ImageStateContext ctx) {
+        imageClasses im = new imageClasses();
+        if(ctx.image_withAsset() != null){
+            im.setimage_withAsset_Network_File(visitImage_withAsset(ctx.image_withAsset()));
+        }
+        if(ctx.image_withFile() != null){
+            im.setimage_withAsset_Network_File(visitImage_withFile(ctx.image_withFile()));
+        }
+        if(ctx.image_withNetWoek() != null){
+            im.setimage_withAsset_Network_File(visitImage_withNetWoek(ctx.image_withNetWoek()));
+        }
+        if(ctx.image_withAssetImage() != null){
+            im.setimage_withAssetImage(visitImage_withAssetImage(ctx.image_withAssetImage()));
+        }
+        if(ctx.image_withAssetImage_WithDirection() != null){
+            im.setimage_withAssetImage_WithDirection(visitImage_withAssetImage_WithDirection(ctx.image_withAssetImage_WithDirection()));
+        }
+        if(ctx.image_withAssetImage_WithDirection_fit() != null){
+            im.setimage_withAssetImage_WithDirection_fit(visitImage_withAssetImage_WithDirection_fit(ctx.image_withAssetImage_WithDirection_fit()));
+        }
+        return im;
     }
 
     @Override
-    public AST visitExtends_ClassStateFullwithinput_appBar(projectParser.Extends_ClassStateFullwithinput_appBarContext ctx) {
-        return super.visitExtends_ClassStateFullwithinput_appBar(ctx);
+    public image_withAssetImage visitImage_withAssetImage(projectParser.Image_withAssetImageContext ctx) {
+        image_withAssetImage imageWithAssetImage = new image_withAssetImage();
+        imageWithAssetImage.setIMAGE(ctx.IMAGE().toString().trim());
+        imageWithAssetImage.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
+        imageWithAssetImage.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
+        imageWithAssetImage.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
+
+        return  imageWithAssetImage;
     }
 
     @Override
-    public AST visitExtends_ClassStateLesswithinput_appBar(projectParser.Extends_ClassStateLesswithinput_appBarContext ctx) {
-        return super.visitExtends_ClassStateLesswithinput_appBar(ctx);
+    public image_withAssetImage_WithDirection visitImage_withAssetImage_WithDirection(projectParser.Image_withAssetImage_WithDirectionContext ctx) {
+        image_withAssetImage_WithDirection imageWithAssetImageWithDirection = new image_withAssetImage_WithDirection();
+        imageWithAssetImageWithDirection.setIMAGE(ctx.IMAGE().toString().trim());
+        imageWithAssetImageWithDirection.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
+        imageWithAssetImageWithDirection.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
+        imageWithAssetImageWithDirection.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
+        /*jhhhhh*/
+        return imageWithAssetImageWithDirection;
     }
 
     @Override
-    public AST visitInput_AppBar(projectParser.Input_AppBarContext ctx) {
-        return super.visitInput_AppBar(ctx);
+    public image_withAssetImage_WithDirection_fit visitImage_withAssetImage_WithDirection_fit(projectParser.Image_withAssetImage_WithDirection_fitContext ctx) {
+        image_withAssetImage_WithDirection_fit imageWithAssetImageWithDirectionFit = new image_withAssetImage_WithDirection_fit();
+        imageWithAssetImageWithDirectionFit.setIMAGE(ctx.IMAGE().toString().trim());
+        imageWithAssetImageWithDirectionFit.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
+        imageWithAssetImageWithDirectionFit.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
+        imageWithAssetImageWithDirectionFit.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
+        /*lk*/
+        imageWithAssetImageWithDirectionFit.setImageFit(visitImageFit(ctx.imageFit()));
+        return imageWithAssetImageWithDirectionFit;
     }
 
     @Override
-    public AST visitColor(projectParser.ColorContext ctx) {
-        return super.visitColor(ctx);
+    public image_withAsset_Network_File visitImage_withAsset(projectParser.Image_withAssetContext ctx) {
+        image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
+        imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
+        imageWithAssetNetworkFile.setIMAGE(ctx.ASSET().toString().trim());
+
+        return  imageWithAssetNetworkFile;
+    }
+
+    @Override
+    public image_withAsset_Network_File visitImage_withNetWoek(projectParser.Image_withNetWoekContext ctx) {
+        image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
+        imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
+        imageWithAssetNetworkFile.setNETWORK(ctx.NETWORK().toString().trim());
+
+        return imageWithAssetNetworkFile;
+    }
+
+    @Override
+    public image_withAsset_Network_File visitImage_withFile(projectParser.Image_withFileContext ctx) {
+        image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
+        imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
+        imageWithAssetNetworkFile.setFile(ctx.FILE().toString().trim());
+
+        return imageWithAssetNetworkFile;
+    }
+    @Override
+    public imageDirection visitImageDirection(projectParser.ImageDirectionContext ctx) {
+        imageDirection image = new imageDirection();
+        if(ctx.imageHight_DF() != null){
+            image.setimageHight_AND_Width_DF(visitImageHight_DF(ctx.imageHight_DF()));
+        }
+        if(ctx.imageWidth_DF() != null){
+            image.setimageHight_AND_Width_DF(visitImageWidth_DF(ctx.imageWidth_DF()));
+        }
+        if(ctx.imageHightWidth_DF() != null){
+            image.setimageHightWidth_Reverse_DF(visitImageHightWidth_DF(ctx.imageHightWidth_DF()));
+        }
+        if(ctx.imageWidthHight_DF() != null){
+            image.setimageHightWidth_Reverse_DF(visitImageWidthHight_DF(ctx.imageWidthHight_DF()));
+        }
+        if(ctx.imageHightWidth_DN() != null){
+            image.setimageHightWidth_Reverse_DN(visitImageHightWidth_DN(ctx.imageHightWidth_DN()));
+        }
+        if(ctx.imageWidthHight_DN() != null){
+            image.setimageHightWidth_Reverse_DN(visitImageWidthHight_DN(ctx.imageWidthHight_DN()));
+        }
+        return image;    }
+
+    @Override
+    public imageFit visitImageFit(projectParser.ImageFitContext ctx) {
+        imageFit imagefit = new imageFit();
+        imagefit.setFIT(ctx.FIT().toString().trim());
+        imagefit.setBOXFIT(ctx.BOXFIT().toString().trim());
+        imagefit.setFILL(ctx.FILL().toString().trim());
+
+        return imagefit;
     }
 
 
     @Override
-    public AST visitRowStatement(projectParser.RowStatementContext ctx) {
-        return super.visitRowStatement(ctx);
+    public expandedClasses visitExpandedStatment(projectParser.ExpandedStatmentContext ctx) {
+        expandedClasses e = new expandedClasses();
+        if(ctx.expanded_withCol() != null){
+            e.setAttr_expanded_withCol_withRow(visitExpanded_withCol(ctx.expanded_withCol()));
+        }
+        if(ctx.expanded_withRow() != null){
+            e.setAttr_expanded_withCol_withRow(visitExpanded_withRow(ctx.expanded_withRow()));
+        }
+        return e;
     }
 
     @Override
-    public AST visitColStatemenst(projectParser.ColStatemenstContext ctx) {
-        return super.visitColStatemenst(ctx);
+    public expanded_withCol_withRow visitExpanded_withCol(projectParser.Expanded_withColContext ctx) {
+        expanded_withCol_withRow nn = new expanded_withCol_withRow();
+        nn.setEXPANDED(ctx.EXPANDED().toString().trim());
+        nn.setCHILD(ctx.CHILD().toString().trim());
+        nn.setColumn(visitColStatemenst(ctx.colStatemenst()));
+        return nn;
     }
 
     @Override
-    public AST visitTexeStatement(projectParser.TexeStatementContext ctx) {
-        return super.visitTexeStatement(ctx);
+    public expanded_withCol_withRow visitExpanded_withRow(projectParser.Expanded_withRowContext ctx) {
+        expanded_withCol_withRow nn = new expanded_withCol_withRow();
+        nn.setEXPANDED(ctx.EXPANDED().toString().trim());
+        nn.setCHILD(ctx.CHILD().toString().trim());
+        nn.setRow(visitRowStatement(ctx.rowStatement()));
+        return nn;
     }
 
     @Override
-    public AST visitText_INPUT_D_Q_N(projectParser.Text_INPUT_D_Q_NContext ctx) {
-        return super.visitText_INPUT_D_Q_N(ctx);
+    public paddingClasses visitPaddingStatement(projectParser.PaddingStatementContext ctx) {
+        paddingClasses padding = new paddingClasses();
+
+        if(ctx.padding_all() != null){
+            padding.setpadding_all(visitPadding_all(ctx.padding_all()));
+        }
+        if(ctx.padding_only()!= null){
+            padding.setpadding_only(visitPadding_only(ctx.padding_only()));
+        }
+        if(ctx.padding_sym_horisantal_num() != null){
+            padding.setpadding_sym_horisantal_num_numFloat(visitPadding_sym_horisantal_num(ctx.padding_sym_horisantal_num()));
+        }
+        if(ctx.padding_sym_horisantal_numFloat() != null){
+            padding.setpadding_sym_horisantal_num_numFloat(visitPadding_sym_horisantal_numFloat(ctx.padding_sym_horisantal_numFloat()));
+        }
+        if(ctx.padding_sym_vertical_num() != null){
+            padding.setpadding_sym_vertical_num_numFloat(visitPadding_sym_vertical_num(ctx.padding_sym_vertical_num()));
+        }
+        if(ctx.padding_sym_vertical_numFloat() != null){
+            padding.setpadding_sym_vertical_num_numFloat(visitPadding_sym_vertical_numFloat(ctx.padding_sym_vertical_numFloat()));
+        }
+        return padding;
     }
 
     @Override
-    public AST visitText_INPUT_D_Q_I(projectParser.Text_INPUT_D_Q_IContext ctx) {
-        return super.visitText_INPUT_D_Q_I(ctx);
+    public padding_all visitPadding_all(projectParser.Padding_allContext ctx) {
+        padding_all paddingAll = new padding_all();
+        paddingAll.setPADDING(ctx.PADDING().toString().trim());
+        paddingAll.setPAD_ALL(ctx.PAD_ALL().toString().trim());
+        paddingAll.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        paddingAll.setCHILD(ctx.CHILD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                paddingAll.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return paddingAll;
+    }
+    @Override
+    public padding_sym_vertical_num_numFloat visitPadding_sym_vertical_num(projectParser.Padding_sym_vertical_numContext ctx) {
+        padding_sym_vertical_num_numFloat nn = new padding_sym_vertical_num_numFloat();
+        nn.setPADDING(ctx.PADDING().toString().trim());
+        nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
+        nn.setNUM(ctx.NUM().toString().trim());
+        nn.setVERTICAL(ctx.VERTICAL().toString().trim());
+        nn.setCHILD(ctx.CHILD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return nn;
     }
 
     @Override
-    public AST visitText_rule(projectParser.Text_ruleContext ctx) {
-        return super.visitText_rule(ctx);
+    public padding_sym_vertical_num_numFloat visitPadding_sym_vertical_numFloat(projectParser.Padding_sym_vertical_numFloatContext ctx) {
+        padding_sym_vertical_num_numFloat nn = new padding_sym_vertical_num_numFloat();
+        nn.setPADDING(ctx.PADDING().toString().trim());
+        nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
+        nn.setNUM(ctx.NUM_FLOAT().toString().trim());
+        nn.setVERTICAL(ctx.VERTICAL().toString().trim());
+        nn.setCHILD(ctx.CHILD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return nn;
+
     }
 
     @Override
-    public AST visitSizedBox(projectParser.SizedBoxContext ctx) {
-        return super.visitSizedBox(ctx);
+    public padding_sym_horisantal_num_numFloat visitPadding_sym_horisantal_num(projectParser.Padding_sym_horisantal_numContext ctx) {
+        padding_sym_horisantal_num_numFloat nn = new padding_sym_horisantal_num_numFloat();
+        nn.setPADDING(ctx.PADDING().toString().trim());
+        nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
+        nn.setNUM(ctx.NUM().toString().trim());
+        nn.setHORISANTAL(ctx.HORISANTAL().toString().trim());
+        nn.setCHILD(ctx.CHILD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return nn;
     }
 
     @Override
-    public AST visitHight_SizedBox(projectParser.Hight_SizedBoxContext ctx) {
-        return super.visitHight_SizedBox(ctx);
+    public padding_sym_horisantal_num_numFloat visitPadding_sym_horisantal_numFloat(projectParser.Padding_sym_horisantal_numFloatContext ctx) {
+        padding_sym_horisantal_num_numFloat nn = new padding_sym_horisantal_num_numFloat();
+        nn.setPADDING(ctx.PADDING().toString().trim());
+        nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
+        nn.setNUM(ctx.NUM_FLOAT().toString().trim());
+        nn.setHORISANTAL(ctx.HORISANTAL().toString().trim());
+        nn.setCHILD(ctx.CHILD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return nn;
     }
 
     @Override
-    public AST visitWidth_SizedBox(projectParser.Width_SizedBoxContext ctx) {
-        return super.visitWidth_SizedBox(ctx);
+    public padding_only visitPadding_only(projectParser.Padding_onlyContext ctx) {
+        padding_only paddingOnly = new padding_only();
+        paddingOnly.setPADDING(ctx.PADDING().toString().trim());
+        paddingOnly.setPAD_ON(ctx.PAD_ON().toString().trim());
+        paddingOnly.setCHILD(ctx.CHILD().toString().trim());
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                paddingOnly.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                paddingOnly.getdirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+
+
+        return paddingOnly;
     }
 
     @Override
-    public AST visitWidthHight_SizedBox(projectParser.WidthHight_SizedBoxContext ctx) {
-        return super.visitWidthHight_SizedBox(ctx);
+    public direction visitDirection(projectParser.DirectionContext ctx) {
+        direction d = new direction();
+        if(ctx.top_direction_FLOAT() != null ){
+            d.setDirections_direction_FLOAT(visitTop_direction_FLOAT(ctx.top_direction_FLOAT()));
+        }
+        if(ctx.right_direction_FLOAT() != null ){
+            d.setDirections_direction_FLOAT(visitRight_direction_FLOAT(ctx.right_direction_FLOAT()));
+        }
+        if(ctx.left_direction_FLOAT() != null ){
+            d.setDirections_direction_FLOAT(visitLeft_direction_FLOAT(ctx.left_direction_FLOAT()));
+        }
+        if(ctx.bottom_direction_FLOAT() != null ){
+            d.setDirections_direction_FLOAT(visitBottom_direction_FLOAT(ctx.bottom_direction_FLOAT()));
+        }
+
+
+        if(ctx.top_direction_FLOAT_D() != null ){
+            d.setDirections_direction_FLOAT_D(visitTop_direction_FLOAT_D(ctx.top_direction_FLOAT_D()));
+        }
+        if(ctx.right_direction_FLOAT_D() != null ){
+            d.setDirections_direction_FLOAT_D(visitRight_direction_FLOAT_D(ctx.right_direction_FLOAT_D()));
+        }
+        if(ctx.left_direction_FLOAT_D() != null ){
+            d.setDirections_direction_FLOAT_D(visitLeft_direction_FLOAT_D(ctx.left_direction_FLOAT_D()));
+        }
+        if(ctx.bottom_direction_FLOAT_D() != null ){
+            d.setDirections_direction_FLOAT_D(visitBottom_direction_FLOAT_D(ctx.bottom_direction_FLOAT_D()));
+        }
+
+        if(ctx.top_direction_NUM() != null){
+            d.setDirections_direction_NUM(visitTop_direction_NUM(ctx.top_direction_NUM()));
+        }
+        if(ctx.right_direction_NUM() != null){
+            d.setDirections_direction_NUM(visitRight_direction_NUM(ctx.right_direction_NUM()));
+        }
+        if(ctx.left_direction_NUM() != null){
+            d.setDirections_direction_NUM(visitLeft_direction_NUM(ctx.left_direction_NUM()));
+        }
+        if(ctx.bottom_direction_NUM() != null){
+            d.setDirections_direction_NUM(visitBottom_direction_NUM(ctx.bottom_direction_NUM()));
+        }
+        if(ctx.top_direction_NUM_D() != null){
+            d.setDirections_direction_NUM_D(visitTop_direction_NUM_D(ctx.top_direction_NUM_D()));
+        }
+        if(ctx.right_direction_NUM_D() != null){
+            d.setDirections_direction_NUM_D(visitRight_direction_NUM_D(ctx.right_direction_NUM_D()));
+        }
+        if(ctx.left_direction_NUM_D() != null){
+            d.setDirections_direction_NUM_D(visitLeft_direction_NUM_D(ctx.left_direction_NUM_D()));
+        }
+        if(ctx.bottom_direction_NUM_D() != null){
+            d.setDirections_direction_NUM_D(visitBottom_direction_NUM_D(ctx.bottom_direction_NUM_D()));
+        }
+
+        return d;
     }
 
     @Override
-    public AST visitHightWidth_SizedBox(projectParser.HightWidth_SizedBoxContext ctx) {
-        return super.visitHightWidth_SizedBox(ctx);
-    }
+    public FlutterWidget visitFlutterWidget(projectParser.FlutterWidgetContext ctx) {
+        FlutterWidget flutterWidget = new FlutterWidget();
+        flutterWidget.setColumn(visitColStatemenst(ctx.colStatemenst()));
+        flutterWidget.setRow(visitRowStatement(ctx.rowStatement()));
+        flutterWidget.setContainer(visitContainerStatement(ctx.containerStatement()));
+        flutterWidget.settextButton(visitTextButton(ctx.textButton()));
 
-    @Override
-    public AST visitTextButton(projectParser.TextButtonContext ctx) {
-        return super.visitTextButton(ctx);
-    }
+        flutterWidget.setTextClasses(visitTexeStatement(ctx.texeStatement()));
 
-    @Override
-    public AST visitImageState(projectParser.ImageStateContext ctx) {
-        return super.visitImageState(ctx);
-    }
+        flutterWidget.setSizedBoxClasses(visitSizedBox(ctx.sizedBox()));
 
-    @Override
-    public AST visitImage_withAssetImage(projectParser.Image_withAssetImageContext ctx) {
-        return super.visitImage_withAssetImage(ctx);
-    }
+        flutterWidget.setimageClasses(visitImageState(ctx.imageState()));
 
-    @Override
-    public AST visitImage_withAssetImage_WithDirection(projectParser.Image_withAssetImage_WithDirectionContext ctx) {
-        return super.visitImage_withAssetImage_WithDirection(ctx);
-    }
+        flutterWidget.setpaddingClasses(visitPaddingStatement(ctx.paddingStatement()));
 
-    @Override
-    public AST visitImage_withAssetImage_WithDirection_fit(projectParser.Image_withAssetImage_WithDirection_fitContext ctx) {
-        return super.visitImage_withAssetImage_WithDirection_fit(ctx);
-    }
-
-    @Override
-    public AST visitImage_withAsset(projectParser.Image_withAssetContext ctx) {
-        return super.visitImage_withAsset(ctx);
-    }
-
-    @Override
-    public AST visitImage_withNetWoek(projectParser.Image_withNetWoekContext ctx) {
-        return super.visitImage_withNetWoek(ctx);
-    }
-
-    @Override
-    public AST visitImage_withFile(projectParser.Image_withFileContext ctx) {
-        return super.visitImage_withFile(ctx);
-    }
-
-    @Override
-    public AST visitImageDirection(projectParser.ImageDirectionContext ctx) {
-        return super.visitImageDirection(ctx);
-    }
-
-    @Override
-    public AST visitImageFit(projectParser.ImageFitContext ctx) {
-        return super.visitImageFit(ctx);
-    }
-
-    @Override
-    public AST visitExpandedStatment(projectParser.ExpandedStatmentContext ctx) {
-        return super.visitExpandedStatment(ctx);
-    }
-
-    @Override
-    public AST visitExpanded_withCol(projectParser.Expanded_withColContext ctx) {
-        return super.visitExpanded_withCol(ctx);
-    }
-
-    @Override
-    public AST visitExpanded_withRow(projectParser.Expanded_withRowContext ctx) {
-        return super.visitExpanded_withRow(ctx);
-    }
-
-    @Override
-    public AST visitPaddingStatement(projectParser.PaddingStatementContext ctx) {
-        return super.visitPaddingStatement(ctx);
-    }
-
-    @Override
-    public AST visitPadding_all(projectParser.Padding_allContext ctx) {
-        return super.visitPadding_all(ctx);
-    }
-
-    @Override
-    public AST visitPadding_sym_vertical_num(projectParser.Padding_sym_vertical_numContext ctx) {
-        return super.visitPadding_sym_vertical_num(ctx);
-    }
-
-    @Override
-    public AST visitPadding_sym_vertical_numFloat(projectParser.Padding_sym_vertical_numFloatContext ctx) {
-        return super.visitPadding_sym_vertical_numFloat(ctx);
-    }
-
-    @Override
-    public AST visitPadding_sym_horisantal_num(projectParser.Padding_sym_horisantal_numContext ctx) {
-        return super.visitPadding_sym_horisantal_num(ctx);
-    }
-
-    @Override
-    public AST visitPadding_sym_horisantal_numFloat(projectParser.Padding_sym_horisantal_numFloatContext ctx) {
-        return super.visitPadding_sym_horisantal_numFloat(ctx);
-    }
-
-    @Override
-    public AST visitPadding_only(projectParser.Padding_onlyContext ctx) {
-        return super.visitPadding_only(ctx);
-    }
-
-    @Override
-    public AST visitDirection(projectParser.DirectionContext ctx) {
-        return super.visitDirection(ctx);
-    }
-
-    @Override
-    public AST visitFlutterWidget(projectParser.FlutterWidgetContext ctx) {
-        return super.visitFlutterWidget(ctx);
+        return flutterWidget;
     }
 
     @Override
@@ -1811,8 +2395,17 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     }
 
     @Override
-    public AST visitContainerStatement(projectParser.ContainerStatementContext ctx) {
-        return super.visitContainerStatement(ctx);
+    public Container visitContainerStatement(projectParser.ContainerStatementContext ctx) {
+        Container container = new Container();
+        container.setCONTAINER(ctx.CONTAINER().toString().trim());
+        container.setCHILD(ctx.CHILD().toString().trim());
+
+        for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
+            if(ctx.flutterWidget(i) != null){
+                container.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
+            }
+        }
+        return container;
     }
 
     @Override
@@ -1905,143 +2498,281 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     }
 
     @Override
-    public AST visitInput_1AppBar(projectParser.Input_1AppBarContext ctx) {
-        return super.visitInput_1AppBar(ctx);
+    public input_1AppBar visitInput_1AppBar(projectParser.Input_1AppBarContext ctx) {
+        input_1AppBar input1AppBar = new input_1AppBar();
+        input1AppBar.setTITLE(ctx.TITLE().toString().trim());
+        return input1AppBar;
+
     }
 
     @Override
-    public AST visitInput_2AppBar(projectParser.Input_2AppBarContext ctx) {
-        return super.visitInput_2AppBar(ctx);
+    public input_2AppBar visitInput_2AppBar(projectParser.Input_2AppBarContext ctx) {
+        input_2AppBar input2AppBar = new input_2AppBar();
+        input2AppBar.setBACHCOLOR(ctx.BACHCOLOR().toString().trim());
+        input2AppBar.setCOLOR(ctx.COLOR().toString().trim());
+        input2AppBar.setColor(visitColor(ctx.color()));
+        return input2AppBar;
     }
 
     @Override
-    public AST visitInput_3AppBar(projectParser.Input_3AppBarContext ctx) {
-        return super.visitInput_3AppBar(ctx);
+    public input_3AppBar visitInput_3AppBar(projectParser.Input_3AppBarContext ctx) {
+        input_3AppBar input3AppBar = new input_3AppBar();
+        input3AppBar.setTITLE(ctx.TITLE().toString().trim());
+        return input3AppBar;
     }
 
     @Override
-    public AST visitInput_4AppBar(projectParser.Input_4AppBarContext ctx) {
-        return super.visitInput_4AppBar(ctx);
+    public input_4AppBar visitInput_4AppBar(projectParser.Input_4AppBarContext ctx) {
+        input_4AppBar input4AppBar = new input_4AppBar();
+        input4AppBar.setTITLE(ctx.TITLE().toString().trim());
+        return input4AppBar;
+    }
+    @Override
+    public color_red_green visitColor_red(projectParser.Color_redContext ctx) {
+        color_red_green colorRedGreen = new color_red_green();
+        colorRedGreen.setRED(ctx.RED().toString().trim());
+        return  colorRedGreen;
     }
 
     @Override
-    public AST visitColor_red(projectParser.Color_redContext ctx) {
-        return super.visitColor_red(ctx);
+    public color_red_green visitColor_green(projectParser.Color_greenContext ctx) {
+        color_red_green colorRedGreen = new color_red_green();
+        colorRedGreen.setGREEN(ctx.GREEN().toString().trim());
+        return colorRedGreen;
+    }
+    @Override
+    public imageHight_AND_Width_DF visitImageHight_DF(projectParser.ImageHight_DFContext ctx) {
+        imageHight_AND_Width_DF imageHightAndWidthDf = new imageHight_AND_Width_DF();
+        imageHightAndWidthDf.setHIGHT(ctx.HIGHT().toString().trim());
+        imageHightAndWidthDf.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        return imageHightAndWidthDf;
     }
 
     @Override
-    public AST visitColor_green(projectParser.Color_greenContext ctx) {
-        return super.visitColor_green(ctx);
+    public imageHight_AND_Width_DF visitImageWidth_DF(projectParser.ImageWidth_DFContext ctx) {
+        imageHight_AND_Width_DF imageHightAndWidthDf = new imageHight_AND_Width_DF();
+        imageHightAndWidthDf.setWIDTH(ctx.WIDTH().toString().trim());
+        imageHightAndWidthDf.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        return imageHightAndWidthDf;
+    }
+    @Override
+    public imageHightWidth_Reverse_DF visitImageHightWidth_DF(projectParser.ImageHightWidth_DFContext ctx) {
+        imageHightWidth_Reverse_DF imageHightWidth_reverse_df = new imageHightWidth_Reverse_DF();
+        imageHightWidth_reverse_df.setHIGHT(ctx.HIGHT().toString().trim());
+        imageHightWidth_reverse_df.setNUM_FLOAT_HIGHT(ctx.NUM_FLOAT(2).toString().trim());
+        imageHightWidth_reverse_df.setWIDTH(ctx.WIDTH().toString().trim());
+        imageHightWidth_reverse_df.setNUM_FLOAT_WIDTH(ctx.NUM_FLOAT(6).toString().trim());
+
+        return imageHightWidth_reverse_df;
     }
 
     @Override
-    public AST visitImageHight_DF(projectParser.ImageHight_DFContext ctx) {
-        return super.visitImageHight_DF(ctx);
+    public imageHightWidth_Reverse_DF visitImageWidthHight_DF(projectParser.ImageWidthHight_DFContext ctx) {
+        imageHightWidth_Reverse_DF imageHightWidth_reverse_df = new imageHightWidth_Reverse_DF();
+        imageHightWidth_reverse_df.setWIDTH(ctx.WIDTH().toString().trim());
+        imageHightWidth_reverse_df.setNUM_FLOAT_WIDTH(ctx.NUM_FLOAT().toString().trim());
+        imageHightWidth_reverse_df.setHIGHT(ctx.HIGHT().toString().trim());
+        imageHightWidth_reverse_df.setNUM_FLOAT_HIGHT(ctx.NUM_FLOAT(6).toString().trim());
+
+        return imageHightWidth_reverse_df;
+    }
+
+
+    @Override
+    public imageHightWidth_Reverse_DN visitImageHightWidth_DN(projectParser.ImageHightWidth_DNContext ctx) {
+        imageHightWidth_Reverse_DN image = new imageHightWidth_Reverse_DN();
+        image.setHIGHT(ctx.HIGHT().toString().trim());
+        image.setNUM_HIGHT(ctx.getChild(2).toString().trim());
+        image.setWIDTH(ctx.WIDTH().toString().trim());
+        image.setNUM_WIDTH(ctx.getChild(6).toString().trim());
+
+        return image;
+
     }
 
     @Override
-    public AST visitImageWidth_DF(projectParser.ImageWidth_DFContext ctx) {
-        return super.visitImageWidth_DF(ctx);
+    public imageHightWidth_Reverse_DN visitImageWidthHight_DN(projectParser.ImageWidthHight_DNContext ctx) {
+        imageHightWidth_Reverse_DN image = new imageHightWidth_Reverse_DN();
+        image.setWIDTH(ctx.WIDTH().toString().trim());
+        image.setNUM_WIDTH(ctx.getChild(2).toString().trim());
+        image.setHIGHT(ctx.HIGHT().toString().trim());
+        image.setNUM_HIGHT(ctx.getChild(6).toString().trim());
+        return image;
+    }
+
+
+    @Override
+    public Directions_direction_NUM visitTop_direction_NUM(projectParser.Top_direction_NUMContext ctx) {
+        Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
+        directionsDirectionNum.setTOP(ctx.TOP().toString().trim());
+        directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+        return directionsDirectionNum;
     }
 
     @Override
-    public AST visitImageHightWidth_DF(projectParser.ImageHightWidth_DFContext ctx) {
-        return super.visitImageHightWidth_DF(ctx);
+    public Directions_direction_NUM visitRight_direction_NUM(projectParser.Right_direction_NUMContext ctx) {
+        Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
+        directionsDirectionNum.setTOP(ctx.RIGHT().toString().trim());
+        directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+        return directionsDirectionNum;
     }
 
     @Override
-    public AST visitImageWidthHight_DF(projectParser.ImageWidthHight_DFContext ctx) {
-        return super.visitImageWidthHight_DF(ctx);
+    public Directions_direction_NUM visitBottom_direction_NUM(projectParser.Bottom_direction_NUMContext ctx) {
+        Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
+        directionsDirectionNum.setTOP(ctx.BOTTOM().toString().trim());
+        directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+
+        return directionsDirectionNum;
     }
 
     @Override
-    public AST visitImageHightWidth_DN(projectParser.ImageHightWidth_DNContext ctx) {
-        return super.visitImageHightWidth_DN(ctx);
+    public Directions_direction_NUM visitLeft_direction_NUM(projectParser.Left_direction_NUMContext ctx) {
+        Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
+        directionsDirectionNum.setTOP(ctx.LEFT().toString().trim());
+        directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+
+        return directionsDirectionNum;
     }
 
     @Override
-    public AST visitImageWidthHight_DN(projectParser.ImageWidthHight_DNContext ctx) {
-        return super.visitImageWidthHight_DN(ctx);
+    public Directions_direction_FLOAT visitTop_direction_FLOAT(projectParser.Top_direction_FLOATContext ctx) {
+        Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
+        directionsDirectionFloat.setTOP(ctx.TOP().toString().trim());
+        directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        return directionsDirectionFloat;
     }
 
     @Override
-    public AST visitTop_direction_NUM(projectParser.Top_direction_NUMContext ctx) {
-        return super.visitTop_direction_NUM(ctx);
+    public Directions_direction_FLOAT visitRight_direction_FLOAT(projectParser.Right_direction_FLOATContext ctx) {
+        Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
+        directionsDirectionFloat.setRIGHT(ctx.RIGHT().toString().trim());
+        directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        return directionsDirectionFloat;
     }
 
     @Override
-    public AST visitRight_direction_NUM(projectParser.Right_direction_NUMContext ctx) {
-        return super.visitRight_direction_NUM(ctx);
+    public Directions_direction_FLOAT visitBottom_direction_FLOAT(projectParser.Bottom_direction_FLOATContext ctx) {
+        Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
+        directionsDirectionFloat.setBOTTOM(ctx.BOTTOM().toString().trim());
+        directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        return directionsDirectionFloat;
     }
 
     @Override
-    public AST visitBottom_direction_NUM(projectParser.Bottom_direction_NUMContext ctx) {
-        return super.visitBottom_direction_NUM(ctx);
+    public Directions_direction_FLOAT visitLeft_direction_FLOAT(projectParser.Left_direction_FLOATContext ctx) {
+        Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
+        directionsDirectionFloat.setLEFT(ctx.LEFT().toString().trim());
+        directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        return directionsDirectionFloat;
     }
 
     @Override
-    public AST visitLeft_direction_NUM(projectParser.Left_direction_NUMContext ctx) {
-        return super.visitLeft_direction_NUM(ctx);
+    public Directions_direction_NUM_D visitTop_direction_NUM_D(projectParser.Top_direction_NUM_DContext ctx) {
+        Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
+        directionsDirectionNumD.setTOP(ctx.TOP().toString().trim());
+        directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionNumD;
     }
 
     @Override
-    public AST visitTop_direction_FLOAT(projectParser.Top_direction_FLOATContext ctx) {
-        return super.visitTop_direction_FLOAT(ctx);
+    public Directions_direction_NUM_D visitRight_direction_NUM_D(projectParser.Right_direction_NUM_DContext ctx) {
+        Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
+        directionsDirectionNumD.setTOP(ctx.RIGHT().toString().trim());
+        directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionNumD;
     }
 
     @Override
-    public AST visitRight_direction_FLOAT(projectParser.Right_direction_FLOATContext ctx) {
-        return super.visitRight_direction_FLOAT(ctx);
+    public Directions_direction_NUM_D visitBottom_direction_NUM_D(projectParser.Bottom_direction_NUM_DContext ctx) {
+        Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
+        directionsDirectionNumD.setTOP(ctx.BOTTOM().toString().trim());
+        directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionNumD;
     }
 
     @Override
-    public AST visitBottom_direction_FLOAT(projectParser.Bottom_direction_FLOATContext ctx) {
-        return super.visitBottom_direction_FLOAT(ctx);
+    public Directions_direction_NUM_D visitLeft_direction_NUM_D(projectParser.Left_direction_NUM_DContext ctx) {
+        Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
+        directionsDirectionNumD.setTOP(ctx.LEFT().toString().trim());
+        directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionNumD;
     }
 
     @Override
-    public AST visitLeft_direction_FLOAT(projectParser.Left_direction_FLOATContext ctx) {
-        return super.visitLeft_direction_FLOAT(ctx);
+    public Directions_direction_FLOAT_D visitTop_direction_FLOAT_D(projectParser.Top_direction_FLOAT_DContext ctx) {
+        Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
+        directionsDirectionFloatD.setTOP(ctx.TOP().toString().trim());
+        directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionFloatD;
     }
 
     @Override
-    public AST visitTop_direction_NUM_D(projectParser.Top_direction_NUM_DContext ctx) {
-        return super.visitTop_direction_NUM_D(ctx);
+    public Directions_direction_FLOAT_D visitRight_direction_FLOAT_D(projectParser.Right_direction_FLOAT_DContext ctx) {
+        Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
+        directionsDirectionFloatD.setTOP(ctx.RIGHT().toString().trim());
+        directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionFloatD;
     }
 
     @Override
-    public AST visitRight_direction_NUM_D(projectParser.Right_direction_NUM_DContext ctx) {
-        return super.visitRight_direction_NUM_D(ctx);
+    public Directions_direction_FLOAT_D visitBottom_direction_FLOAT_D(projectParser.Bottom_direction_FLOAT_DContext ctx) {
+        Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
+        directionsDirectionFloatD.setTOP(ctx.BOTTOM().toString().trim());
+        directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionFloatD;
     }
 
     @Override
-    public AST visitBottom_direction_NUM_D(projectParser.Bottom_direction_NUM_DContext ctx) {
-        return super.visitBottom_direction_NUM_D(ctx);
-    }
-
-    @Override
-    public AST visitLeft_direction_NUM_D(projectParser.Left_direction_NUM_DContext ctx) {
-        return super.visitLeft_direction_NUM_D(ctx);
-    }
-
-    @Override
-    public AST visitTop_direction_FLOAT_D(projectParser.Top_direction_FLOAT_DContext ctx) {
-        return super.visitTop_direction_FLOAT_D(ctx);
-    }
-
-    @Override
-    public AST visitRight_direction_FLOAT_D(projectParser.Right_direction_FLOAT_DContext ctx) {
-        return super.visitRight_direction_FLOAT_D(ctx);
-    }
-
-    @Override
-    public AST visitBottom_direction_FLOAT_D(projectParser.Bottom_direction_FLOAT_DContext ctx) {
-        return super.visitBottom_direction_FLOAT_D(ctx);
-    }
-
-    @Override
-    public AST visitLeft_direction_FLOAT_D(projectParser.Left_direction_FLOAT_DContext ctx) {
-        return super.visitLeft_direction_FLOAT_D(ctx);
+    public Directions_direction_FLOAT_D visitLeft_direction_FLOAT_D(projectParser.Left_direction_FLOAT_DContext ctx) {
+        Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
+        directionsDirectionFloatD.setTOP(ctx.LEFT().toString().trim());
+        directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        for (int i =0 ; i< ctx.direction().size() ; i++){
+            if(ctx.direction(i) != null){
+                directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
+            }
+        }
+        return directionsDirectionFloatD;
     }
 
     @Override

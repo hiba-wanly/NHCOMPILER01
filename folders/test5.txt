@@ -1,3 +1,8 @@
+DART////////////
+
+
+***********
+
 class b{
 int i=9;
 var k=9;
@@ -27,7 +32,10 @@ print("hfhf 888");
 }
 }
 
-
+********
+void fff(){
+int aaa =[4,1]; ////////error
+}
 
 ****************
 
@@ -69,17 +77,68 @@ int i=9;
 int o=1/8;
 int p;
 float kk=1.4;
-
+//double i=9.4;//error
 bool bb=true;
 
 }
 
 *************
 
+void fff(){
+if(i<9 && j==7){
+var i=9;}
+else if(c==7){
+break;}
+else{
+var o=9;}
+}
+}
+
+
+************
+
+int iii(int j,String d,){
+
+while(i==8 || g==8){
+var j;
+}
+return i;
+}
+
+**************
 
 
 
+void kk(){
+switch(i){
+case 1:{
+var i=9;
+var j=9;
+}
+break;
+case "k":{
+int h=9;
+int g;
+}
+break;
+default:{
+var j=0;
+
+}
+break;
+}
+
+}
+
+**************
 
 
+void kk(){
+try{
+var j;}
+catch(j){
+final k;////error
+}
+}
 
-
+*******************
