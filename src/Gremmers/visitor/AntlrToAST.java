@@ -79,6 +79,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow("prog","progname","progvalue",ctx.start.getLine());
+        this.symbolTable.printSymbol();
 //        this.symbolTable.printSymbol();
         return  pp ;
     }
@@ -2913,7 +2914,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     private SymbolRow createSymbolRow(String type,String name,String value,int numline){
         SymbolRow symbolRow = new SymbolRow();
         symbolRow.setType(type);
-        symbolRow.setType(name);
+        symbolRow.setName(name);
         symbolRow.setValue(value);
         symbolRow.setNumline(numline);
 //        System.out.println(symbolRow.getName()+" - "+symbolRow.getType()+" - "+symbolRow.getValue()+" - "+symbolRow.getNumline());
