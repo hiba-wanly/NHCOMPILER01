@@ -2174,7 +2174,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         createSymbolRow(" Image Assets",imageWithAssetImage.getASSETSIMAGE().toString(),imageWithAssetImage.getIMAGE_INPUT_ASSET().toString(),ctx.start.getLine());
         this.symbolTable.printSymbol();
 
-
         return  imageWithAssetImage;
     }
 
