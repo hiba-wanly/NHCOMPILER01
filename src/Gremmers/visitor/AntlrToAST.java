@@ -1226,16 +1226,23 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Operations operation=new Operations();
         if(ctx.PLUS()!=null){
             operation.setPLUS(ctx.PLUS().toString().trim());
+            createSymbolRow("Operation "," Plus ",operation.getPLUS().toString(),ctx.start.getLine());
         }
 
         else  if(ctx.MINUS()!=null){
             operation.setMINUS(ctx.MINUS().toString().trim());
+            createSymbolRow("Operation "," Ninus ",operation.getMINUS().toString(),ctx.start.getLine());
+
         }
         else if(ctx.MULTI()!=null){
             operation.setMULTI(ctx.MULTI().toString().trim());
+            createSymbolRow("Operation "," Multi ",operation.getMULTI().toString(),ctx.start.getLine());
+
         }
         else if(ctx.DIVIDE()!=null){
             operation.setDIVIDE(ctx.DIVIDE().toString().trim());
+            createSymbolRow("Operation "," Divide ",operation.getDIVIDE().toString(),ctx.start.getLine());
+
         }
 
         return operation;
@@ -1262,21 +1269,29 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Expr ex = new Expr();
         if(ctx.multiplication() != null){
             ex.setMultiplication(visitMultiplication(ctx.multiplication()));
+            createSymbolRow("Expression "," Multiplication ",ex.getMultiplication().toString(),ctx.start.getLine());
         }
         if(ctx.addition() != null){
             ex.setAddition(visitAddition(ctx.addition()));
+            createSymbolRow("Expression "," Addition ",ex.getAddition().toString(),ctx.start.getLine());
         }
         if(ctx.subtraction() != null){
             ex.setSubtraction(visitSubtraction(ctx.subtraction()));
+            createSymbolRow("Expression "," Subtraction ",ex.getSubtraction().toString(),ctx.start.getLine());
         }
         if(ctx.division() != null){
             ex.setDivision(visitDivision(ctx.division()));
+            createSymbolRow("Expression "," Division ",ex.getDivision().toString(),ctx.start.getLine());
         }
         if(ctx.identifier() != null){
             ex.setIdentifier(visitIdentifier(ctx.identifier()));
+            createSymbolRow("Expression "," Identifier ",ex.getIdentifier().toString(),ctx.start.getLine());
+
         }
         if(ctx.integer_i() != null){
             ex.setInteger(visitInteger_i(ctx.integer_i()));
+            createSymbolRow("Expression "," Integer ",ex.getInteger().toString(),ctx.start.getLine());
+
         }
         return ex;
     }
@@ -1330,6 +1345,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitIdentifier");
         Identifier ii = new Identifier();
         ii.setIdentifier(ctx.ID().toString().trim());
+        createSymbolRow("visitIdentifier "," Identifier ",ii.getIdentifier().toString(),ctx.start.getLine());
+
         return ii;
     }
 
@@ -1338,6 +1355,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitInteger_i");
         IntegerII ii = new IntegerII();
         ii.setIntegerII(ctx.NUM().toString().trim());
+        createSymbolRow("visitIdentifier "," Integer_i ",ii.getIntegerII().toString(),ctx.start.getLine());
+
         return ii;
     }
 
@@ -1347,34 +1366,43 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Functions fun = new Functions();
         if(ctx.void_Function_NOReturn_NoARG() != null){
             fun.setVoidWithoutArg(visitVoid_Function_NOReturn_NoARG(ctx.void_Function_NOReturn_NoARG()));
+            createSymbolRow("FunctionStatement "," --void NOReturn_NoARG-- ","void NOReturn_NoARG ",ctx.start.getLine());
         }
         if(ctx.int_Function_Return_NoARG() != null){
             fun.setFunWithoutArg(visitInt_Function_Return_NoARG(ctx.int_Function_Return_NoARG()));
+            createSymbolRow("FunctionStatement "," --int Return_NoARG-- "," int Return_NoARG ",ctx.start.getLine());
         }
         if(ctx.string_Function_Return_NoARG() != null){
             fun.setFunWithoutArg(visitString_Function_Return_NoARG(ctx.string_Function_Return_NoARG()));
+            createSymbolRow("FunctionStatement "," --string Return_NoARG-- "," string Return_NoARG ",ctx.start.getLine());
         }
         if(ctx.double_Function_Return_NoARG() != null){
             fun.setFunWithoutArg(visitDouble_Function_Return_NoARG(ctx.double_Function_Return_NoARG()));
+            createSymbolRow("FunctionStatement "," --double Return_NoARG-- ","double Return_NoARG ",ctx.start.getLine());
         }
         if(ctx.float_Function_Return_NoARG() != null){
             fun.setFunWithoutArg(visitFloat_Function_Return_NoARG(ctx.float_Function_Return_NoARG()));
+            createSymbolRow("FunctionStatement "," --float Return_NoARG-- ","float Return_NoARG ",ctx.start.getLine());
         }
-
         if(ctx.void_Function_NOReturn_ARG() != null){
             fun.setVoidWithArg(visitVoid_Function_NOReturn_ARG(ctx.void_Function_NOReturn_ARG()));
+            createSymbolRow("FunctionStatement "," --void NOReturn_ARG-- ","void NOReturn_ARG ",ctx.start.getLine());
         }
         if(ctx.int_Function_Return_ARG() != null){
             fun.setFunWithArg(visitInt_Function_Return_ARG(ctx.int_Function_Return_ARG()));
+            createSymbolRow("FunctionStatement "," --int Return_ARG-- ","int Return_ARG ",ctx.start.getLine());
         }
         if(ctx.string_Function_Return_ARG() != null){
             fun.setFunWithArg(visitString_Function_Return_ARG(ctx.string_Function_Return_ARG()));
+            createSymbolRow("FunctionStatement "," --string Return_ARG-- ","string Return_ARG ",ctx.start.getLine());
         }
         if(ctx.double_Function_Return_ARG() != null){
             fun.setFunWithArg(visitDouble_Function_Return_ARG(ctx.double_Function_Return_ARG()));
+            createSymbolRow("FunctionStatement "," --double Return_ARG-- ","double Return_ARG ",ctx.start.getLine());
         }
         if(ctx.floate_Function_Return_ARG() != null){
             fun.setFunWithArg(visitFloate_Function_Return_ARG(ctx.floate_Function_Return_ARG()));
+            createSymbolRow("FunctionStatement "," --float Return_ARG-- ","void Return_ARG ",ctx.start.getLine());
         }
         return fun;
     }
@@ -1558,26 +1586,37 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.VAR() != null){
             arg.setTypee(ctx.VAR().toString().trim());
             arg.setNamee(visitNamen(ctx.namen()));
+            createSymbolRow("ArgumentFunctionType ",arg.getTypee().toString() ,arg.getNamee().toString(),ctx.start.getLine());
         }
         else if(ctx.INT() != null){
             arg.setTypee(ctx.INT().toString().trim());
             arg.setNamee(visitNamen(ctx.namen()));
+            createSymbolRow("ArgumentFunctionType ",arg.getTypee().toString() ,arg.getNamee().toString(),ctx.start.getLine());
+
         }
         else if(ctx.DOUBLE() != null){
             arg.setTypee(ctx.DOUBLE().toString().trim());
             arg.setNamee(visitNamen(ctx.namen()));
+            createSymbolRow("ArgumentFunctionType ",arg.getTypee().toString() ,arg.getNamee().toString(),ctx.start.getLine());
+
         }
         else if(ctx.FLOAT() != null){
             arg.setTypee(ctx.FLOAT().toString().trim());
             arg.setNamee(visitNamen(ctx.namen()));
+            createSymbolRow("ArgumentFunctionType ",arg.getTypee().toString() ,arg.getNamee().toString(),ctx.start.getLine());
+
         }
         else if(ctx.DYNAMIC() != null){
             arg.setTypee(ctx.DYNAMIC().toString().trim());
             arg.setNamee(visitNamen(ctx.namen()));
+            createSymbolRow("ArgumentFunctionType ",arg.getTypee().toString() ,arg.getNamee().toString(),ctx.start.getLine());
+
         }
         if(ctx.STRING() != null){
             arg.setTypee(ctx.STRING().toString().trim());
             arg.setNamee(visitNamen(ctx.namen()));
+            createSymbolRow("ArgumentFunctionType ",arg.getTypee().toString() ,arg.getNamee().toString(),ctx.start.getLine());
+
         }
         return arg;
     }
@@ -1588,24 +1627,36 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ReturnStatement returnStatement = new ReturnStatement();
         if(ctx.returnID() != null){
             returnStatement.setReturnType(visitReturnID(ctx.returnID()));
+            createSymbolRow("ReturnStatement ","return type" ,returnStatement.getReturnType().toString(),ctx.start.getLine());
+
         }
         if(ctx.returnINPUT_D_Q_I() != null){
             returnStatement.setReturnType(visitReturnINPUT_D_Q_I(ctx.returnINPUT_D_Q_I()));
+            createSymbolRow("ReturnStatement ","return type" ,returnStatement.getReturnType().toString(),ctx.start.getLine());
+
         }
         if(ctx.returnRule() != null){
             returnStatement.setReturnType(visitReturnRule(ctx.returnRule()));
+            createSymbolRow("ReturnStatement ","return type" ,returnStatement.getReturnType().toString(),ctx.start.getLine());
+
         }
 //        if(ctx.return() != null){
 //            returnStatement.setReturnType(visitReturn(ctx.return()));
 //        }  /////////error
         if(ctx.returnNum() != null){
             returnStatement.setReturnType(visitReturnNum(ctx.returnNum()));
+            createSymbolRow("ReturnStatement ","return type" ,returnStatement.getReturnType().toString(),ctx.start.getLine());
+
         }
         if(ctx.returnNumFloat() != null){
             returnStatement.setReturnType(visitReturnNumFloat(ctx.returnNumFloat()));
+            createSymbolRow("ReturnStatement ","return type" ,returnStatement.getReturnType().toString(),ctx.start.getLine());
+
         }
         if(ctx.returnNumDouble() != null){
             returnStatement.setReturnType(visitReturnNumDouble(ctx.returnNumDouble()));
+            createSymbolRow("ReturnStatement ","return type" ,returnStatement.getReturnType().toString(),ctx.start.getLine());
+
         }
         return returnStatement;
     }
