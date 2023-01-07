@@ -2171,6 +2171,10 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageWithAssetImage.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
         imageWithAssetImage.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
 
+        createSymbolRow(" Image Assets",imageWithAssetImage.getASSETSIMAGE().toString(),imageWithAssetImage.getIMAGE_INPUT_ASSET().toString(),ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
+
         return  imageWithAssetImage;
     }
 
@@ -2187,6 +2191,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 imageWithAssetImageWithDirection.getimageDirection().add(visitImageDirection(ctx.imageDirection(i)));
             }
         }
+        createSymbolRow(" ImageDirection "," AssetsImage ",imageWithAssetImageWithDirection.getimageDirection().toString(),ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
         return imageWithAssetImageWithDirection;
     }
 
@@ -2204,6 +2211,10 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 imageWithAssetImageWithDirectionFit.getimageDirection().add(visitImageDirection(ctx.imageDirection(i)));
             }
         }
+
+        createSymbolRow(" ImageDirectionWithFit "," Asstes ",imageWithAssetImageWithDirectionFit.getimageDirection().toString(),ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
         return imageWithAssetImageWithDirectionFit;
     }
 
@@ -2213,6 +2224,10 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.ASSET().toString().trim());
+
+        createSymbolRow(" ImageType "," Assets ",imageWithAssetNetworkFile.getType().toString(),ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
 
         return  imageWithAssetNetworkFile;
     }
@@ -2224,6 +2239,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.NETWORK().toString().trim());
 
+        createSymbolRow(" ImageType ","Network ",imageWithAssetNetworkFile.getType().toString(),ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
         return imageWithAssetNetworkFile;
     }
 
@@ -2234,6 +2252,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.FILE().toString().trim());
 
+        createSymbolRow(" ImageType "," File ",imageWithAssetNetworkFile.getType().toString(),ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
         return imageWithAssetNetworkFile;
     }
     @Override
@@ -2242,23 +2263,38 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageDirection image = new imageDirection();
         if(ctx.imageHight_DF() != null){
             image.setimageHight_AND_Width_DF(visitImageHight_DF(ctx.imageHight_DF()));
+            createSymbolRow(" Flutter Widget -> ImageDirection "," imageHight "," Float  ",ctx.start.getLine());
+            this.symbolTable.printSymbol();
         }
         if(ctx.imageWidth_DF() != null){
             image.setimageHight_AND_Width_DF(visitImageWidth_DF(ctx.imageWidth_DF()));
+            createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidth "," Float  ",ctx.start.getLine());
+            this.symbolTable.printSymbol();
         }
         if(ctx.imageHightWidth_DF() != null){
             image.setimageHightWidth_Reverse_DF(visitImageHightWidth_DF(ctx.imageHightWidth_DF()));
+            createSymbolRow(" Flutter Widget -> ImageDirection "," imageHightWidth_F "," Float  ",ctx.start.getLine());
+            this.symbolTable.printSymbol();
         }
         if(ctx.imageWidthHight_DF() != null){
             image.setimageHightWidth_Reverse_DF(visitImageWidthHight_DF(ctx.imageWidthHight_DF()));
+            createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidthHight_F "," Float  ",ctx.start.getLine());
+            this.symbolTable.printSymbol();
         }
         if(ctx.imageHightWidth_DN() != null){
             image.setimageHightWidth_Reverse_DN(visitImageHightWidth_DN(ctx.imageHightWidth_DN()));
+            createSymbolRow(" Flutter Widget -> ImageDirection "," imageHightWidth_N "," Num  ",ctx.start.getLine());
+            this.symbolTable.printSymbol();
         }
         if(ctx.imageWidthHight_DN() != null){
             image.setimageHightWidth_Reverse_DN(visitImageWidthHight_DN(ctx.imageWidthHight_DN()));
+            createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidthHight_F "," Num  ",ctx.start.getLine());
+            this.symbolTable.printSymbol();
         }
-        return image;    }
+
+
+        return image;
+    }
 
     @Override
     public imageFit visitImageFit(projectParser.ImageFitContext ctx) {
@@ -2267,6 +2303,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imagefit.setFIT(ctx.FIT().toString().trim());
         imagefit.setBOXFIT(ctx.BOXFIT().toString().trim());
         imagefit.setFILL(ctx.FILL().toString().trim());
+
+        createSymbolRow(" ImageFit "," BoxFit "," Fill  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
 
         return imagefit;
     }
@@ -2282,6 +2321,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.expanded_withRow() != null){
             e.setAttr_expanded_withCol_withRow(visitExpanded_withRow(ctx.expanded_withRow()));
         }
+        createSymbolRow("Flutter Widget -> Expanded "," Wiget Components "," COlumn / Row  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return e;
     }
 
@@ -2292,6 +2333,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         nn.setEXPANDED(ctx.EXPANDED().toString().trim());
         nn.setCHILD(ctx.CHILD().toString().trim());
         nn.setColumn(visitColStatemenst(ctx.colStatemenst()));
+
+        createSymbolRow(" Expanded "," expanded col "," ColumnStatement  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2302,6 +2346,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         nn.setEXPANDED(ctx.EXPANDED().toString().trim());
         nn.setCHILD(ctx.CHILD().toString().trim());
         nn.setRow(visitRowStatement(ctx.rowStatement()));
+        createSymbolRow(" Expanded "," expanded row "," rowStatement  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2328,6 +2374,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.padding_sym_vertical_numFloat() != null){
             padding.setpadding_sym_vertical_num_numFloat(visitPadding_sym_vertical_numFloat(ctx.padding_sym_vertical_numFloat()));
         }
+            createSymbolRow("Flutter widget -> Padding "," Wiget Components "," List of padding type  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return padding;
     }
 
@@ -2344,6 +2392,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 paddingAll.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        createSymbolRow(" Padding "," Padding all "," Float  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return paddingAll;
     }
     @Override
@@ -2360,6 +2410,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        createSymbolRow(" Padding "," Padding Symmatric vertical"," Num  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2377,6 +2429,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        createSymbolRow(" Padding "," Padding Symmatric vertical"," Float  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return nn;
 
     }
@@ -2395,6 +2449,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        createSymbolRow(" Padding "," Padding Symmatric horisantal"," Num  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2412,6 +2468,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        createSymbolRow(" Padding "," Padding Symmatric horisantal"," Float  ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2432,6 +2490,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 paddingOnly.getdirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow(" Padding  "," padding only "," List of direction type ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
 
 
         return paddingOnly;
@@ -2453,7 +2513,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.bottom_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitBottom_direction_FLOAT(ctx.bottom_direction_FLOAT()));
         }
-
 
         if(ctx.top_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitTop_direction_FLOAT_D(ctx.top_direction_FLOAT_D()));
@@ -2493,6 +2552,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             d.setDirections_direction_NUM_D(visitBottom_direction_NUM_D(ctx.bottom_direction_NUM_D()));
         }
 
+        createSymbolRow("Flutter widget -> Padding "," All direction for padding "," Num & Float ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
         return d;
     }
 
@@ -2524,6 +2586,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.paddingStatement() != null){
             flutterWidget.setpaddingClasses(visitPaddingStatement(ctx.paddingStatement()));
         }
+
+        createSymbolRow("Flutter widget "," Widget Components "," object from Widget Components ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return flutterWidget;
     }
 
@@ -2629,6 +2694,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 container.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+
+        createSymbolRow(" Container Widget "," Container "," List of flutter widget ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return container;
     }
 
@@ -2727,6 +2795,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input_1AppBar input1AppBar = new input_1AppBar();
         input1AppBar.setTITLE(ctx.TITLE().toString().trim());
         input1AppBar.setTextClasses(visitTexeStatement(ctx.texeStatement()));
+
+        createSymbolRow("Input AppBar type 1 : ","with Title"," title ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return input1AppBar;
 
     }
@@ -2738,6 +2809,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input2AppBar.setBACHCOLOR(ctx.BACHCOLOR().toString().trim());
         input2AppBar.setCOLOR(ctx.COLOR().toString().trim());
         input2AppBar.setColor(visitColor(ctx.color()));
+
+        createSymbolRow("Input AppBar type 2 : ","with just Color"," color ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return input2AppBar;
     }
 
@@ -2751,6 +2825,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input3AppBar.setCOLOR(ctx.COLOR().toString().trim());
         input3AppBar.setColor(visitColor(ctx.color()));
 
+        createSymbolRow("Input AppBar twpe 3 : ","with Title and Color","  title color ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return input3AppBar;
     }
 
@@ -2764,6 +2840,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input4AppBar.setTITLE(ctx.TITLE().toString().trim());
         input4AppBar.setTextClasses(visitTexeStatement(ctx.texeStatement()));
 
+        createSymbolRow("Input AppBar type 4 :","with Color and Title"," color title ",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return input4AppBar;
     }
     @Override
@@ -2771,6 +2849,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
        System.out.println("visitColor_red");
         color_red_green colorRedGreen = new color_red_green();
         colorRedGreen.setColor_type(ctx.RED().toString().trim());
+        createSymbolRow(" type_Color ","Color","Red",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return  colorRedGreen;
     }
 
@@ -2779,6 +2859,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitColor_green");
         color_red_green colorRedGreen = new color_red_green();
         colorRedGreen.setColor_type(ctx.GREEN().toString().trim());
+
+        createSymbolRow("type_Color ","Color ","Green",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return colorRedGreen;
     }
     @Override
@@ -2788,6 +2871,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHightAndWidthDf.setType(ctx.HIGHT().toString().trim());
         imageHightAndWidthDf.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
 
+        createSymbolRow("Image Decoration "," Hight ","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return imageHightAndWidthDf;
     }
 
@@ -2797,6 +2882,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHight_AND_Width_DF imageHightAndWidthDf = new imageHight_AND_Width_DF();
         imageHightAndWidthDf.setType(ctx.WIDTH().toString().trim());
         imageHightAndWidthDf.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        createSymbolRow("Image Decoration ","Width ","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return imageHightAndWidthDf;
     }
     @Override
@@ -2808,6 +2896,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHightWidth_reverse_df.setWIDTH(ctx.WIDTH().toString().trim());
         imageHightWidth_reverse_df.setNUM_FLOAT_WIDTH(ctx.getChild(6).toString().trim());
 
+        createSymbolRow("Image Decoration "," Hight & Width  ","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return imageHightWidth_reverse_df;
     }
 
@@ -2820,6 +2910,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHightWidth_reverse_df.setHIGHT(ctx.HIGHT().toString().trim());
         imageHightWidth_reverse_df.setNUM_FLOAT_HIGHT(ctx.getChild(6).toString().trim());
 
+        createSymbolRow("Image Decoration ","Width & Hight ","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return imageHightWidth_reverse_df;
     }
 
@@ -2833,6 +2925,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image.setWIDTH(ctx.WIDTH().toString().trim());
         image.setNUM_WIDTH(ctx.getChild(6).toString().trim());
 
+        createSymbolRow("Image Decoration "," Hight & Width  ","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
         return image;
 
     }
@@ -2845,6 +2940,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image.setNUM_WIDTH(ctx.getChild(2).toString().trim());
         image.setHIGHT(ctx.HIGHT().toString().trim());
         image.setNUM_HIGHT(ctx.getChild(6).toString().trim());
+
+        createSymbolRow("Image Decoration ","Width & Hight ","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return image;
     }
 
@@ -2855,6 +2953,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
         directionsDirectionNum.setType(ctx.TOP().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+
+        createSymbolRow("Direction","Top_direction","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNum;
     }
 
@@ -2864,6 +2965,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
         directionsDirectionNum.setType(ctx.RIGHT().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+
+        createSymbolRow("Direction","Right_direction","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNum;
     }
 
@@ -2874,6 +2978,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         directionsDirectionNum.setType(ctx.BOTTOM().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
 
+        createSymbolRow("Direction","Bottom_direction","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNum;
     }
 
@@ -2884,6 +2990,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         directionsDirectionNum.setType(ctx.LEFT().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
 
+        createSymbolRow("Direction","Left_direction","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNum;
     }
 
@@ -2894,6 +3002,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         directionsDirectionFloat.setType(ctx.TOP().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
 
+        createSymbolRow("Direction","Top_direction","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
+
         return directionsDirectionFloat;
     }
 
@@ -2903,6 +3014,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
         directionsDirectionFloat.setType(ctx.RIGHT().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        createSymbolRow("Direction","Right_direction","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionFloat;
     }
 
@@ -2912,6 +3026,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
         directionsDirectionFloat.setType(ctx.BOTTOM().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+
+        createSymbolRow("Direction","Bottom_direction","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
 
         return directionsDirectionFloat;
     }
@@ -2923,6 +3040,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         directionsDirectionFloat.setType(ctx.LEFT().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
 
+        createSymbolRow("Direction","Left_direction","Float",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionFloat;
     }
 
@@ -2937,6 +3056,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","progname","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNumD;
     }
 
@@ -2951,6 +3072,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","Right_direction","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNumD;
     }
 
@@ -2965,6 +3088,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","Bottom_direction","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNumD;
     }
 
@@ -2979,6 +3104,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","Left_direction","Num",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionNumD;
     }
 
@@ -2993,6 +3120,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","Top_direction","FlOAT",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionFloatD;
     }
 
@@ -3007,6 +3136,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","Right_direction","FLOAT",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionFloatD;
     }
 
@@ -3021,6 +3152,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","Bottom_direction","FLOAT",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionFloatD;
     }
 
@@ -3035,6 +3168,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        createSymbolRow("Direction","Left_direction","FLOAT",ctx.start.getLine());
+        this.symbolTable.printSymbol();
         return directionsDirectionFloatD;
     }
 
