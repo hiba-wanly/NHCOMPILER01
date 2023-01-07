@@ -28,7 +28,7 @@ public class Main {
 
 //            Prog prog = (Prog) new AntlrToAST().visit(dartAST);
             System.out.println("Prog:  ");
-            System.out.println(prog);
+//            System.out.println(prog);
 
             System.out.println("SymbolTable:  ");
             programVisitor.symbolTable.printSymbol();

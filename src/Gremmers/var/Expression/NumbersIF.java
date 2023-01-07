@@ -19,7 +19,7 @@ public class NumbersIF extends AST {
     public IntI getInt(){
         return ii;
     }
-    public Float fetFf(){
+    public Float getFf(){
         return  ff;
     }
 

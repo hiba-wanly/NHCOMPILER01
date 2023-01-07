@@ -22,11 +22,13 @@ public class SymbolTable {
         for(int i=0;i<symbolRows.size();i++){
 //            System.out.println("forrrrrrrrrrrrrrr");
             if(symbolRows.get(i)!=null){
-                System.out.print("Symbol Name:  "+symbolRows.get(i).getName() + "  ");
+                System.out.println("Symbol : "+i);
                 System.out.print("Symbol Type: "+symbolRows.get(i).getType()+ "  ");
+                System.out.print("Symbol Name: "+symbolRows.get(i).getName() + "  ");
                 System.out.print("Symbol Value: "+symbolRows.get(i).getValue()+ "  ");
-                System.out.print(" Line Number: " +symbolRows.get(i).getNumline()+" ");
+                System.out.print("Line Number: " +symbolRows.get(i).getNumline()+"  ");
                 System.out.println();
+                System.out.println("___________________________");
             }
         }
 

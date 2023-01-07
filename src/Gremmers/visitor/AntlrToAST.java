@@ -79,7 +79,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow("prog","progname","progvalue",ctx.start.getLine());
-        this.symbolTable.printSymbol();
+//        this.symbolTable.printSymbol();
 //        this.symbolTable.printSymbol();
         return  pp ;
     }
@@ -92,6 +92,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
 //            System.out.println("1");
             e.setBody(visitBody(ctx.body()));
         }
+        createSymbolRow("Element","elemname","elemvalue",ctx.start.getLine());
         return e;
     }
 
@@ -103,9 +104,11 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.classS() != null) {
 //            System.out.println("2");
             body.setClasses(visitClassS(ctx.classS()));
+            createSymbolRow("Class","","",ctx.start.getLine());
         }
         else if(ctx.functionStatement() != null) {
             body.setFunctions(visitFunctionStatement(ctx.functionStatement()));
+            createSymbolRow("Function","","",ctx.start.getLine());
         }
         return body;
     }
@@ -115,6 +118,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitfloat");
         Float float_p = new Float();
         float_p.setFLOAT(ctx.NUM_FLOAT().toString().trim());
+        createSymbolRow("initial","var",float_p.getFLOAT(),ctx.start.getLine());
         return float_p;
     }
 
@@ -123,6 +127,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitInt");
         IntI int_p = new IntI();
         int_p.setIntt(ctx.NUM().toString().trim());
+        createSymbolRow("initial","int",int_p.getIntt(),ctx.start.getLine());
         return int_p;
     }
 
@@ -131,6 +136,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitdouble");
         Double double_p = new Double();
         double_p.setDouble(ctx.NUM_DOUBLE().toString().trim());
+        createSymbolRow("initial","double",double_p.getDouble(),ctx.start.getLine());
         return double_p;
     }
 
@@ -140,15 +146,19 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ArrayType a = new ArrayType();
         if(ctx.array_var() != null){
             a.setArrayVar(visitArray_var(ctx.array_var()));
+            createSymbolRow("array","arrayvar",a.getArrayVar().toString(),ctx.start.getLine());
         }
         if(ctx.array_int() != null){
             a.setArrayInt(visitArray_int(ctx.array_int()));
+            createSymbolRow("array","arrayint",a.getArrayInt().toString(),ctx.start.getLine());
         }
         if(ctx.array_string() != null){
             a.setArrayString(visitArray_string(ctx.array_string()));
+            createSymbolRow("array","arraystring",a.getArrayString().toString(),ctx.start.getLine());
         }
         if(ctx.array_float() != null){
             a.setArrayfloat(visitArray_float(ctx.array_float()));
+            createSymbolRow("array","arrayfloat",a.getArrayFloat().toString(),ctx.start.getLine());
         }
         return a;
     }
@@ -160,6 +170,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         arrvar.setVar(ctx.VAR().toString().trim());
         arrvar.setId(visitNamen(ctx.namen()));
         arrvar.setArraybody(visitArraybody(ctx.arraybody()));
+        createSymbolRow(arrvar.getVar(),arrvar.getId().toString(),arrvar.getArraybody().toString(),ctx.start.getLine());
         return arrvar;
     }
 
@@ -170,6 +181,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         arrint.setVar(ctx.INT().toString().trim());
         arrint.setId(visitNamen(ctx.namen()));
         arrint.setArrayVarInt(visitArrayINT(ctx.arrayINT()));
+        createSymbolRow(arrint.getVar(),arrint.getId().toString(),arrint.getArrayVarInt().toString(),ctx.start.getLine());
         return arrint;
     }
 
@@ -180,6 +192,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         arrstr.setVar(ctx.STRING().toString().trim());
         arrstr.setId(visitNamen(ctx.namen()));
         arrstr.setArrayVarString(visitArraySTRING(ctx.arraySTRING()));
+        createSymbolRow(arrstr.getVar(),arrstr.getId().toString(),arrstr.getArrayVarString().toString(),ctx.start.getLine());
         return arrstr;
     }
 
@@ -190,6 +203,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         arrflo.setVar(ctx.FLOAT().toString().trim());
         arrflo.setId(visitNamen(ctx.namen()));
         arrflo.setArrayVarFloat(visitArrayFLOAT(ctx.arrayFLOAT()));
+        createSymbolRow(arrflo.getVar(),arrflo.getId().toString(),arrflo.getArrayVarFloat().toString(),ctx.start.getLine());
         return arrflo;
     }
 
@@ -199,12 +213,15 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ArrayBody aa = new ArrayBody();
         if(ctx.arrayINT() != null){
             aa.setArrayVarInt(visitArrayINT(ctx.arrayINT()));
+            createSymbolRow("arraybody",aa.getArrayVarInt().toString(),"value",ctx.start.getLine());
         }
         if(ctx.arraySTRING() != null){
             aa.setArrayVarString(visitArraySTRING(ctx.arraySTRING()));
+            createSymbolRow("arraybody",aa.getArrayVarString().toString(),"value",ctx.start.getLine());
         }
         if(ctx.arrayFLOAT() != null){
             aa.setArrayVarFloat(visitArrayFLOAT(ctx.arrayFLOAT()));
+            createSymbolRow("arraybody",aa.getArrayVarFloat().toString(),"value",ctx.start.getLine());
         }
         return aa;
     }
@@ -217,6 +234,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.NUM(i) != null){
             aarvarint.addChild((ctx.NUM(i).toString()));
         }}
+        createSymbolRow("arraybody","",aarvarint.toString(),ctx.start.getLine());
         return aarvarint;
     }
 
@@ -228,6 +246,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.INPUT_D_Q_I(i) != null){
             aarvarstr.addChild(ctx.INPUT_D_Q_I().get(i).getText());
         }}
+        createSymbolRow("arraybody","",aarvarstr.toString(),ctx.start.getLine());
         return aarvarstr;
     }
 
@@ -239,6 +258,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.NUM_FLOAT(i) != null){
             aarvarflo.addChild(ctx.NUM_FLOAT().get(i).getText());
         }}
+        createSymbolRow("arraybody","",aarvarflo.toString(),ctx.start.getLine());
         return aarvarflo;
     }
 
@@ -250,93 +270,123 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.var_Variable() != null){
 //            System.out.println("7");
             in.setVarvariable(visitVar_Variable(ctx.var_Variable()));
+            createSymbolRow("initial","varvariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.var_Variable_expr() != null){
             in.setVarvariableexpr(visitVar_Variable_expr(ctx.var_Variable_expr()));
+            createSymbolRow("initial","varvariableExpr",in.getVarvariableexpr().toString(),ctx.start.getLine());
         }
         else if(ctx.var_Variable_emp() != null){
             in.setVarvariableemp(visitVar_Variable_emp(ctx.var_Variable_emp()));
+            createSymbolRow("initial","varvariableEmp",in.getVarvariableemp().toString(),ctx.start.getLine());
         }
         else if(ctx.varVariable_INPUT_D_Q_N() != null){
             in.setVarvariable(visitVarVariable_INPUT_D_Q_N(ctx.varVariable_INPUT_D_Q_N()));
+            createSymbolRow("initial","varvariableDQN",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.varVariable_INPUT_D_Q_I() != null){
             in.setVarvariable(visitVarVariable_INPUT_D_Q_I(ctx.varVariable_INPUT_D_Q_I()));
+            createSymbolRow("initial","varvariableDQI",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.const_Variable() != null){
             in.setVarvariable(visitConst_Variable(ctx.const_Variable()));
+            createSymbolRow("initial","constvariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.const_Variable_expr() != null){
             in.setVarvariableexpr(visitConst_Variable_expr(ctx.const_Variable_expr()));
+            createSymbolRow("initial","constvariableExpr",in.getVarvariableexpr().toString(),ctx.start.getLine());
         }
         else if(ctx.const_Variable_emp() != null){
             in.setVarvariableemp(visitConst_Variable_emp(ctx.const_Variable_emp()));
+            createSymbolRow("initial","constvariableEmp",in.getVarvariableemp().toString(),ctx.start.getLine());
         }
         else if(ctx.const_Variable_INPUT_D_Q_N() != null){
             in.setVarvariable(visitConst_Variable_INPUT_D_Q_N(ctx.const_Variable_INPUT_D_Q_N()));
+            createSymbolRow("initial","constvariableDQN",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.const_Variable_INPUT_D_Q_I() != null){
             in.setVarvariable(visitConst_Variable_INPUT_D_Q_I(ctx.const_Variable_INPUT_D_Q_I()));
+            createSymbolRow("initial","constvariableDQI",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.dynamic_Variable() != null){
             in.setVarvariable(visitDynamic_Variable(ctx.dynamic_Variable()));
+            createSymbolRow("initial","dynamicvariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.dynamic_Variable_expr() != null){
             in.setVarvariableexpr(visitDynamic_Variable_expr(ctx.dynamic_Variable_expr()));
+            createSymbolRow("initial","dynamicvariableExpr",in.getVarvariableexpr().toString(),ctx.start.getLine());
         }
         else if(ctx.dynamic_Variable_emp() != null){
             in.setVarvariableemp(visitDynamic_Variable_emp(ctx.dynamic_Variable_emp()));
+            createSymbolRow("initial","dynamicvariableEmp",in.getVarvariableemp().toString(),ctx.start.getLine());
         }
         else if(ctx.dynamic_Variable_INPUT_D_Q_N() != null){
             in.setVarvariable(visitDynamic_Variable_INPUT_D_Q_N(ctx.dynamic_Variable_INPUT_D_Q_N()));
+            createSymbolRow("initial","dynamicvariableDQN",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.dynamic_Variable_INPUT_D_Q_I() != null){
             in.setVarvariable(visitDynamic_Variable_INPUT_D_Q_I(ctx.dynamic_Variable_INPUT_D_Q_I()));
+            createSymbolRow("initial","dynamicvariableDQI",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.final_Variable() != null){
             in.setVarvariable(visitFinal_Variable(ctx.final_Variable()));
+            createSymbolRow("initial","finalvariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.final_Variable_expr() != null){
             in.setVarvariableexpr(visitFinal_Variable_expr(ctx.final_Variable_expr()));
+            createSymbolRow("initial","finalvariableExp",in.getVarvariableexpr().toString(),ctx.start.getLine());
         }
         else if(ctx.final_Variable_emp() != null){
             in.setVarvariableemp(visitFinal_Variable_emp(ctx.final_Variable_emp()));
+            createSymbolRow("initial","finalvariableEmp",in.getVarvariableemp().toString(),ctx.start.getLine());
         }
         else if(ctx.final_Variable_INPUT_D_Q_N() != null){
             in.setVarvariable(visitFinal_Variable_INPUT_D_Q_N(ctx.final_Variable_INPUT_D_Q_N()));
+            createSymbolRow("initial","finalvariableDQN",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.final_Variable_INPUT_D_Q_I() != null){
             in.setVarvariable(visitFinal_Variable_INPUT_D_Q_I(ctx.final_Variable_INPUT_D_Q_I()));
+            createSymbolRow("initial","finalvariableDQI",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.string_Variable_INPUT_D_Q_N() != null){
             in.setVarvariable(visitString_Variable_INPUT_D_Q_N(ctx.string_Variable_INPUT_D_Q_N()));
+            createSymbolRow("initial","stringvariableDQN",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.string_Variable_INPUT_D_Q_I() != null){
             in.setVarvariable(visitString_Variable_INPUT_D_Q_I(ctx.string_Variable_INPUT_D_Q_I()));
+            createSymbolRow("initial","stringvariableDQI",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.string_Variable_TEXT() != null){
             in.setVarvariableString(visitString_Variable_TEXT(ctx.string_Variable_TEXT()));
+            createSymbolRow("initial","stringvariableText",in.getVarvariableString().toString(),ctx.start.getLine());
         }
         else if(ctx.int_Variable() != null){
             in.setVarvariable(visitInt_Variable(ctx.int_Variable()));
+            createSymbolRow("initial","intvariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.int_Variable_expr() != null){
             in.setVarvariableexpr(visitInt_Variable_expr(ctx.int_Variable_expr()));
+            createSymbolRow("initial","intvariableExpr",in.getVarvariableexpr().toString(),ctx.start.getLine());
         }
         else if(ctx.int_Variable_emp() != null){
             in.setVarvariableemp(visitInt_Variable_emp(ctx.int_Variable_emp()));
+            createSymbolRow("initial","intvariableEmp",in.getVarvariableemp().toString(),ctx.start.getLine());
         }
         else if(ctx.float_Variable() != null){
             in.setVarvariable(visitFloat_Variable(ctx.float_Variable()));
+            createSymbolRow("initial","floatvariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.double_Variable() != null){
             in.setVarvariable(visitDouble_Variable(ctx.double_Variable()));
+            createSymbolRow("initial","doublevariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.boolean_Variable() != null){
             in.setVarvariable(visitBoolean_Variable(ctx.boolean_Variable()));
+            createSymbolRow("initial","booleanvariable",in.getVarvariable().toString(),ctx.start.getLine());
         }
         else if(ctx.arrayType() != null){
             in.setArrayType(visitArrayType(ctx.arrayType()));
+            createSymbolRow("initial","arraytypevariable",in.getArrayType().toString(),ctx.start.getLine());
         }
         return in;
     }
@@ -348,6 +398,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.VAR().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -358,6 +409,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.VAR().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableExpr(visitExpr(ctx.expr()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiableExpr().toString(),ctx.start.getLine());
         return vv;
     }
 
@@ -367,6 +419,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         varVariableEmp vv = new varVariableEmp();
         vv.setVarVaiableType(ctx.VAR().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),"",ctx.start.getLine());
         return vv;
     }
 
@@ -377,6 +430,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.VAR().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_N().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -387,6 +441,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.VAR().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_I().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -397,6 +452,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.CONST().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -407,6 +463,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.CONST().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableExpr(visitExpr(ctx.expr()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiableExpr().toString(),ctx.start.getLine());
         return vv;
     }
 
@@ -416,6 +473,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         varVariableEmp vv = new varVariableEmp();
         vv.setVarVaiableType(ctx.CONST().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),"",ctx.start.getLine());
         return vv;
     }
 
@@ -426,6 +484,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.CONST().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_N().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -436,6 +495,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.CONST().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_I().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -446,6 +506,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.DYNAMIC().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -456,6 +517,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.DYNAMIC().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableExpr(visitExpr(ctx.expr()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiableExpr().toString(),ctx.start.getLine());
         return vv;
     }
 
@@ -465,6 +527,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         varVariableEmp vv = new varVariableEmp();
         vv.setVarVaiableType(ctx.DYNAMIC().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),"",ctx.start.getLine());
         return vv;
     }
 
@@ -475,6 +538,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.DYNAMIC().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_N().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -485,6 +549,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.DYNAMIC().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_I().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -495,6 +560,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.FINAL().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -505,6 +571,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.FINAL().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableExpr(visitExpr(ctx.expr()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiableExpr().toString(),ctx.start.getLine());
         return vv;
     }
 
@@ -514,6 +581,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         varVariableEmp vv = new varVariableEmp();
         vv.setVarVaiableType(ctx.FINAL().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),"",ctx.start.getLine());
         return vv;
     }
 
@@ -524,6 +592,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.FINAL().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_N().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -534,6 +603,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.FINAL().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_I().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -544,6 +614,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.STRING().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_N().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -554,6 +625,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.STRING().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.INPUT_D_Q_I().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -567,6 +639,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.rule_(i) != null){
             vv.getVarVaiablerule().add((visitRule(ctx.rule_(i))));
         }}
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablerule().toString(),ctx.start.getLine());
         return vv;
     }
 
@@ -577,6 +650,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.INT().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -587,6 +661,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.INT().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableExpr(visitExpr(ctx.expr()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiableExpr().toString(),ctx.start.getLine());
         return vv;
     }
 
@@ -596,6 +671,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         varVariableEmp vv = new varVariableEmp();
         vv.setVarVaiableType(ctx.INT().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),"",ctx.start.getLine());
         return vv;
     }
 
@@ -606,6 +682,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.FLOAT().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM_FLOAT().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -616,6 +693,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.DOUBLE().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM_DOUBLE().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -626,6 +704,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         vv.setVarVaiableType(ctx.BOOLEAN().toString().trim());
         vv.setVarVaiableId(visitNamen(ctx.namen()));
         vv.setVarVaiableValue(ctx.NUM_BOOL().toString().trim());
+        createSymbolRow(vv.getVarVaiabletype(),vv.getVarVaiableid().toString(),vv.getVarVaiablevalue(),ctx.start.getLine());
         return vv;
     }
 
@@ -633,17 +712,21 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public Loop visitLoop(projectParser.LoopContext ctx) {
         System.out.println("visitLoop");
         Loop lo = new Loop();
-        if(ctx.for_INT_With_ID_ID() != null){
+        if(ctx.for_VAR_With_ID_ID() != null){
             lo.setForloop(visitFor_VAR_With_ID_ID(ctx.for_VAR_With_ID_ID()));
+            createSymbolRow("loop","forVarIDID",lo.getForloop().toString(),ctx.start.getLine());
         }
         if(ctx.for_INT_With_ID_ID() != null){
             lo.setForloop(visitFor_INT_With_ID_ID(ctx.for_INT_With_ID_ID()));
+            createSymbolRow("loop","forIntIDID",lo.getForloop().toString(),ctx.start.getLine());
         }
         if(ctx.for_VAR_With_ID_NUM() != null){
             lo.setForloop(visitFor_VAR_With_ID_NUM(ctx.for_VAR_With_ID_NUM()));
+            createSymbolRow("loop","forVarIDNUM",lo.getForloop().toString(),ctx.start.getLine());
         }
         if(ctx.for_INT_With_ID_NUM() != null){
             lo.setForloop(visitFor_INT_With_ID_NUM(ctx.for_INT_With_ID_NUM()));
+            createSymbolRow("loop","forIntIDNUM",lo.getForloop().toString(),ctx.start.getLine());
         }
         return  lo;
     }
@@ -665,6 +748,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.inputI(i) != null){
             fo.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
+        createSymbolRow(fo.getForf(),fo.getVarr(),fo.getInputs().toString(),ctx.start.getLine());
         return fo;
     }
 
@@ -685,6 +769,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.inputI(i) != null){
             fo.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
+        createSymbolRow(fo.getForf(),fo.getVarr(),fo.getInputs().toString(),ctx.start.getLine());
         return fo;
     }
 
@@ -705,6 +790,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.inputI(i) != null){
             fo.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
+        createSymbolRow(fo.getForf(),fo.getVarr(),fo.getInputs().toString(),ctx.start.getLine());
         return fo;
     }
 
@@ -725,6 +811,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.inputI(i) != null){
             fo.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
+        createSymbolRow(fo.getForf(),fo.getVarr(),fo.getInputs().toString(),ctx.start.getLine());
         return fo;
     }
 
@@ -734,12 +821,15 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         PrintStatement pr = new PrintStatement();
          if(ctx.print_ID() != null){
              pr.setPrindidnum(visitPrint_ID(ctx.print_ID()));
+             createSymbolRow("print","printID",pr.getPrindidnum().toString(),ctx.start.getLine());
          }
          if(ctx.print_NUM() != null){
              pr.setPrindidnum(visitPrint_NUM(ctx.print_NUM()));
+             createSymbolRow("print","printNUM",pr.getPrindidnum().toString(),ctx.start.getLine());
          }
          if(ctx.print_TEXT() != null){
              pr.setPrindText(visitPrint_TEXT(ctx.print_TEXT()));
+             createSymbolRow("print","printIEXT",pr.getPrindText().toString(),ctx.start.getLine());
          }
         return pr;
     }
@@ -750,6 +840,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         PrintIdNum pp = new PrintIdNum();
         pp.setPrin(ctx.PRINT().toString().trim());
         pp.setWorld(ctx.INPUT_D_Q_I().toString().trim());
+        createSymbolRow("printID",pp.getPrin(),pp.getWorld().toString(),ctx.start.getLine());
         return pp;
     }
 
@@ -759,6 +850,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         PrintIdNum pp = new PrintIdNum();
         pp.setPrin(ctx.PRINT().toString().trim());
         pp.setWorld(ctx.INPUT_D_Q_N().toString().trim());
+        createSymbolRow("printNUM",pp.getPrin(),pp.getWorld().toString(),ctx.start.getLine());
         return pp;
     }
 
@@ -772,6 +864,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                pp.getRules().add((visitRule(ctx.rule_(i))));
            }
         }
+        createSymbolRow("printTEXT",pp.getPrin(),pp.getRules().toString().toString(),ctx.start.getLine());
         return pp;
     }
 
@@ -781,9 +874,11 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Rule rr = new Rule();
         if(ctx.ID() != null){
             rr.setId(ctx.ID().toString().trim());
+            createSymbolRow("Rule","ID",rr.getId(),ctx.start.getLine());
         }
         if(ctx.NUM() != null){
             rr.setNum(ctx.NUM().toString().trim());
+            createSymbolRow("Rule","NUM",rr.getId(),ctx.start.getLine());
         }
         return rr;
     }
@@ -800,6 +895,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.else_WithInput() != null){
             ifif.setElsein(visitElse_WithInput(ctx.else_WithInput()));
         }
+        createSymbolRow("if",ifif.getElseifin().toString(),ifif.getElsein().toString(),ctx.start.getLine());
         return ifif ;
     }
 
@@ -814,6 +910,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
               }
           }
           ifin.setIfatr(visitIfif(ctx.ifif()));
+        createSymbolRow("if",ifin.getIfif(),ifin.getIfatr().toString(),ctx.start.getLine());
           return ifin;
     }
 
@@ -828,6 +925,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
              }
          }
          whilstat.setIfif(visitIfif(ctx.ifif()));
+        createSymbolRow(whilstat.getWhilee(),whilstat.getCond().toString(),whilstat.getIfif().toString(),ctx.start.getLine());
         return whilstat;
     }
 
@@ -837,9 +935,11 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         SwitchStatement swstat = new SwitchStatement();
         if(ctx.switch_With_ID() != null){
             swstat.setSwitchid(visitSwitch_With_ID(ctx.switch_With_ID()));
+            createSymbolRow("switch",swstat.getSwitchid().toString(),"",ctx.start.getLine());
         }
         else if(ctx.switch_With_NUM() != null){
             swstat.setSwitchnum(visitSwitch_With_NUM(ctx.switch_With_NUM()));
+            createSymbolRow("switch",swstat.getSwitchnum().toString(),"",ctx.start.getLine());
         }
         return swstat;
     }
@@ -855,6 +955,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             switid.getCasestat().add((visitCasestatement(ctx.casestatement(i))));
         }}
         switid.setDef(visitDefaultstatement(ctx.defaultstatement()));
+        createSymbolRow(switid.getSwitchh(),switid.getId(),switid.getDef().toString(),ctx.start.getLine());
         return switid;
     }
 
@@ -869,6 +970,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             switnum.getCasestat().add((visitCasestatement(ctx.casestatement(i))));
         }}
         switnum.setDef(visitDefaultstatement(ctx.defaultstatement()));
+        createSymbolRow(switnum.getSwitchh(),switnum.getNumm(),switnum.getDef().toString(),ctx.start.getLine());
         return switnum;
     }
 
@@ -878,9 +980,11 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         CaseStatement casestat = new CaseStatement();
         if(ctx.case_With_ID() != null){
             casestat.setCaseid(visitCase_With_ID(ctx.case_With_ID()));
+            createSymbolRow("case",casestat.getCaseid().toString(),"",ctx.start.getLine());
         }
         if(ctx.case_With_NUM() != null){
             casestat.setCasenum(visitCase_With_NUM(ctx.case_With_NUM()));
+            createSymbolRow("case",casestat.getCasenum().toString(),"",ctx.start.getLine());
         }
         return casestat;
     }
@@ -896,6 +1000,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             caseid.getInp().add((visitInputI(ctx.inputI(i))));
         }}
         caseid.setBreakk(ctx.BREAK().toString().trim());
+        createSymbolRow(caseid.getCasee(),caseid.getInputt(),caseid.getInp().toString(),ctx.start.getLine());
         return caseid;
     }
 
@@ -910,6 +1015,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             casenum.getInp().add((visitInputI(ctx.inputI(i))));
         }}
         casenum.setBeakk(ctx.BREAK().toString().trim());
+        createSymbolRow(casenum.getCass(),casenum.getNumm(),casenum.getInp().toString(),ctx.start.getLine());
         return casenum;
     }
 
@@ -923,6 +1029,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
            def.getInp().add((visitInputI(ctx.inputI(i))));
        }}
        def.setBreakk(ctx.BREAK().toString().trim());
+        createSymbolRow(def.getDef(),def.getInp().toString(),def.getBreakk(),ctx.start.getLine());
        return def;
     }
 
@@ -940,9 +1047,10 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.inputI() != null){
           for(int i=0;i<ctx.inputI().size();i++){
               if(ctx.inputI(i) != null){
-             trystat.getInp().add((visitInputI(ctx.inputI(i))));
+             trystat.getInp2().add((visitInputI(ctx.inputI(i))));
           }}
         }
+        createSymbolRow(trystat.getTryy(),trystat.getInp().toString(),trystat.getInp2().toString(),ctx.start.getLine());
         return  trystat;
     }
 
@@ -953,9 +1061,11 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
 
         if (ctx.TRUE() != null) {
             boolean_p.setTRUE(ctx.TRUE().toString().trim());
+            createSymbolRow("boolean","true",boolean_p.getTRUE(),ctx.start.getLine());
         }
         else if (ctx.FALSE() != null) {
             boolean_p.setFALSE(ctx.FALSE().toString().trim());
+            createSymbolRow("boolean","false",boolean_p.getFALSE(),ctx.start.getLine());
         }
         return boolean_p;
     }
@@ -967,9 +1077,11 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         NumbersIF  numbers=new NumbersIF();
         if(ctx.float_f()!=null) {
             numbers.setFf(visitFloat_f(ctx.float_f()));
+            createSymbolRow("Number","float",numbers.getFf().toString(),ctx.start.getLine());
         }
         else if(ctx.int_i()!=null) {
             numbers.setIi(visitInt_i(ctx.int_i()));
+            createSymbolRow("Number","int",numbers.getInt().toString(),ctx.start.getLine());
         }
         return numbers;
     }
@@ -979,6 +1091,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitVar");
         Var vv = new Var();
         vv.setVARNAME(ctx.ID().toString().trim());
+        createSymbolRow("var",vv.getVARNAME(),"",ctx.start.getLine());
         return vv;
     }
 
@@ -989,18 +1102,23 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Expression  expression=new Expression();
         if (ctx.numbers() != null) {
             expression.setNumbers(visitNumbers(ctx.numbers()));
+            createSymbolRow("Expression","number",expression.getNumbers().toString(),ctx.start.getLine());
         }
         else if (ctx.boolean_p() != null) {
             expression.setBoolean_p(visitBoolean_p(ctx.boolean_p()));
+            createSymbolRow("Expression","boolean",expression.getBoolean_p().toString(),ctx.start.getLine());
         }
         else if (ctx.var() != null) {
             expression.setVar(visitVar(ctx.var()));
+            createSymbolRow("Expression","var",expression.getVar().toString(),ctx.start.getLine());
         }
         else if (ctx.expression() != null) {
             expression.setExpression(visitExpression(ctx.expression()));
+            createSymbolRow("Expression","expr",expression.getExpression().toString(),ctx.start.getLine());
         }
         else if(ctx.math() != null){
             expression.setMath(visitMath(ctx.math()));
+            createSymbolRow("Expression","math",expression.getMath().toString(),ctx.start.getLine());
         }
         return expression;
 
@@ -1093,10 +1211,13 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Conditions  conditions=new Conditions();
         if(ctx.boolExpresion()!=null) {
             conditions.setBoolExpresion(visitBoolExpresion(ctx.boolExpresion()));
+            createSymbolRow("conditions","Expression",conditions.getBoolExpresion().toString(),ctx.start.getLine());
         }
         else if(ctx.logic()!=null) {
             conditions.setLogic(visitLogic(ctx.logic()));
+            createSymbolRow("conditions","logic",conditions.getLogic().toString(),ctx.start.getLine());
         }
+
         return conditions;
     }
 
@@ -1132,6 +1253,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
              }
          }
          dostat.setWhileStatement(visitWhilestatemen(ctx.whilestatemen()));
+        createSymbolRow(dostat.getDoo(),dostat.getInn().toString(),dostat.getWhileStatement().toString(),ctx.start.getLine());
         return dostat;
     }
 
@@ -1167,6 +1289,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         mm.setNum1(ctx.getChild(0).toString().trim());
         mm.setM(ctx.MULTI().toString().trim());
         mm.setNum2(ctx.getChild(2).toString().trim());
+        createSymbolRow(mm.getNum1(),mm.getM(),mm.getNum2(),ctx.start.getLine());
         return mm;
     }
 
@@ -1177,6 +1300,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         mm.setNum1(ctx.getChild(0).toString().trim());
         mm.setM(ctx.PLUS().toString().trim());
         mm.setNum2(ctx.getChild(2).toString().trim());
+        createSymbolRow(mm.getNum1(),mm.getM(),mm.getNum2(),ctx.start.getLine());
         return mm;
     }
 
@@ -1187,6 +1311,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         mm.setNum1(ctx.getChild(0).toString().trim());
         mm.setM(ctx.MINUS().toString().trim());
         mm.setNum2(ctx.getChild(2).toString().trim());
+        createSymbolRow(mm.getNum1(),mm.getM(),mm.getNum2(),ctx.start.getLine());
         return mm;
     }
 
@@ -1197,6 +1322,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         mm.setNum1(ctx.getChild(0).toString().trim());
         mm.setM(ctx.DIVIDE().toString().trim());
         mm.setNum2(ctx.getChild(2).toString().trim());
+        createSymbolRow(mm.getNum1(),mm.getM(),mm.getNum2(),ctx.start.getLine());
         return mm;
     }
 
@@ -1266,6 +1392,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
               voidd.getInp().add((visitInputI(ctx.inputI(i))));
             }
         }
+        createSymbolRow(voidd.getViodd(),voidd.getNamee().toString(),voidd.getInp().toString(),ctx.start.getLine());
         return voidd;    }
 
     @Override
@@ -1280,6 +1407,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
            }
        }
        fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
        return fun ;
     }
 
@@ -1295,6 +1423,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
         return fun ;
     }
 
@@ -1310,6 +1439,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
            }
         }
         fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
         return fun ;
     }
 
@@ -1325,6 +1455,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
            }
         }
         fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
         return fun ;
     }
 
@@ -1342,6 +1473,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             if(ctx.inputI(i) != null){
             voidd.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
+        createSymbolRow(voidd.getVoidd(),voidd.getNamee().toString(),voidd.getInputs().toString(),ctx.start.getLine());
         return voidd;
     }
 
@@ -1360,6 +1492,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             fun.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
         fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
         return fun ;
     }
 
@@ -1378,6 +1511,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             fun.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
         fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
         return fun ;
     }
 
@@ -1396,6 +1530,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             fun.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
         fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
         return fun ;
     }
 
@@ -1414,6 +1549,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             fun.getInputs().add((visitInputI(ctx.inputI(i))));
         }}
         fun.setReturnStatement(visitReturnStatement(ctx.returnStatement()));
+        createSymbolRow(fun.getType(),fun.getName().toString(),fun.getInputs().toString(),ctx.start.getLine());
         return fun ;     }
 
     @Override
@@ -1505,6 +1641,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
 //             clas.getInputclasses().add(visitInputclass(ctx.inputclass().get(i)));
             }
         }
+        createSymbolRow(clas.getClas(),clas.getId().toString(),clas.getInputclasses().toString(),ctx.start.getLine());
         return clas;
     }
 
@@ -1515,6 +1652,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
          abclas.setAbstr(ctx.ABSTRACT().toString().trim());
         abclas.setClas(ctx.CLASS().toString().trim());
          abclas.setId(visitNamen(ctx.namen()));
+        createSymbolRow(abclas.getAbstr(),abclas.getClas(),abclas.getId().toString(),ctx.start.getLine());
         return abclas;
     }
 
