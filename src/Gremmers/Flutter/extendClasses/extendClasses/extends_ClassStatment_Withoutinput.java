@@ -10,6 +10,23 @@ public class extends_ClassStatment_Withoutinput extends AST {
     private NameN ID ;
     private String EXTENDS;
     private String ID_ID;
+    private int numline;
+    private int ChildrenCount ;
+
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public String getCLASS() {
         return CLASS;
@@ -50,6 +67,8 @@ public class extends_ClassStatment_Withoutinput extends AST {
                 ", ID='" + ID + '\'' +
                 ", extends " + EXTENDS + '\'' +
                 ", ID_ID='" + ID_ID + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

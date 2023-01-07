@@ -14,7 +14,23 @@ public class padding_sym_vertical_num_numFloat extends AST {
     private String NUM;
     private String CHILD;
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>() ;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public void setPADDING( String PADDING ){
         this.PADDING=PADDING;
     }
@@ -64,6 +80,8 @@ public class padding_sym_vertical_num_numFloat extends AST {
                 ", NUM='" + NUM + '\'' +
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

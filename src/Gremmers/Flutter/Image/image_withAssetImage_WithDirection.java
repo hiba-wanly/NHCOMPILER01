@@ -13,7 +13,23 @@ public class image_withAssetImage_WithDirection extends AST {
     private String ASSETSIMAGE;
     private String IMAGE_INPUT_ASSET;
     private List<imageDirection> attr_imageDirection = new ArrayList<imageDirection>();
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getIMAGE() {
         return IMAGE;
     }
@@ -62,6 +78,8 @@ public class image_withAssetImage_WithDirection extends AST {
                 ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +
                 ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
                 ", attr_imageDirection=" + attr_imageDirection +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

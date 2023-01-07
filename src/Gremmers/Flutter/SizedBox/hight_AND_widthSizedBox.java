@@ -5,10 +5,25 @@ import Gremmers.AST;
 public class hight_AND_widthSizedBox extends AST {
 
     private String SIZEDBOX;
-
     private String type;
     private String NUM_FLOAT;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getSIZEDBOX() {
         return SIZEDBOX;
     }
@@ -39,6 +54,8 @@ public class hight_AND_widthSizedBox extends AST {
                 "SIZEDBOX='" + SIZEDBOX + '\'' +
                 ", type ='" + type + '\'' +
                 ", NUM_FLOAT='" + NUM_FLOAT + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

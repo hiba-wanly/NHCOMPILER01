@@ -8,7 +8,23 @@ public class imageHightWidth_Reverse_DN extends AST {
     private String WIDTH;
     private String NUM_HIGHT;
     private String NUM_WIDTH;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getHIGHT() {
         return HIGHT;
     }
@@ -48,6 +64,8 @@ public class imageHightWidth_Reverse_DN extends AST {
                 ", WIDTH='" + WIDTH + '\'' +
                 ", NUM_HIGHT='" + NUM_HIGHT + '\'' +
                 ", NUM_WIDTH='" + NUM_WIDTH + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

@@ -24,6 +24,23 @@ public class extends_ClassStateFull_AND_Less_withinput_appBar extends AST {
     private List<input_AppBar> attr_input_AppBar = new ArrayList<input_AppBar>();
     private String BODY;
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
+    private int numline;
+    private int ChildrenCount ;
+
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public String getCLASS() {
         return CLASS;
@@ -154,6 +171,8 @@ public class extends_ClassStateFull_AND_Less_withinput_appBar extends AST {
                 ", attr_input_AppBar=" + attr_input_AppBar +
                 ", BODY='" + BODY + '\'' +
                 ", flutterWidget=" + flutterWidget +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

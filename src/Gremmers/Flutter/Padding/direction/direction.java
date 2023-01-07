@@ -8,7 +8,23 @@ public class direction extends AST {
     private  Directions_direction_FLOAT_D directions_direction_FLOAT_D;
     private  Directions_direction_NUM directions_direction_NUM;
     private  Directions_direction_NUM_D directions_direction_NUM_D;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public Directions_direction_FLOAT getDirections_direction_FLOAT() {
         return directions_direction_FLOAT;
     }
@@ -45,19 +61,19 @@ public class direction extends AST {
     public String toString() {
         if(this.directions_direction_FLOAT!=null)
             return "direction{" +
-                    "directions_direction_FLOAT=" + directions_direction_FLOAT +
+                    "directions_direction_FLOAT=" + directions_direction_FLOAT + "Line number " + numline+ "children count = " + ChildrenCount+
                     "} \n";
         if(this.directions_direction_NUM!=null)
             return "direction{" +
-                    ", directions_direction_NUM=" + directions_direction_NUM +
+                    ", directions_direction_NUM=" + directions_direction_NUM +"Line number " + numline+ "children count = " + ChildrenCount+
                     "} \n";
         if(this.directions_direction_FLOAT_D!=null)
             return "direction{" +
-                    ", directions_direction_FLOAT_D=" + directions_direction_FLOAT_D+
+                    ", directions_direction_FLOAT_D=" + directions_direction_FLOAT_D+ "Line number " + numline+ "children count = " + ChildrenCount+
                     "} \n";
         return "direction{" +
 
-                ", directions_direction_NUM_D=" + directions_direction_NUM_D +
+                ", directions_direction_NUM_D=" + directions_direction_NUM_D + "Line number " + numline+ "children count = " + ChildrenCount+
                 "} \n";
     }
 }

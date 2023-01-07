@@ -12,7 +12,23 @@ public class textButton extends AST {
     private String CHILD ;
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
     private String ONPRESSED;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getTEXTBUTTON() {
         return TEXTBUTTON;
     }
@@ -52,6 +68,8 @@ public class textButton extends AST {
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
                 ", ONPRESSED='" + ONPRESSED + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

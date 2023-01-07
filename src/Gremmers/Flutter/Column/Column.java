@@ -12,8 +12,25 @@ public class Column extends AST {
     private String CHILDREN;
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
 
+    private int numline;
+    private int ChildrenCount ;
 
-    public void setCOLUMN( String COLUMN ){
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
+
+    public void setCOLUMN(String COLUMN ){
         this.COLUMN=COLUMN;
     }
 
@@ -44,6 +61,8 @@ public class Column extends AST {
                 "COLUMN='" + COLUMN + '\'' +
                 ", CHILDREN='" + CHILDREN + '\'' +
                 ", flutterWidget=" + flutterWidget +
+                "Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

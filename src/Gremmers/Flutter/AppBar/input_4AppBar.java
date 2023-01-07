@@ -10,6 +10,23 @@ public class input_4AppBar extends AST {
     private Color color;
     private String TITLE;
     private TextClasses textClasses;
+    private int numline;
+    private int ChildrenCount ;
+
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public String getBACHCOLOR() {
         return BACHCOLOR;
@@ -59,6 +76,8 @@ public class input_4AppBar extends AST {
                 ", color=" + color +
                 ", TITLE='" + TITLE + '\'' +
                 ", textClasses=" + textClasses +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

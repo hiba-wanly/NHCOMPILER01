@@ -6,7 +6,23 @@ public class Directions_direction_FLOAT extends AST {
 
     private String NUM_FLOAT;
     private String type;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getNUM_FLOAT() {
         return NUM_FLOAT;
     }
@@ -28,6 +44,8 @@ public class Directions_direction_FLOAT extends AST {
         return "Directions_direction_FLOAT{" +
                 "NUM_FLOAT='" + NUM_FLOAT + '\'' +
                 ", type ='" + type + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

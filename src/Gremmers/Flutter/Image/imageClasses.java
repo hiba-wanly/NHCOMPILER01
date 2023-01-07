@@ -4,11 +4,27 @@ import Gremmers.AST;
 
 public class imageClasses extends AST {
 
-    public image_withAsset_Network_File attr_image_withAsset_Network_File;
-    public image_withAssetImage attr_image_withAssetImage;
-    public image_withAssetImage_WithDirection attr_image_withAssetImage_WithDirection;
-    public image_withAssetImage_WithDirection_fit attr_image_withAssetImage_WithDirection_fit;
+    private image_withAsset_Network_File attr_image_withAsset_Network_File;
+    private image_withAssetImage attr_image_withAssetImage;
+    private image_withAssetImage_WithDirection attr_image_withAssetImage_WithDirection;
+    private image_withAssetImage_WithDirection_fit attr_image_withAssetImage_WithDirection_fit;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public void setimage_withAsset_Network_File( image_withAsset_Network_File attr_image_withAsset_Network_File ){
         this.attr_image_withAsset_Network_File = attr_image_withAsset_Network_File;
@@ -45,16 +61,16 @@ public class imageClasses extends AST {
     public String toString() {
         if(this.attr_image_withAssetImage != null){
             return "imageClasses{" +
-            " attr_image_withAssetImage=" + attr_image_withAssetImage + "}\n";
+            " attr_image_withAssetImage=" + attr_image_withAssetImage +"Line number " + numline+"children count = " + ChildrenCount+ "}\n";
         }
         if(this.attr_image_withAsset_Network_File != null){
-            return "imageClasses{" + "attr_image_withAsset_Network_File=" + attr_image_withAsset_Network_File + "}\n";
+            return "imageClasses{" + "attr_image_withAsset_Network_File=" + attr_image_withAsset_Network_File +"Line number " + numline+"children count = " + ChildrenCount+ "}\n";
         }
         if(this.attr_image_withAssetImage_WithDirection != null){
-            return "imageClasses{" + " attr_image_withAssetImage_WithDirection=" + attr_image_withAssetImage_WithDirection + "}\n";
+            return "imageClasses{" + " attr_image_withAssetImage_WithDirection=" + attr_image_withAssetImage_WithDirection +"Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
         }
         return "imageClasses{" +
-                " attr_image_withAssetImage_WithDirection_fit=" + attr_image_withAssetImage_WithDirection_fit +
+                " attr_image_withAssetImage_WithDirection_fit=" + attr_image_withAssetImage_WithDirection_fit + "Line number " + numline+ "children count = " + ChildrenCount+
                 "} \n";
     }
 }

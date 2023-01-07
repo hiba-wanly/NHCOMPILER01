@@ -9,7 +9,23 @@ public class paddingClasses extends AST {
     private padding_sym_horisantal_num_numFloat attr_padding_sym_horisantal_num_numFloat;
     private padding_sym_vertical_num_numFloat attr_padding_sym_vertical_num_numFloat;
 
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public void setpadding_all( padding_all attr_padding_all){
         this.attr_padding_all=attr_padding_all;
     }
@@ -46,18 +62,18 @@ public class paddingClasses extends AST {
     public String toString() {
         if(this.attr_padding_all != null){
             return "paddingClasses{" +
-                    "attr_padding_all=" + attr_padding_all + "}\n";
+                    "attr_padding_all=" + attr_padding_all + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
         }
         if(this.attr_padding_only != null){
             return "paddingClasses{" +
-                    " attr_padding_only=" + attr_padding_only +"}\n";
+                    " attr_padding_only=" + attr_padding_only + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
         }
         if(this.attr_padding_sym_horisantal_num_numFloat != null){
             return "paddingClasses{" +
-                    " attr_padding_sym_horisantal_num_numFloat=" + attr_padding_sym_horisantal_num_numFloat +  "}\n";
+                    " attr_padding_sym_horisantal_num_numFloat=" + attr_padding_sym_horisantal_num_numFloat + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
         }
         return "paddingClasses{" +
-                "attr_padding_sym_vertical_num_numFloat=" + attr_padding_sym_vertical_num_numFloat +
+                "attr_padding_sym_vertical_num_numFloat=" + attr_padding_sym_vertical_num_numFloat + "Line number " + numline+ "children count = " + ChildrenCount+
                 "} \n";
     }
 }

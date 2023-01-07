@@ -8,8 +8,25 @@ public class widthHight_SizedBox extends AST {
     private String WIDTH;
     private String NUM_FLOAT_WIDTH;
     private String HIGHT;
-    public  String NUM_FLOAT_HIGHT;
+    private String NUM_FLOAT_HIGHT;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public void setSIZEDBOX(String SIZEDBOX) {
         this.SIZEDBOX = SIZEDBOX;
     }
@@ -58,6 +75,8 @@ public class widthHight_SizedBox extends AST {
                 ", NUM_FLOAT_WIDTH='" + NUM_FLOAT_WIDTH + '\'' +
                 ", HIGHT='" + HIGHT + '\'' +
                 ", NUM_FLOAT_HIGHT='" + NUM_FLOAT_HIGHT + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

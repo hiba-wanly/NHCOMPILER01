@@ -23,6 +23,23 @@ public class FlutterWidget extends AST {
     private textButton attr_textButton;
     private imageClasses attr_imageClasses ;
     private paddingClasses attr_paddingClasses ;
+    private int numline;
+    private int ChildrenCount ;
+
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public void setContainer(Container attr_Container){
         this.attr_Container=attr_Container;
@@ -90,28 +107,28 @@ public class FlutterWidget extends AST {
     @Override
     public String toString() {
         if(this.attr_imageClasses != null){
-            return "FlutterWidget{" + "attr_imageClasses=" + attr_imageClasses + "}\n";
+            return "FlutterWidget{" + "attr_imageClasses=" + attr_imageClasses + "Line number " + numline+ "children count = " + ChildrenCount+"}\n";
         }
         if(this.attr_paddingClasses != null){
-            return "FlutterWidget{" +" attr_paddingClasses=" + attr_paddingClasses + "}\n";
+            return "FlutterWidget{" +" attr_paddingClasses=" + attr_paddingClasses + "Line number " + numline+"children count = " + ChildrenCount+ "}\n";
         }
         if(this.attr_textButton != null){
-            return "FlutterWidget{" + " attr_textButton=" + attr_textButton + "}\n";
+            return "FlutterWidget{" + " attr_textButton=" + attr_textButton + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
         }
         if(this.attr_TextClasses != null){
-            return "FlutterWidget{" + " attr_TextClasses=" + attr_TextClasses + "}\n";
+            return "FlutterWidget{" + " attr_TextClasses=" + attr_TextClasses + "Line number " + numline+ "children count = " + ChildrenCount+"}\n";
         }
         if(this.attr_Column != null){
-            return "FlutterWidget{" + "attr_Column=" + attr_Column + "}\n";
+            return "FlutterWidget{" + "attr_Column=" + attr_Column + "Line number " + numline+"children count = " + ChildrenCount+ "}\n";
         }
         if(this.attr_Row != null){
-            return "FlutterWidget{" + " attr_Row=" + attr_Row + "} \n";
+            return "FlutterWidget{" + " attr_Row=" + attr_Row + "Line number " + numline+"children count = " + ChildrenCount+ "} \n";
         }
         if(this.attr_Container != null){
-            return "FlutterWidget{" +  "attr_Container=" + attr_Container +"} \n";
+            return "FlutterWidget{" +  "attr_Container=" + attr_Container + "Line number " + numline+ "children count = " + ChildrenCount+"} \n";
         }
         return "FlutterWidget{" +
-                "attr_SizedBoxClasses=" + attr_SizedBoxClasses +
+                "attr_SizedBoxClasses=" + attr_SizedBoxClasses + "Line number " + numline+ "children count = " + ChildrenCount +
                 "} \n";
     }
 }

@@ -11,7 +11,23 @@ public class Row extends AST {
     private String ROW;
     private String CHILDREN;
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getROW() {
         return ROW;
     }
@@ -42,6 +58,8 @@ public class Row extends AST {
                 "ROW='" + ROW + '\'' +
                 ", CHILDREN='" + CHILDREN + '\'' +
                 ", flutterWidget=" + flutterWidget +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

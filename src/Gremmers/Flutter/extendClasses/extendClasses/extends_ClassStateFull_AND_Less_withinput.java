@@ -22,6 +22,23 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
     private String BODY;
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
     private List<InputClasses> inputClasses = new ArrayList<InputClasses>();
+    private int numline;
+    private int ChildrenCount ;
+
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public String getCLASS() {
         return CLASS;
@@ -125,6 +142,8 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
                 ", BODY='" + BODY + '\'' +
                 ", flutterWidget=" + flutterWidget +
                 ", inputClasses=" + inputClasses +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

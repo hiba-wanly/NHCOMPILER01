@@ -8,6 +8,23 @@ public class input_AppBar extends AST {
     private input_2AppBar attr_input_2AppBar;
     private input_3AppBar attr_input_3AppBar;
     private input_4AppBar attr_input_4AppBar;
+    private int numline;
+    private int ChildrenCount ;
+
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public input_1AppBar getinput_1AppBar() {
         return attr_input_1AppBar;
@@ -45,16 +62,17 @@ public class input_AppBar extends AST {
     public String toString() {
         if(this.attr_input_1AppBar!=null)
             return "input_AppBar{" +
-                    "attr_input_1AppBar=" + attr_input_1AppBar + "} \n";
+                    "attr_input_1AppBar=" + attr_input_1AppBar + "Line number " + numline+ "children count = " + ChildrenCount + "} \n";
         if(this.attr_input_2AppBar!=null)
             return "input_AppBar{" +
-                    ", attr_input_2AppBar=" + attr_input_2AppBar + "} \n";
+                    ", attr_input_2AppBar=" + attr_input_2AppBar + "Line number " + numline+"children count = " + ChildrenCount +"} \n";
 
        if(this.attr_input_3AppBar!=null)
            return "input_AppBar{" +
-                   ", attr_input_3AppBar=" + attr_input_3AppBar + "} \n";
+                   ", attr_input_3AppBar=" + attr_input_3AppBar + "Line number " + numline+"children count = " + ChildrenCount+ "} \n";
         return "input_AppBar{" +
                 ", attr_input_4AppBar=" + attr_input_4AppBar +
+                "Line number " + numline+ "children count = " + ChildrenCount+
                 "} \n";
     }
 }

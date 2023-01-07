@@ -6,6 +6,23 @@ public class imageDirection extends AST {
      private imageHight_AND_Width_DF attr_imageHight_AND_Width_DF;
      private imageHightWidth_Reverse_DF attr_imageHightWidth_Reverse_DF;
      private imageHightWidth_Reverse_DN attr_imageHightWidth_Reverse_DN;
+    private int numline;
+    private int ChildrenCount ;
+
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
 
     public imageHight_AND_Width_DF getimageHight_AND_Width_DF() {
         return attr_imageHight_AND_Width_DF;
@@ -35,14 +52,14 @@ public class imageDirection extends AST {
     public String toString() {
         if(this.attr_imageHight_AND_Width_DF != null){
             return "imageDirection{" +
-                    "attr_imageHight_AND_Width_DF=" + attr_imageHight_AND_Width_DF +"}\n";
+                    "attr_imageHight_AND_Width_DF=" + attr_imageHight_AND_Width_DF + "Line number " + numline+"children count = " + ChildrenCount+"}\n";
         }
         if(this.attr_imageHightWidth_Reverse_DN != null){
             return "imageDirection{" +
-                    " attr_imageHightWidth_Reverse_DN=" + attr_imageHightWidth_Reverse_DN + "}\n";
+                    " attr_imageHightWidth_Reverse_DN=" + attr_imageHightWidth_Reverse_DN +"Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
         }
         return "imageDirection{" +
-                "attr_imageHightWidth_Reverse_DN=" + attr_imageHightWidth_Reverse_DF +
+                "attr_imageHightWidth_Reverse_DN=" + attr_imageHightWidth_Reverse_DF +"Line number " + numline+ "children count = " + ChildrenCount+
                 "} \n";
     }
 }

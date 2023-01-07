@@ -1771,6 +1771,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
         ee.setID_ID(ctx.ID().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
+
         for (int i=0 ; i< ctx.inputclass().size() ; i++ ){
             if(ctx.inputclass(i) != null){
                 ee.getInputclasses().add((visitInputclass(ctx.inputclass(i))));
@@ -1789,6 +1792,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
         ee.setID_ID(ctx.ID().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
+
 
         createSymbolRow(" Class Extends without input ",ee.getID().toString() , ee.getID_ID().toString(),ctx.start.getLine());
 
@@ -1808,6 +1814,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setRETURN(ctx.RETURN().toString().trim());
         ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
         ee.setBODY(ctx.BODY().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
+
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
                 ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
@@ -1832,13 +1841,15 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setRETURN(ctx.RETURN().toString().trim());
         ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
         ee.setBODY(ctx.BODY().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
+
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
                 ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
         createSymbolRow(" Class Extends  ",ee.getType().toString() , ee.getFlutterWidget().toString(),ctx.start.getLine());
-
         return ee;
     }
 
@@ -1857,6 +1868,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setAPPBAR(ctx.APPBAR().toString().trim());
         ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
         ee.setBODY(ctx.BODY().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
 
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
@@ -1890,6 +1903,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setAPPBAR(ctx.APPBAR().toString().trim());
         ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
         ee.setBODY(ctx.BODY().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
 
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
@@ -1920,6 +1935,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setRETURN(ctx.RETURN().toString().trim());
         ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
         ee.setBODY(ctx.BODY().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
 
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
@@ -1950,6 +1967,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setRETURN(ctx.RETURN().toString().trim());
         ee.setSCAFFOLD(ctx.SCAFFOLD().toString().trim());
         ee.setBODY(ctx.BODY().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
+
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
                 ee.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
@@ -1982,6 +2002,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setBODY(ctx.BODY().toString().trim());
         ee.setAPPBAR(ctx.APPBAR().toString().trim());
         ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
 
         for (int i =0 ; i< ctx.input_AppBar().size() ; i++){
             if(ctx.input_AppBar(i) != null){
@@ -2019,6 +2041,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setBODY(ctx.BODY().toString().trim());
         ee.setAPPBAR(ctx.APPBAR().toString().trim());
         ee.setAPPBAR_CHILD(ctx.APPBAR_CHILD().toString().trim());
+        ee.setNumline(ctx.start.getLine());
+        ee.setChildrenCount(ctx.getChildCount());
 
         for (int i =0 ; i< ctx.input_AppBar().size() ; i++){
             if(ctx.input_AppBar(i) != null){
@@ -2033,7 +2057,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
 
         for (int i =0 ; i< ctx.inputclass().size() ; i++){
             if(ctx.inputclass(i) != null){
-                ee. getInputClasses().add((visitInputclass(ctx.inputclass(i))));
+                ee.getInputClasses().add((visitInputclass(ctx.inputclass(i))));
             }
         }
         createSymbolRow(" Class Extends with input AppBar ",ee.getType().toString() , ee.getFlutterWidget().toString(),ctx.start.getLine());
@@ -2047,21 +2071,29 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input_AppBar input = new input_AppBar();
         if(ctx.input_1AppBar() != null ){
             input.setinput_1AppBar(visitInput_1AppBar(ctx.input_1AppBar()));
+            input.setNumline(ctx.start.getLine());
+            input.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget ->  "," inputAppBar " , "input_1AppBar",ctx.start.getLine());
 
         }
         if(ctx.input_2AppBar() != null ){
             input.setinput_2AppBar(visitInput_2AppBar(ctx.input_2AppBar()));
+            input.setNumline(ctx.start.getLine());
+            input.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget ->  "," inputAppBar " , "input_2AppBar",ctx.start.getLine());
 
         }
         if(ctx.input_3AppBar() != null ){
             input.setinput_3AppBar(visitInput_3AppBar(ctx.input_3AppBar()));
+            input.setNumline(ctx.start.getLine());
+            input.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget ->  "," inputAppBar " , "input_3AppBar",ctx.start.getLine());
 
         }
         if(ctx.input_4AppBar() != null ){
             input.setinput_4AppBar(visitInput_4AppBar(ctx.input_4AppBar()));
+            input.setNumline(ctx.start.getLine());
+            input.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget ->  "," inputAppBar " , "input_4AppBar",ctx.start.getLine());
 
         }
@@ -2074,12 +2106,16 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Color color = new Color();
         if(ctx.color_red() != null){
             color.setAttr_color_red_green(visitColor_red(ctx.color_red()));
+            color.setNumline(ctx.start.getLine());
+            color.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Colors ","Color type " , "red",ctx.start.getLine());
 
         }
 
         if(ctx.color_green() != null){
             color.setAttr_color_red_green(visitColor_green(ctx.color_green()));
+            color.setNumline(ctx.start.getLine());
+            color.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Colors ","Color type " , "green",ctx.start.getLine());
 
         }
@@ -2093,6 +2129,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Row row = new Row();
         row.setROW(ctx.ROW().toString().trim());
         row.setCHILDREN(ctx.CHILDREN().toString().trim());
+        row.setNumline(ctx.start.getLine());
+        row.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
                 row.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
@@ -2110,6 +2148,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Column c = new Column();
         c.setCOLUMN(ctx.COLUMN().toString().trim());
         c.setCHILDREN(ctx.CHILDREN().toString().trim());
+        c.setNumline(ctx.start.getLine());
+        c.setChildrenCount(ctx.getChildCount());
 
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
@@ -2129,16 +2169,22 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         TextClasses t = new TextClasses();
         if(ctx.text_INPUT_D_Q_I() != null ){
             t.settext_INPUT_D_Q_I(visitText_INPUT_D_Q_I(ctx.text_INPUT_D_Q_I()));
+            t.setNumline(ctx.start.getLine());
+            t.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget -> Text"," INPUT_D_Q_I","text_INPUT_D_Q_I",ctx.start.getLine());
 
         }
         if(ctx.text_INPUT_D_Q_N() != null){
             t.settext_INPUT_D_Q_N(visitText_INPUT_D_Q_N(ctx.text_INPUT_D_Q_N()));
+            t.setNumline(ctx.start.getLine());
+            t.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget -> Text"," INPUT_D_Q_N","text_INPUT_D_Q_N",ctx.start.getLine());
 
         }
         if(ctx.text_rule() != null){
             t.settext_rule(visitText_rule(ctx.text_rule()));
+            t.setNumline(ctx.start.getLine());
+            t.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget -> Text"," rule "," text_rule ",ctx.start.getLine());
 
         }
@@ -2151,6 +2197,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         text_INPUT_D_Q_N textInputDQN = new  text_INPUT_D_Q_N();
         textInputDQN.setTEXT(ctx.TEXT().toString().trim());
         textInputDQN.setINPUT_D_Q_N(ctx.INPUT_D_Q_N().toString().trim());
+        textInputDQN.setNumline(ctx.start.getLine());
+        textInputDQN.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(textInputDQN.getTEXT().toString(),"text",textInputDQN.getINPUT_D_Q_N().toString(),ctx.start.getLine());
 
@@ -2164,6 +2212,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         text_INPUT_D_Q_I textInputDQN = new  text_INPUT_D_Q_I();
         textInputDQN.setTEXT(ctx.TEXT().toString().trim());
         textInputDQN.setINPUT_D_Q_I(ctx.INPUT_D_Q_I().toString().trim());
+        textInputDQN.setNumline(ctx.start.getLine());
+        textInputDQN.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(textInputDQN.getTEXT().toString(),"text",textInputDQN.getINPUT_D_Q_I().toString(),ctx.start.getLine());
 
@@ -2180,6 +2230,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 textRule.getRules().add((visitRule(ctx.rule_(i))));
             }
         }
+        textRule.setNumline(ctx.start.getLine());
+        textRule.setChildrenCount(ctx.getChildCount());
         createSymbolRow(textRule.getTEXT().toString(),"text",textRule.getRules().toString(),ctx.start.getLine());
 
         return textRule;
@@ -2192,21 +2244,29 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
 
         if(ctx.hight_SizedBox() != null){
             sized.sethight_AND_widthSizedBox(visitHight_SizedBox(ctx.hight_SizedBox()));
+            sized.setNumline(ctx.start.getLine());
+            sized.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> SizedBox ","Hight","Float",ctx.start.getLine());
 
         }
         if(ctx.width_SizedBox() != null){
             sized.sethight_AND_widthSizedBox(visitWidth_SizedBox(ctx.width_SizedBox()));
+            sized.setNumline(ctx.start.getLine());
+            sized.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> SizedBox ","Width","Float",ctx.start.getLine());
 
         }
         if(ctx.hightWidth_SizedBox() != null){
             sized.setwidthHight_SizedBox(visitHightWidth_SizedBox(ctx.hightWidth_SizedBox()));
+            sized.setNumline(ctx.start.getLine());
+            sized.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> SizedBox ","HightWidth","Float",ctx.start.getLine());
 
         }
         if(ctx.widthHight_SizedBox() != null){
             sized.setwidthHight_SizedBox(visitWidthHight_SizedBox(ctx.widthHight_SizedBox()));
+            sized.setNumline(ctx.start.getLine());
+            sized.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> SizedBox ","WidthHight","Float",ctx.start.getLine());
 
         }
@@ -2220,6 +2280,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         hw.setSIZEDBOX(ctx.SIZEDBOX().toString().trim());
         hw.setType(ctx.HIGHT().toString().trim());
         hw.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        hw.setNumline(ctx.start.getLine());
+        hw.setChildrenCount(ctx.getChildCount());
         createSymbolRow("SizedBox ",hw.getType().toString(),hw.getNUM_FLOAT().toString(),ctx.start.getLine());
 
         return hw;
@@ -2232,6 +2294,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         hw.setSIZEDBOX(ctx.SIZEDBOX().toString().trim());
         hw.setType(ctx.WIDTH().toString().trim());
         hw.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        hw.setNumline(ctx.start.getLine());
+        hw.setChildrenCount(ctx.getChildCount());
         createSymbolRow("SizedBox ",hw.getType().toString(),hw.getNUM_FLOAT().toString(),ctx.start.getLine());
 
         return  hw;
@@ -2245,6 +2309,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         widthHight_sizedBox.setNUM_FLOAT_WIDTH(ctx.getChild(4).toString().trim());
         widthHight_sizedBox.setHIGHT(ctx.HIGHT().toString().trim());
         widthHight_sizedBox.setNUM_FLOAT_HIGHT(ctx.getChild(8).toString().trim());
+        widthHight_sizedBox.setNumline(ctx.start.getLine());
+        widthHight_sizedBox.setChildrenCount(ctx.getChildCount());
         createSymbolRow("SizedBox "," WidthHight ","Float & Float",ctx.start.getLine());
 
         return widthHight_sizedBox;
@@ -2258,6 +2324,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         widthHight_sizedBox.setNUM_FLOAT_HIGHT(ctx.getChild(4).toString().trim());
         widthHight_sizedBox.setWIDTH(ctx.WIDTH().toString().trim());
         widthHight_sizedBox.setNUM_FLOAT_WIDTH(ctx.getChild(8).toString().trim());
+        widthHight_sizedBox.setNumline(ctx.start.getLine());
+        widthHight_sizedBox.setChildrenCount(ctx.getChildCount());
+
         createSymbolRow("SizedBox "," HightWidth ","Float & Float",ctx.start.getLine());
 
         return widthHight_sizedBox;
@@ -2270,6 +2339,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         tt.setTEXTBUTTON(ctx.TEXTBUTTON().toString().trim());
         tt.setCHILD(ctx.CHILD().toString().trim());
         tt.setONPRESSED(ctx.ONPRESSED().toString().trim());
+        tt.setNumline(ctx.start.getLine());
+        tt.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.flutterWidget().size() ; i++){
             if(ctx.flutterWidget(i) != null){
                 tt.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
@@ -2286,32 +2357,44 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageClasses im = new imageClasses();
         if(ctx.image_withAsset() != null){
             im.setimage_withAsset_Network_File(visitImage_withAsset(ctx.image_withAsset()));
+            im.setNumline(ctx.start.getLine());
+            im.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> Image "," Wiget Components "," With Assets",ctx.start.getLine());
 
 
         }
         if(ctx.image_withFile() != null){
             im.setimage_withAsset_Network_File(visitImage_withFile(ctx.image_withFile()));
+            im.setNumline(ctx.start.getLine());
+            im.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> Image "," Wiget Components "," File ",ctx.start.getLine());
 
         }
         if(ctx.image_withNetWoek() != null){
             im.setimage_withAsset_Network_File(visitImage_withNetWoek(ctx.image_withNetWoek()));
+            im.setNumline(ctx.start.getLine());
+            im.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> Image "," Wiget Components "," Network ",ctx.start.getLine());
 
         }
         if(ctx.image_withAssetImage() != null){
             im.setimage_withAssetImage(visitImage_withAssetImage(ctx.image_withAssetImage()));
+            im.setNumline(ctx.start.getLine());
+            im.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> Image "," Wiget Components "," Assets .",ctx.start.getLine());
 
         }
         if(ctx.image_withAssetImage_WithDirection() != null){
             im.setimage_withAssetImage_WithDirection(visitImage_withAssetImage_WithDirection(ctx.image_withAssetImage_WithDirection()));
+            im.setNumline(ctx.start.getLine());
+            im.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> Image "," Wiget Components "," With Decoration",ctx.start.getLine());
 
         }
         if(ctx.image_withAssetImage_WithDirection_fit() != null){
             im.setimage_withAssetImage_WithDirection_fit(visitImage_withAssetImage_WithDirection_fit(ctx.image_withAssetImage_WithDirection_fit()));
+            im.setNumline(ctx.start.getLine());
+            im.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> Image "," Wiget Components "," With Decoration Fit",ctx.start.getLine());
 
         }
@@ -2326,6 +2409,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageWithAssetImage.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
         imageWithAssetImage.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
         imageWithAssetImage.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
+        imageWithAssetImage.setNumline(ctx.start.getLine());
+        imageWithAssetImage.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(" Image Assets",imageWithAssetImage.getASSETSIMAGE().toString(),imageWithAssetImage.getIMAGE_INPUT_ASSET().toString(),ctx.start.getLine());
 
@@ -2342,6 +2427,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageWithAssetImageWithDirection.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
         imageWithAssetImageWithDirection.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
         imageWithAssetImageWithDirection.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
+        imageWithAssetImageWithDirection.setNumline(ctx.start.getLine());
+        imageWithAssetImageWithDirection.setChildrenCount(ctx.getChildCount());
         for(int i = 0 ; i<ctx.imageDirection().size() ; i++){
             if(ctx.imageDirection(i) != null){
                 imageWithAssetImageWithDirection.getimageDirection().add(visitImageDirection(ctx.imageDirection(i)));
@@ -2362,6 +2449,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageWithAssetImageWithDirectionFit.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
         imageWithAssetImageWithDirectionFit.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
         imageWithAssetImageWithDirectionFit.setImageFit(visitImageFit(ctx.imageFit()));
+        imageWithAssetImageWithDirectionFit.setNumline(ctx.start.getLine());
+        imageWithAssetImageWithDirectionFit.setChildrenCount(ctx.getChildCount());
         for(int i = 0 ; i<ctx.imageDirection().size() ; i++){
             if(ctx.imageDirection(i) != null){
                 imageWithAssetImageWithDirectionFit.getimageDirection().add(visitImageDirection(ctx.imageDirection(i)));
@@ -2380,6 +2469,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.ASSET().toString().trim());
+        imageWithAssetNetworkFile.setNumline(ctx.start.getLine());
+        imageWithAssetNetworkFile.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(" ImageType "," Assets ",imageWithAssetNetworkFile.getType().toString(),ctx.start.getLine());
 
@@ -2394,6 +2485,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.NETWORK().toString().trim());
+        imageWithAssetNetworkFile.setNumline(ctx.start.getLine());
+        imageWithAssetNetworkFile.setChildrenCount(ctx.getChildCount());
+
 
         createSymbolRow(" ImageType ","Network ",imageWithAssetNetworkFile.getType().toString(),ctx.start.getLine());
 
@@ -2407,6 +2501,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.FILE().toString().trim());
+        imageWithAssetNetworkFile.setNumline(ctx.start.getLine());
+        imageWithAssetNetworkFile.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(" ImageType "," File ",imageWithAssetNetworkFile.getType().toString(),ctx.start.getLine());
 
@@ -2419,26 +2515,38 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageDirection image = new imageDirection();
         if(ctx.imageHight_DF() != null){
             image.setimageHight_AND_Width_DF(visitImageHight_DF(ctx.imageHight_DF()));
+            image.setNumline(ctx.start.getLine());
+            image.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageHight "," Float  ",ctx.start.getLine());
         }
         if(ctx.imageWidth_DF() != null){
             image.setimageHight_AND_Width_DF(visitImageWidth_DF(ctx.imageWidth_DF()));
+            image.setNumline(ctx.start.getLine());
+            image.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidth "," Float  ",ctx.start.getLine());
         }
         if(ctx.imageHightWidth_DF() != null){
             image.setimageHightWidth_Reverse_DF(visitImageHightWidth_DF(ctx.imageHightWidth_DF()));
+            image.setNumline(ctx.start.getLine());
+            image.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageHightWidth_F "," Float  ",ctx.start.getLine());
         }
         if(ctx.imageWidthHight_DF() != null){
             image.setimageHightWidth_Reverse_DF(visitImageWidthHight_DF(ctx.imageWidthHight_DF()));
+            image.setNumline(ctx.start.getLine());
+            image.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidthHight_F "," Float  ",ctx.start.getLine());
         }
         if(ctx.imageHightWidth_DN() != null){
             image.setimageHightWidth_Reverse_DN(visitImageHightWidth_DN(ctx.imageHightWidth_DN()));
+            image.setNumline(ctx.start.getLine());
+            image.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageHightWidth_N "," Num  ",ctx.start.getLine());
         }
         if(ctx.imageWidthHight_DN() != null){
             image.setimageHightWidth_Reverse_DN(visitImageWidthHight_DN(ctx.imageWidthHight_DN()));
+            image.setNumline(ctx.start.getLine());
+            image.setChildrenCount(ctx.getChildCount());
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidthHight_F "," Num  ",ctx.start.getLine());
         }
 
@@ -2453,6 +2561,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imagefit.setFIT(ctx.FIT().toString().trim());
         imagefit.setBOXFIT(ctx.BOXFIT().toString().trim());
         imagefit.setFILL(ctx.FILL().toString().trim());
+        imagefit.setNumline(ctx.start.getLine());
+        imagefit.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(" ImageFit "," BoxFit "," Fill  ",ctx.start.getLine());
 
@@ -2466,11 +2576,15 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         expandedClasses e = new expandedClasses();
         if(ctx.expanded_withCol() != null){
             e.setAttr_expanded_withCol_withRow(visitExpanded_withCol(ctx.expanded_withCol()));
+            e.setNumline(ctx.start.getLine());
+            e.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget -> Expanded "," Wiget Components ","  Row  ",ctx.start.getLine());
 
         }
         if(ctx.expanded_withRow() != null){
             e.setAttr_expanded_withCol_withRow(visitExpanded_withRow(ctx.expanded_withRow()));
+            e.setNumline(ctx.start.getLine());
+            e.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter Widget -> Expanded "," Wiget Components "," Column   ",ctx.start.getLine());
 
         }
@@ -2484,6 +2598,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         nn.setEXPANDED(ctx.EXPANDED().toString().trim());
         nn.setCHILD(ctx.CHILD().toString().trim());
         nn.setColumn(visitColStatemenst(ctx.colStatemenst()));
+        nn.setNumline(ctx.start.getLine());
+        nn.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(" Expanded "," expanded col "," ColumnStatement  ",ctx.start.getLine());
         return nn;
@@ -2496,6 +2612,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         nn.setEXPANDED(ctx.EXPANDED().toString().trim());
         nn.setCHILD(ctx.CHILD().toString().trim());
         nn.setRow(visitRowStatement(ctx.rowStatement()));
+        nn.setNumline(ctx.start.getLine());
+        nn.setChildrenCount(ctx.getChildCount());
         createSymbolRow(" Expanded "," expanded row "," rowStatement  ",ctx.start.getLine());
         return nn;
     }
@@ -2507,21 +2625,33 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
 
         if(ctx.padding_all() != null){
             padding.setpadding_all(visitPadding_all(ctx.padding_all()));
+            padding.setNumline(ctx.start.getLine());
+            padding.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.padding_only()!= null){
             padding.setpadding_only(visitPadding_only(ctx.padding_only()));
+            padding.setNumline(ctx.start.getLine());
+            padding.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.padding_sym_horisantal_num() != null){
             padding.setpadding_sym_horisantal_num_numFloat(visitPadding_sym_horisantal_num(ctx.padding_sym_horisantal_num()));
+            padding.setNumline(ctx.start.getLine());
+            padding.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.padding_sym_horisantal_numFloat() != null){
             padding.setpadding_sym_horisantal_num_numFloat(visitPadding_sym_horisantal_numFloat(ctx.padding_sym_horisantal_numFloat()));
+            padding.setNumline(ctx.start.getLine());
+            padding.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.padding_sym_vertical_num() != null){
             padding.setpadding_sym_vertical_num_numFloat(visitPadding_sym_vertical_num(ctx.padding_sym_vertical_num()));
+            padding.setNumline(ctx.start.getLine());
+            padding.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.padding_sym_vertical_numFloat() != null){
             padding.setpadding_sym_vertical_num_numFloat(visitPadding_sym_vertical_numFloat(ctx.padding_sym_vertical_numFloat()));
+            padding.setNumline(ctx.start.getLine());
+            padding.setChildrenCount(ctx.getChildCount());
         }
         createSymbolRow("Flutter widget -> Padding "," Wiget Components "," List of padding type  ",ctx.start.getLine());
         return padding;
@@ -2540,6 +2670,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 paddingAll.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        paddingAll.setNumline(ctx.start.getLine());
+        paddingAll.setChildrenCount(ctx.getChildCount());
+
         createSymbolRow(" Padding "," Padding all "," Float  ",ctx.start.getLine());
         return paddingAll;
     }
@@ -2557,6 +2690,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        nn.setNumline(ctx.start.getLine());
+        nn.setChildrenCount(ctx.getChildCount());
+
         createSymbolRow(" Padding "," Padding Symmatric vertical"," Num  ",ctx.start.getLine());
         return nn;
     }
@@ -2575,6 +2711,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        nn.setNumline(ctx.start.getLine());
+        nn.setChildrenCount(ctx.getChildCount());
+
         createSymbolRow(" Padding "," Padding Symmatric vertical"," Float  ",ctx.start.getLine());
         return nn;
 
@@ -2594,6 +2733,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        nn.setNumline(ctx.start.getLine());
+        nn.setChildrenCount(ctx.getChildCount());
         createSymbolRow(" Padding "," Padding Symmatric horisantal"," Num  ",ctx.start.getLine());
         return nn;
     }
@@ -2612,6 +2753,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 nn.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        nn.setNumline(ctx.start.getLine());
+        nn.setChildrenCount(ctx.getChildCount());
         createSymbolRow(" Padding "," Padding Symmatric horisantal"," Float  ",ctx.start.getLine());
         return nn;
     }
@@ -2633,6 +2776,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 paddingOnly.getdirection().add((visitDirection(ctx.direction(i))));
             }
         }
+        paddingOnly.setNumline(ctx.start.getLine());
+        paddingOnly.setChildrenCount(ctx.getChildCount());
         createSymbolRow(" Padding  "," padding only "," List of direction type ",ctx.start.getLine());
 
 
@@ -2645,68 +2790,100 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         direction d = new direction();
         if(ctx.top_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitTop_direction_FLOAT(ctx.top_direction_FLOAT()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," top direction  ","  Float ",ctx.start.getLine());
         }
         if(ctx.right_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitRight_direction_FLOAT(ctx.right_direction_FLOAT()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," right direction  ","  Float ",ctx.start.getLine());
         }
         if(ctx.left_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitLeft_direction_FLOAT(ctx.left_direction_FLOAT()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," left direction  ","  Float ",ctx.start.getLine());
         }
         if(ctx.bottom_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitBottom_direction_FLOAT(ctx.bottom_direction_FLOAT()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," bottom direction  ","  Float ",ctx.start.getLine());
         }
 
         if(ctx.top_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitTop_direction_FLOAT_D(ctx.top_direction_FLOAT_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," top direction+  ","  Float ",ctx.start.getLine());
         }
         if(ctx.right_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitRight_direction_FLOAT_D(ctx.right_direction_FLOAT_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," right direction+  ","  Float ",ctx.start.getLine());
         }
         if(ctx.left_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitLeft_direction_FLOAT_D(ctx.left_direction_FLOAT_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," left direction+  ","  Float ",ctx.start.getLine());
         }
         if(ctx.bottom_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitBottom_direction_FLOAT_D(ctx.bottom_direction_FLOAT_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," bottom direction+  ","  Float ",ctx.start.getLine());
         }
 
         if(ctx.top_direction_NUM() != null){
             d.setDirections_direction_NUM(visitTop_direction_NUM(ctx.top_direction_NUM()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," top direction  ","  Num ",ctx.start.getLine());
         }
         if(ctx.right_direction_NUM() != null){
             d.setDirections_direction_NUM(visitRight_direction_NUM(ctx.right_direction_NUM()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," right direction  ","  Num ",ctx.start.getLine());
         }
         if(ctx.left_direction_NUM() != null){
             d.setDirections_direction_NUM(visitLeft_direction_NUM(ctx.left_direction_NUM()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," left direction  ","  Num ",ctx.start.getLine());
         }
         if(ctx.bottom_direction_NUM() != null){
             d.setDirections_direction_NUM(visitBottom_direction_NUM(ctx.bottom_direction_NUM()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," bottom direction  ","  Num ",ctx.start.getLine());
         }
         if(ctx.top_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitTop_direction_NUM_D(ctx.top_direction_NUM_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," top direction+  ","  Num ",ctx.start.getLine());
         }
         if(ctx.right_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitRight_direction_NUM_D(ctx.right_direction_NUM_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," right direction+  ","  Num ",ctx.start.getLine());
         }
         if(ctx.left_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitLeft_direction_NUM_D(ctx.left_direction_NUM_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," left direction+  ","  Num ",ctx.start.getLine());
         }
         if(ctx.bottom_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitBottom_direction_NUM_D(ctx.bottom_direction_NUM_D()));
+            d.setNumline(ctx.start.getLine());
+            d.setChildrenCount(ctx.getChildCount());
             createSymbolRow("Flutter widget -> Padding "," bottom direction+  ","  Num ",ctx.start.getLine());
         }
 
@@ -2721,27 +2898,43 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FlutterWidget flutterWidget = new FlutterWidget();
         if(ctx.colStatemenst() != null){
             flutterWidget.setColumn(visitColStatemenst(ctx.colStatemenst()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.rowStatement() != null){
             flutterWidget.setRow(visitRowStatement(ctx.rowStatement()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.containerStatement() != null){
             flutterWidget.setContainer(visitContainerStatement(ctx.containerStatement()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.textButton() != null){
             flutterWidget.settextButton(visitTextButton(ctx.textButton()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.texeStatement() != null){
             flutterWidget.setTextClasses(visitTexeStatement(ctx.texeStatement()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.sizedBox() != null){
             flutterWidget.setSizedBoxClasses(visitSizedBox(ctx.sizedBox()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.imageState() != null){
             flutterWidget.setimageClasses(visitImageState(ctx.imageState()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
         if(ctx.paddingStatement() != null){
             flutterWidget.setpaddingClasses(visitPaddingStatement(ctx.paddingStatement()));
+            flutterWidget.setNumline(ctx.start.getLine());
+            flutterWidget.setChildrenCount(ctx.getChildCount());
         }
 
         createSymbolRow("Flutter widget "," Widget Components "," object from Widget Components ",ctx.start.getLine());
@@ -2866,6 +3059,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
                 container.getFlutterWidget().add((visitFlutterWidget(ctx.flutterWidget(i))));
             }
         }
+        container.setNumline(ctx.start.getLine());
+        container.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow(" Container Widget "," Container "," List of flutter widget ",ctx.start.getLine());
 
@@ -2967,6 +3162,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input_1AppBar input1AppBar = new input_1AppBar();
         input1AppBar.setTITLE(ctx.TITLE().toString().trim());
         input1AppBar.setTextClasses(visitTexeStatement(ctx.texeStatement()));
+        input1AppBar.setNumline(ctx.start.getLine());
+        input1AppBar.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Input AppBar type 1 : ","with Title"," title ",ctx.start.getLine());
 
@@ -2981,6 +3178,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input2AppBar.setBACHCOLOR(ctx.BACHCOLOR().toString().trim());
         input2AppBar.setCOLOR(ctx.COLOR().toString().trim());
         input2AppBar.setColor(visitColor(ctx.color()));
+        input2AppBar.setNumline(ctx.start.getLine());
+        input2AppBar.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Input AppBar type 2 : ","with just Color"," color ",ctx.start.getLine());
 
@@ -2996,6 +3195,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input3AppBar.setBACHCOLOR(ctx.BACHCOLOR().toString().trim());
         input3AppBar.setCOLOR(ctx.COLOR().toString().trim());
         input3AppBar.setColor(visitColor(ctx.color()));
+        input3AppBar.setNumline(ctx.start.getLine());
+        input3AppBar.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Input AppBar type 3 : ","with Title and Color","  title color ",ctx.start.getLine());
 
@@ -3011,6 +3212,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         input4AppBar.setColor(visitColor(ctx.color()));
         input4AppBar.setTITLE(ctx.TITLE().toString().trim());
         input4AppBar.setTextClasses(visitTexeStatement(ctx.texeStatement()));
+        input4AppBar.setNumline(ctx.start.getLine());
+        input4AppBar.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Input AppBar type 4 :","with Color and Title"," color title ",ctx.start.getLine());
 
@@ -3021,6 +3224,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitColor_red");
         color_red_green colorRedGreen = new color_red_green();
         colorRedGreen.setColor_type(ctx.RED().toString().trim());
+        colorRedGreen.setNumline(ctx.start.getLine());
+        colorRedGreen.setChildrenCount(ctx.getChildCount());
+
         createSymbolRow(" type_Color ","Color",colorRedGreen.getColor_type().toString(),ctx.start.getLine());
 
         return  colorRedGreen;
@@ -3031,6 +3237,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitColor_green");
         color_red_green colorRedGreen = new color_red_green();
         colorRedGreen.setColor_type(ctx.GREEN().toString().trim());
+        colorRedGreen.setNumline(ctx.start.getLine());
+        colorRedGreen.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("type_Color ","Color ",colorRedGreen.getColor_type().toString(),ctx.start.getLine());
 
@@ -3042,6 +3250,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHight_AND_Width_DF imageHightAndWidthDf = new imageHight_AND_Width_DF();
         imageHightAndWidthDf.setType(ctx.HIGHT().toString().trim());
         imageHightAndWidthDf.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        imageHightAndWidthDf.setNumline(ctx.start.getLine());
+        imageHightAndWidthDf.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Image Decoration ",imageHightAndWidthDf.getType().toString(),imageHightAndWidthDf.getNUM_FLOAT().toString(),ctx.start.getLine());
 
@@ -3054,6 +3264,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHight_AND_Width_DF imageHightAndWidthDf = new imageHight_AND_Width_DF();
         imageHightAndWidthDf.setType(ctx.WIDTH().toString().trim());
         imageHightAndWidthDf.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        imageHightAndWidthDf.setNumline(ctx.start.getLine());
+        imageHightAndWidthDf.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Image Decoration ",imageHightAndWidthDf.getType().toString(),imageHightAndWidthDf.getNUM_FLOAT().toString(),ctx.start.getLine());
 
@@ -3067,6 +3279,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHightWidth_reverse_df.setNUM_FLOAT_HIGHT(ctx.getChild(2).toString().trim());
         imageHightWidth_reverse_df.setWIDTH(ctx.WIDTH().toString().trim());
         imageHightWidth_reverse_df.setNUM_FLOAT_WIDTH(ctx.getChild(6).toString().trim());
+        imageHightWidth_reverse_df.setNumline(ctx.start.getLine());
+        imageHightWidth_reverse_df.setChildrenCount(ctx.getChildCount());
+
 
         createSymbolRow("Image Direction","ImageHightWidth","Float",ctx.start.getLine());
 
@@ -3081,6 +3296,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imageHightWidth_reverse_df.setNUM_FLOAT_WIDTH(ctx.getChild(2).toString().trim());
         imageHightWidth_reverse_df.setHIGHT(ctx.HIGHT().toString().trim());
         imageHightWidth_reverse_df.setNUM_FLOAT_HIGHT(ctx.getChild(6).toString().trim());
+        imageHightWidth_reverse_df.setNumline(ctx.start.getLine());
+        imageHightWidth_reverse_df.setChildrenCount(ctx.getChildCount());
+
 
         createSymbolRow("Image Direction","ImageWidthHight","Float",ctx.start.getLine());
 
@@ -3096,6 +3314,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image.setNUM_HIGHT(ctx.getChild(2).toString().trim());
         image.setWIDTH(ctx.WIDTH().toString().trim());
         image.setNUM_WIDTH(ctx.getChild(6).toString().trim());
+        image.setNumline(ctx.start.getLine());
+        image.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Image Direction","ImageHightWidth","Num",ctx.start.getLine());
 
@@ -3112,6 +3332,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         image.setNUM_WIDTH(ctx.getChild(2).toString().trim());
         image.setHIGHT(ctx.HIGHT().toString().trim());
         image.setNUM_HIGHT(ctx.getChild(6).toString().trim());
+        image.setNumline(ctx.start.getLine());
+        image.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Image Direction","ImageWidthHight","Num",ctx.start.getLine());
 
@@ -3125,6 +3347,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
         directionsDirectionNum.setType(ctx.TOP().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+        directionsDirectionNum.setNumline(ctx.start.getLine());
+        directionsDirectionNum.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Direction",directionsDirectionNum.getType().toString(),directionsDirectionNum.getNUM().toString(),ctx.start.getLine());
 
@@ -3137,6 +3361,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
         directionsDirectionNum.setType(ctx.RIGHT().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+        directionsDirectionNum.setNumline(ctx.start.getLine());
+        directionsDirectionNum.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Direction",directionsDirectionNum.getType().toString(),directionsDirectionNum.getNUM().toString(),ctx.start.getLine());
 
@@ -3149,7 +3375,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
         directionsDirectionNum.setType(ctx.BOTTOM().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
-
+        directionsDirectionNum.setNumline(ctx.start.getLine());
+        directionsDirectionNum.setChildrenCount(ctx.getChildCount());
         createSymbolRow("Direction",directionsDirectionNum.getType().toString(),directionsDirectionNum.getNUM().toString(),ctx.start.getLine());
 
         return directionsDirectionNum;
@@ -3161,6 +3388,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM directionsDirectionNum = new Directions_direction_NUM();
         directionsDirectionNum.setType(ctx.LEFT().toString().trim());
         directionsDirectionNum.setNUM(ctx.NUM().toString().trim());
+        directionsDirectionNum.setNumline(ctx.start.getLine());
+        directionsDirectionNum.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Direction",directionsDirectionNum.getType().toString(),directionsDirectionNum.getNUM().toString(),ctx.start.getLine());
 
@@ -3173,6 +3402,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
         directionsDirectionFloat.setType(ctx.TOP().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        directionsDirectionFloat.setNumline(ctx.start.getLine());
+        directionsDirectionFloat.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Direction",directionsDirectionFloat.getType().toString(),directionsDirectionFloat.getNUM_FLOAT().toString(),ctx.start.getLine());
 
@@ -3186,6 +3417,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
         directionsDirectionFloat.setType(ctx.RIGHT().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        directionsDirectionFloat.setNumline(ctx.start.getLine());
+        directionsDirectionFloat.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Direction",directionsDirectionFloat.getType().toString(),directionsDirectionFloat.getNUM_FLOAT().toString(),ctx.start.getLine());
 
@@ -3198,7 +3431,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
         directionsDirectionFloat.setType(ctx.BOTTOM().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
-
+        directionsDirectionFloat.setNumline(ctx.start.getLine());
+        directionsDirectionFloat.setChildrenCount(ctx.getChildCount());
         createSymbolRow("Direction",directionsDirectionFloat.getType().toString(),directionsDirectionFloat.getNUM_FLOAT().toString(),ctx.start.getLine());
 
 
@@ -3211,6 +3445,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT directionsDirectionFloat = new Directions_direction_FLOAT();
         directionsDirectionFloat.setType(ctx.LEFT().toString().trim());
         directionsDirectionFloat.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        directionsDirectionFloat.setNumline(ctx.start.getLine());
+        directionsDirectionFloat.setChildrenCount(ctx.getChildCount());
 
         createSymbolRow("Direction",directionsDirectionFloat.getType().toString(),directionsDirectionFloat.getNUM_FLOAT().toString(),ctx.start.getLine());
 
@@ -3223,6 +3459,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
         directionsDirectionNumD.setType(ctx.TOP().toString().trim());
         directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        directionsDirectionNumD.setNumline(ctx.start.getLine());
+        directionsDirectionNumD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3239,6 +3477,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
         directionsDirectionNumD.setType(ctx.RIGHT().toString().trim());
         directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        directionsDirectionNumD.setNumline(ctx.start.getLine());
+        directionsDirectionNumD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3255,6 +3495,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
         directionsDirectionNumD.setType(ctx.BOTTOM().toString().trim());
         directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        directionsDirectionNumD.setNumline(ctx.start.getLine());
+        directionsDirectionNumD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3271,6 +3513,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_NUM_D directionsDirectionNumD = new Directions_direction_NUM_D();
         directionsDirectionNumD.setType(ctx.LEFT().toString().trim());
         directionsDirectionNumD.setNUM(ctx.NUM().toString().trim());
+        directionsDirectionNumD.setNumline(ctx.start.getLine());
+        directionsDirectionNumD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionNumD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3287,6 +3531,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
         directionsDirectionFloatD.setType(ctx.TOP().toString().trim());
         directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        directionsDirectionFloatD.setNumline(ctx.start.getLine());
+        directionsDirectionFloatD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3303,6 +3549,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
         directionsDirectionFloatD.setType(ctx.RIGHT().toString().trim());
         directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        directionsDirectionFloatD.setNumline(ctx.start.getLine());
+        directionsDirectionFloatD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3319,6 +3567,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
         directionsDirectionFloatD.setType(ctx.BOTTOM().toString().trim());
         directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        directionsDirectionFloatD.setNumline(ctx.start.getLine());
+        directionsDirectionFloatD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3335,6 +3585,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         Directions_direction_FLOAT_D directionsDirectionFloatD = new Directions_direction_FLOAT_D();
         directionsDirectionFloatD.setType(ctx.LEFT().toString().trim());
         directionsDirectionFloatD.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
+        directionsDirectionFloatD.setNumline(ctx.start.getLine());
+        directionsDirectionFloatD.setChildrenCount(ctx.getChildCount());
         for (int i =0 ; i< ctx.direction().size() ; i++){
             if(ctx.direction(i) != null){
                 directionsDirectionFloatD.getDirection().add((visitDirection(ctx.direction(i))));
@@ -3363,7 +3615,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         symbolRow.setValue(value);
         symbolRow.setNumline(numline);
 
-//        System.out.println(symbolRow.getName()+" - "+symbolRow.getType()+" - "+symbolRow.getValue()+" - "+symbolRow.getNumline());
         symbolTable.getSymbolRows().add(symbolRow);
         return symbolRow;
     }

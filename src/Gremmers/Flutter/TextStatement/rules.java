@@ -7,7 +7,23 @@ public class rules extends AST {
 
     private NameN ID;
     private String NUM;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public NameN getID() {
         return ID;
     }
@@ -28,9 +44,9 @@ public class rules extends AST {
     public String toString() {
         if(this.ID!=null)
             return "rules{" +
-                    "ID='" + ID + '\'' + "} \n";
+                    "ID='" + ID + '\'' +"Line number " + numline+ "children count = " + ChildrenCount+ "} \n";
         return "rules{" +
-                ", NUM='" + NUM + '\'' +
+                ", NUM='" + NUM + '\'' + "Line number " + numline+ "children count = " + ChildrenCount+
                 "} \n";
     }
 }

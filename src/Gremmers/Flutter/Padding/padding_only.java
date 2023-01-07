@@ -19,7 +19,23 @@ public class padding_only extends AST {
     public List<direction> getdirection() {
         return attr_direction;
     }
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public void setdirection(ArrayList<direction> attr_direction) {
         this.attr_direction = attr_direction;
     }
@@ -61,6 +77,8 @@ public class padding_only extends AST {
                 ", attr_direction=" + attr_direction +
                 ", CHILD='" + CHILD + '\'' +
                 ", flutterWidget=" + flutterWidget +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

@@ -8,7 +8,23 @@ public class image_withAssetImage extends AST {
     private String IMAGE_CHILD;
     private String ASSETSIMAGE;
     private String IMAGE_INPUT_ASSET;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getIMAGE() {
         return IMAGE;
     }
@@ -48,6 +64,8 @@ public class image_withAssetImage extends AST {
                 ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +
                 ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +
                 ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

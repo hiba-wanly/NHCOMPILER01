@@ -8,7 +8,23 @@ public class imageHightWidth_Reverse_DF extends AST {
     private String WIDTH;
     private String NUM_FLOAT_HIGHT;
     private String NUM_FLOAT_WIDTH;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getHIGHT() {
         return HIGHT;
     }
@@ -48,6 +64,8 @@ public class imageHightWidth_Reverse_DF extends AST {
                 ", WIDTH='" + WIDTH + '\'' +
                 ", NUM_FLOAT_HIGHT='" + NUM_FLOAT_HIGHT + '\'' +
                 ", NUM_FLOAT_WIDTH='" + NUM_FLOAT_WIDTH + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

@@ -6,7 +6,23 @@ public class text_INPUT_D_Q_N extends AST {
 
     private String TEXT;
     private String INPUT_D_Q_N;
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getTEXT() {
         return TEXT;
     }
@@ -28,6 +44,8 @@ public class text_INPUT_D_Q_N extends AST {
         return "text_INPUT_D_Q_N{" +
                 "TEXT='" + TEXT + '\'' +
                 ", INPUT_D_Q_N='" + INPUT_D_Q_N + '\'' +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }

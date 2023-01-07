@@ -11,7 +11,23 @@ public class Directions_direction_NUM_D extends AST {
     private String NUM;
     private String type;
     private List<direction> direction = new ArrayList<direction>();
+    private int numline;
+    private int ChildrenCount ;
 
+    public int getChildrenCount() {
+        return ChildrenCount;
+    }
+
+    public void setChildrenCount(int childrenCount) {
+        ChildrenCount = childrenCount;
+    }
+    public int getNumline() {
+        return numline;
+    }
+
+    public void setNumline(int numline) {
+        this.numline = numline;
+    }
     public String getNUM() {
         return NUM;
     }
@@ -42,6 +58,8 @@ public class Directions_direction_NUM_D extends AST {
                 "type=" + type + '\'' +
                 "NUM='" + NUM + '\'' +
                 ", direction=" + direction +
+                ", Line number " + numline+
+                ", children count = " + ChildrenCount +
                 "} \n";
     }
 }
