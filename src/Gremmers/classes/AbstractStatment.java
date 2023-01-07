@@ -2,6 +2,7 @@ package Gremmers.classes;
 
 import Gremmers.AST;
 import Gremmers.NameN;
+import Gremmers.prog.Classes;
 
 public class AbstractStatment extends AST {
     private String abstr;
@@ -10,6 +11,11 @@ public class AbstractStatment extends AST {
     private NameN id;
     private int linenum;
     private int childrennum;
+
+    private String parentt;
+
+
+
 
     public void setAbstr(String abstr){
         this.abstr = abstr;
@@ -44,6 +50,16 @@ public class AbstractStatment extends AST {
     public void setChildrennum(int childrennum) {
         this.childrennum = childrennum;
     }
+
+
+    public String getParentt() {
+        return parentt;
+    }
+
+    public void setParentt(String parentt) {
+        this.parentt = parentt;
+    }
+
     @Override
     public String toString() {
         return "AbstractStatment{" +
@@ -51,6 +67,7 @@ public class AbstractStatment extends AST {
                 ", clas='" + clas + '\'' +
                 ", id='" + id + '\''
                 + "line:"+linenum+"children:"+childrennum+
+                "parent: "+ parentt+
                 "} \n";
     }
 }

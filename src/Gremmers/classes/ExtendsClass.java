@@ -14,6 +14,8 @@ public class ExtendsClass extends AST {
     private extends_ClassStatment_Withoutinput attr_extends_ClassStatment_Withoutinput;
     private int linenum;
     private int childrennum;
+
+    private String parentt;
     public extends_ClassStateFull_AND_Less getAttr_extends_ClassStateFull_AND_Less() {
         return attr_extends_ClassStateFull_AND_Less;
     }
@@ -76,20 +78,29 @@ public class ExtendsClass extends AST {
     public void setChildrennum(int childrennum) {
         this.childrennum = childrennum;
     }
+
+    public String getParentt() {
+        return parentt;
+    }
+
+    public void setParentt(String parentt) {
+        this.parentt = parentt;
+    }
+
     @Override
     public String toString() {
         if(this.attr_extends_ClassStateFull_AND_Less!=null)
-           return "ExtendsClass{attr_extends_ClassStateFull_AND_Less:" +attr_extends_ClassStateFull_AND_Less+ "line:"+linenum+"children:"+childrennum+"}\n";
+           return "ExtendsClass{attr_extends_ClassStateFull_AND_Less:" +attr_extends_ClassStateFull_AND_Less+ "line:"+linenum+"children:"+childrennum+"parent: "+ parentt+"}\n";
 
         if(this.attr_extends_ClassStateFull_AND_Less_WithAppBar!=null)
-            return "ExtendsClass{attr_extends_ClassStateFull_AND_Less_WithAppBar:" +attr_extends_ClassStateFull_AND_Less_WithAppBar+ "line:"+linenum+"children:"+childrennum+"}\n";
+            return "ExtendsClass{attr_extends_ClassStateFull_AND_Less_WithAppBar:" +attr_extends_ClassStateFull_AND_Less_WithAppBar+ "line:"+linenum+"children:"+childrennum+"parent: "+ parentt+"}\n";
         if(this.attr_extends_ClassStateFull_AND_Less_withinput!=null)
-            return "ExtendsClass{attr_extends_ClassStateFull_AND_Less_withinput:" +attr_extends_ClassStateFull_AND_Less_withinput+ "line:"+linenum+"children:"+childrennum+"}\n";
+            return "ExtendsClass{attr_extends_ClassStateFull_AND_Less_withinput:" +attr_extends_ClassStateFull_AND_Less_withinput+ "line:"+linenum+"children:"+childrennum+"parent: "+ parentt+"}\n";
         if(this.attr_extends_ClassStateFull_AND_Less_withinput_appBar!=null)
-            return "ExtendsClass{attr_extends_ClassStateFull_AND_Less_withinput_appBar:" +attr_extends_ClassStateFull_AND_Less_withinput_appBar+ "line:"+linenum+"children:"+childrennum+"}\n";
+            return "ExtendsClass{attr_extends_ClassStateFull_AND_Less_withinput_appBar:" +attr_extends_ClassStateFull_AND_Less_withinput_appBar+ "line:"+linenum+"children:"+childrennum+"parent: "+ parentt+"}\n";
         if(this.attr_extends_ClassStatment_Withinput!=null)
-            return "ExtendsClass{attr_extends_ClassStatment_Withinput:" +attr_extends_ClassStatment_Withinput+ "line:"+linenum+"children:"+childrennum+"}\n";
-        return "ExtendsClass{ attr_extends_ClassStatment_Withoutinput=" + attr_extends_ClassStatment_Withoutinput + "line:"+linenum+"children:"+childrennum+"}\n";
+            return "ExtendsClass{attr_extends_ClassStatment_Withinput:" +attr_extends_ClassStatment_Withinput+ "line:"+linenum+"children:"+childrennum+"parent: "+ parentt+"}\n";
+        return "ExtendsClass{ attr_extends_ClassStatment_Withoutinput=" + attr_extends_ClassStatment_Withoutinput + "line:"+linenum+"children:"+childrennum+"parent: "+ parentt+"}\n";
 
     }
 }

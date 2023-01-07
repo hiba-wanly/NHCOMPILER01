@@ -2,6 +2,7 @@ package Gremmers.classes;
 
 import Gremmers.AST;
 import Gremmers.NameN;
+import Gremmers.prog.Classes;
 import Gremmers.var.InputClasses;
 
 import java.util.ArrayList;
@@ -13,6 +14,9 @@ public class ClassStatement extends AST {
     private List<InputClasses> inputclasses = new ArrayList<InputClasses>();
     private int linenum;
     private int childrennum;
+
+    private String parenttt;
+
     public void setClas(String clas ){
         this.clas = clas;
     }
@@ -49,6 +53,16 @@ public class ClassStatement extends AST {
         return inputclasses;
     }
 
+
+
+
+    public String getParenttt() {
+        return parenttt;
+    }
+
+    public void setParenttt(String parent) {
+        this.parenttt = parent;
+    }
     @Override
     public String toString() {
         return "ClassStatement{" +
@@ -57,6 +71,7 @@ public class ClassStatement extends AST {
                 ", inputclasses=" + inputclasses +
                 "line:"+linenum+"children:"+childrennum
                 +
+                "parent :" +parenttt+
                 "} \n";
     }
 }

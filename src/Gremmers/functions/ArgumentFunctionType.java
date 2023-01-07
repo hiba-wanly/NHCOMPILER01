@@ -9,6 +9,7 @@ public class ArgumentFunctionType extends AST {
 
     private int linenum;
     private int childrennum;
+
     public String getTypee() {
         return typee;
     }

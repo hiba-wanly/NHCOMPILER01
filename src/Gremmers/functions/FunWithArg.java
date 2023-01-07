@@ -16,6 +16,8 @@ public class FunWithArg extends AST {
     private int linenum;
     private int childrennum;
 
+    private String parentt;
+
     public String getType() {
         return type;
     }
@@ -71,6 +73,15 @@ public class FunWithArg extends AST {
     public void setChildrennum(int childrennum) {
         this.childrennum = childrennum;
     }
+
+    public String getParentt() {
+        return parentt;
+    }
+
+    public void setParentt(String parentt) {
+        this.parentt = parentt;
+    }
+
     @Override
     public String toString() {
         return "FunWithArg{" +
@@ -80,7 +91,7 @@ public class FunWithArg extends AST {
                 ", inputs=" + inputs +
                 ", returnStatement=" + returnStatement
                 + "line:"+linenum+"children:"+childrennum
-                +
+                +"parent:" +parentt+
                 "} \n";
     }
 }

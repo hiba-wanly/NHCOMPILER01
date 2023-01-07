@@ -1641,53 +1641,73 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitFunction");
         Functions fun = new Functions();
         if(ctx.void_Function_NOReturn_NoARG() != null){
-            fun.setVoidWithoutArg(visitVoid_Function_NOReturn_NoARG(ctx.void_Function_NOReturn_NoARG()));
+            VoidWithoutArg vv = visitVoid_Function_NOReturn_NoARG(ctx.void_Function_NOReturn_NoARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setVoidWithoutArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.int_Function_Return_NoARG() != null){
-            fun.setFunWithoutArg(visitInt_Function_Return_NoARG(ctx.int_Function_Return_NoARG()));
+            FunWithoutArg vv = visitInt_Function_Return_NoARG(ctx.int_Function_Return_NoARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithoutArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.string_Function_Return_NoARG() != null){
-            fun.setFunWithoutArg(visitString_Function_Return_NoARG(ctx.string_Function_Return_NoARG()));
+            FunWithoutArg vv =visitString_Function_Return_NoARG(ctx.string_Function_Return_NoARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithoutArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.double_Function_Return_NoARG() != null){
-            fun.setFunWithoutArg(visitDouble_Function_Return_NoARG(ctx.double_Function_Return_NoARG()));
+            FunWithoutArg vv =visitDouble_Function_Return_NoARG(ctx.double_Function_Return_NoARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithoutArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.float_Function_Return_NoARG() != null){
-            fun.setFunWithoutArg(visitFloat_Function_Return_NoARG(ctx.float_Function_Return_NoARG()));
+            FunWithoutArg vv = visitFloat_Function_Return_NoARG(ctx.float_Function_Return_NoARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithoutArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
 
         if(ctx.void_Function_NOReturn_ARG() != null){
-            fun.setVoidWithArg(visitVoid_Function_NOReturn_ARG(ctx.void_Function_NOReturn_ARG()));
+            VoidWithArg vv = visitVoid_Function_NOReturn_ARG(ctx.void_Function_NOReturn_ARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setVoidWithArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.int_Function_Return_ARG() != null){
-            fun.setFunWithArg(visitInt_Function_Return_ARG(ctx.int_Function_Return_ARG()));
+            FunWithArg vv = visitInt_Function_Return_ARG(ctx.int_Function_Return_ARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.string_Function_Return_ARG() != null){
-            fun.setFunWithArg(visitString_Function_Return_ARG(ctx.string_Function_Return_ARG()));
+            FunWithArg vv = visitString_Function_Return_ARG(ctx.string_Function_Return_ARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.double_Function_Return_ARG() != null){
-            fun.setFunWithArg(visitDouble_Function_Return_ARG(ctx.double_Function_Return_ARG()));
+            FunWithArg vv =visitDouble_Function_Return_ARG(ctx.double_Function_Return_ARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
         if(ctx.floate_Function_Return_ARG() != null){
-            fun.setFunWithArg(visitFloate_Function_Return_ARG(ctx.floate_Function_Return_ARG()));
+            FunWithArg vv = visitFloate_Function_Return_ARG(ctx.floate_Function_Return_ARG());
+            vv.setParentt(ctx.getParent().start.getText());
+            fun.setFunWithArg(vv);
             fun.setLinenum(ctx.start.getLine());
             fun.setChildrennum(ctx.getChildCount());
         }
@@ -1973,18 +1993,34 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitClasses");
         Classes clas = new Classes();
         if(ctx.classstatement() != null){
+
+            ClassStatement cs = visitClassstatement(ctx.classstatement());
+            cs.setParenttt(ctx.getParent().start.getText());
+            clas.setClassStatement(cs);
+//            System.out.println("33333");
+//            System.out.println(cs.getParenttt());
 //            System.out.println("3");
-            clas.setClassStatement(visitClassstatement(ctx.classstatement()));
+
+
+
+//            clas.setClassStatement(visitClassstatement(ctx.classstatement()));
             clas.setLinenum(ctx.start.getLine());
             clas.setChildrennum(ctx.getChildCount());
+
+
+
         }
         else if(ctx.abstractstatment() != null){
-            clas.setAbstractStatment(visitAbstractstatment(ctx.abstractstatment()));
+            AbstractStatment cs = visitAbstractstatment(ctx.abstractstatment());
+            cs.setParentt(ctx.getParent().start.getText());
+            clas.setAbstractStatment(cs);
             clas.setLinenum(ctx.start.getLine());
             clas.setChildrennum(ctx.getChildCount());
         }
         else if(ctx.extendsClass() != null){
-            clas.setExtendsClass(visitExtendsClass(ctx.extendsClass()));
+            ExtendsClass cs = visitExtendsClass(ctx.extendsClass());
+            cs.setParentt(ctx.getParent().start.getText());
+            clas.setExtendsClass(cs);
             clas.setLinenum(ctx.start.getLine());
             clas.setChildrennum(ctx.getChildCount());
         }
@@ -2006,8 +2042,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         }
         clas.setLinenum(ctx.start.getLine());
         clas.setChildrennum(ctx.getChildCount());
-        System.out.println("jjjjjjjjjjjjjjjjjjjjjjjj");
-        System.out.println(ctx.start.getStartIndex());
+
+//        System.out.println("jjjjjjjjjjjjjjjjjjjjjjjj");
+//        System.out.println(ctx.getParent().start.getText());
         createSymbolRow(clas.getClas(),clas.getId().toString(),clas.getInputclasses().toString(),ctx.start.getLine());
         return clas;
     }
@@ -2099,6 +2136,9 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             createSymbolRow(" Flutter Widget -> Class Extends  ","Widget Components" , "Statment_Withoutinput",ctx.start.getLine());
 
         }
+
+//        System.out.println("jjjjjjjjjjjjjjjjjjjjjjjj");
+//        System.out.println(ctx.getParent().getText()+"LLLLLLLL");
         return extclas;
     }
     @Override
@@ -3990,6 +4030,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitNameN");
         NameN nam = new NameN();
         nam.setNam(ctx.ID().toString().trim());
+        nam.setLinenum(ctx.start.getLine());
+        nam.setChildrennum(ctx.getChildCount());
         return nam;
     }
 
