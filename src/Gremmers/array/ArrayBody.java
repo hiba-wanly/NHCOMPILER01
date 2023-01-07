@@ -7,6 +7,10 @@ public class ArrayBody extends AST {
     private ArrayVarFloat arrayVarFloat;
     private ArrayVarString arrayVarString;
 
+    private int linenum;
+    private int childrennum;
+
+
     public void setArrayVarInt(ArrayVarInt arrayVarInt){
         this.arrayVarInt = arrayVarInt;
     }
@@ -26,14 +30,33 @@ public class ArrayBody extends AST {
         return arrayVarString;
     }
 
+
+    public int getLinenum() {
+        return linenum;
+    }
+
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
+
     @Override
     public String toString() {
         if(this.arrayVarString != null){
-            return "\n ArrayBody{"+arrayVarString + " } \n";
+            return "\n ArrayBody{"+arrayVarString +"line:"+linenum+"children:"+childrennum+ " } \n";
         } else if (this.arrayVarFloat != null) {
-            return "\n ArrayBody{" +arrayVarFloat +"} \n";
+            return "\n ArrayBody{" +arrayVarFloat +"line:"+linenum+"children:"+childrennum+"} \n";
         }
-        return "\n ArrayBody{" + arrayVarInt+"} \n";
+        return "\n ArrayBody{" + arrayVarInt
+                + "line:"+linenum+"children:"+childrennum
+                +"} \n";
 //        return "ArrayBody{" +
 //                "arrayVarInt=" + arrayVarInt +
 //                ", arrayVarFloat=" + arrayVarFloat +

@@ -7,7 +7,8 @@ public class Operations extends AST {
     private String MINUS;
     private String MULTI;
     private String DIVIDE;
-
+    private int linenum;
+    private int childrennum;
     public String getPLUS() {
         return PLUS;
     }
@@ -39,23 +40,45 @@ public class Operations extends AST {
     public void setDIVIDE(String DIVIDE) {
         this.DIVIDE = DIVIDE;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if(this.PLUS!=null){
             return "Operations{" +
-                    "PLUS='" + PLUS + '\'' +"} \n";
+                    "PLUS='" + PLUS + '\''
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
         if(this.MINUS!=null){
             return "Operations{" +
-                    "MINUS='" + MINUS + '\'' +"} \n";
+                    "MINUS='" + MINUS + '\''
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
         if(this.MULTI!=null){
             return "Operations{" +
-                    ", MULTI='" + MULTI + '\'' +"} \n";
+                    ", MULTI='" + MULTI + '\''
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
         return "Operations{" +
-                ", DIVIDE='" + DIVIDE + '\'' +
+                ", DIVIDE='" + DIVIDE
+                + "line:"+linenum+"children:"+childrennum
+                + '\'' +
                 "} \n";
     }
 }

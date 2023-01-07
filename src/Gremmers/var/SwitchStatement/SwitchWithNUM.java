@@ -11,6 +11,8 @@ public class SwitchWithNUM extends AST {
     private String numm;
     private List<CaseStatement> casestat = new ArrayList<CaseStatement>();
     private DefaultStatement def;
+    private int linenum;
+    private int childrennum;
 
     public String getSwitchh() {
         return switchh;
@@ -43,14 +45,30 @@ public class SwitchWithNUM extends AST {
     public void setDef(DefaultStatement def) {
         this.def = def;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "SwitchWithNUM{" +
                 "switchh='" + switchh + '\'' +
                 ", numm='" + numm + '\'' +
                 ", casestat=" + casestat +
-                ", def=" + def +
+                ", def=" + def
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "\n";
     }
 }

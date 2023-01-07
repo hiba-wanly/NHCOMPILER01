@@ -8,7 +8,8 @@ public class Expression extends AST {
     private Var var;
     private Expression expression;
     private Math math;
-
+    private int linenum;
+    private int childrennum;
     public Math getMath() {
         return math;
     }
@@ -48,29 +49,53 @@ public class Expression extends AST {
     public void setExpression(Expression expression) {
         this.expression = expression;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
 
     @Override
     public String toString() {
         if(this.numbers!=null){
             return "Expression{" +
-                    "numbers=" + numbers +"} \n";
+                    "numbers=" + numbers
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
         if(this.var!=null){
             return "Expression{" +
-                    "var=" + var +'}';
+                    "var=" + var
+                    + "line:"+linenum+"children:"+childrennum
+                    +'}';
         }
         if(this.boolean_p!=null){
             return "Expression{" +
-                    "boolean_p=" + boolean_p+"} \n";
+                    "boolean_p=" + boolean_p
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
         if(this.math!=null){
             return "Expression{" +
-                    "math=" + math+"} \n";
+                    "math=" + math
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
 
         return "Expression{" +
-                "expression=" + expression +
+                "expression=" + expression
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

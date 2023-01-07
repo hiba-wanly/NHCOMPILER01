@@ -7,7 +7,8 @@ public class ArrayFloat extends AST {
     private String flot;
     private NameN id;
     private ArrayVarFloat arrayVarFloat;
-
+    private int linenum;
+    private int childrennum;
     public void setVar(String flot){
         this.flot = flot;
     }
@@ -28,13 +29,28 @@ public class ArrayFloat extends AST {
     public ArrayVarFloat getArrayVarFloat(){
         return arrayVarFloat;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "ArrayFloat{" +
                 "flot='" + flot + '\'' +
                 ", id=" + id +
                 ", arrayVarFloat=" + arrayVarFloat +
+                "line:"+linenum+"children:"+childrennum+
                 "}\n";
     }
 }

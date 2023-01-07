@@ -11,6 +11,8 @@ public class CaseWithID extends AST {
     private String inputt;
     private List<Input> inp = new ArrayList<Input>();
     private String breakk;
+    private int linenum;
+    private int childrennum;
 
     public String getCasee() {
         return casee;
@@ -43,14 +45,30 @@ public class CaseWithID extends AST {
     public void setBreakk(String breakk) {
         this.breakk = breakk;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "CaseWithID{" +
                 "casee='" + casee + '\'' +
                 ", inputt='" + inputt + '\'' +
                 ", inp=" + inp +
-                ", breakk='" + breakk + '\'' +
+                ", breakk='" + breakk + '\''
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "\n";
     }
 }

@@ -9,7 +9,8 @@ public class varVariable extends AST {
 
     private  NameN id ;
     private  String value ;
-
+    private int linenum;
+    private int childrennum;
 
     public void setVarVaiableType(String type){
 //        System.out.println("addnummm");
@@ -37,13 +38,29 @@ public class varVariable extends AST {
     public String getVarVaiablevalue(){
         return value;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "varVariable{" +
                 "type='" + type + '\'' +
                 ", id='" + id + '\'' +
-                ", value='" + value + '\'' +
+                ", value='" + value + '\''
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

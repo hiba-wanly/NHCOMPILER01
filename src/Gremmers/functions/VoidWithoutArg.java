@@ -12,6 +12,8 @@ public class VoidWithoutArg extends AST {
     private String viodd;
     private NameN namee;
     private List<Input> inp = new ArrayList<Input>();
+    private int linenum;
+    private int childrennum;
 
     public String getViodd() {
         return viodd;
@@ -37,12 +39,30 @@ public class VoidWithoutArg extends AST {
         this.inp = inp;
     }
 
+
+    public int getLinenum() {
+        return linenum;
+    }
+
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "VoidWithoutArg{" +
                 "viodd='" + viodd + '\'' +
                 ", namee=" + namee +
-                ", inp=" + inp +
+                ", inp=" + inp
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

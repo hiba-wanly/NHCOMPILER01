@@ -11,6 +11,8 @@ public class CaseWithNUM extends AST {
     private String numm;
     private List<Input> inp = new ArrayList<Input>();
     private String beakk;
+    private int linenum;
+    private int childrennum;
 
     public String getCass() {
         return cass;
@@ -43,14 +45,30 @@ public class CaseWithNUM extends AST {
     public void setBeakk(String beakk) {
         this.beakk = beakk;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "CaseWithNUM{" +
                 "cass='" + cass + '\'' +
                 ", numm='" + numm + '\'' +
                 ", inp=" + inp +
-                ", beakk='" + beakk + '\'' +
+                ", beakk='" + beakk + '\''
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "\n";
     }
 }

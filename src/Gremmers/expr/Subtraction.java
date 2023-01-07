@@ -6,7 +6,8 @@ public class Subtraction extends AST{
 
     private String m;
     private String num2 ;
-
+    private int linenum;
+    private int childrennum;
     public void setNum1(String num1){
         this.num1 = num1;
     }
@@ -28,12 +29,30 @@ public class Subtraction extends AST{
         return num2;
     }
 
+    public int getLinenum() {
+        return linenum;
+    }
+
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
+
     @Override
     public String toString() {
         return "Subtraction{" +
                 "num1='" + num1 + '\'' +
                 ", m='" + m + '\'' +
-                ", num2='" + num2 + '\'' +
+                ", num2='" + num2 + '\''
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

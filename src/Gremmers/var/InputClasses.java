@@ -9,6 +9,8 @@ public class InputClasses extends AST {
     private Initial initial;
     private Functions fun;
 
+    private int linenum;
+    private int childrennum;
 
 
 
@@ -27,14 +29,32 @@ public class InputClasses extends AST {
     public Functions getFun(){
         return fun;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if (this.initial != null)
-            return "\n Body Classes {"+ initial+"\n";
+            return "\n Body Classes {"+ initial
+                    + "line:"+linenum+"children:"+childrennum
+                    +"\n";
 
 
-        return "\n Body Classes {"+ fun+"\n";
+        return "\n Body Classes {"+ fun
+                + "line:"+linenum+"children:"+childrennum
+                +"\n";
 
     }
 }

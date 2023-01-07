@@ -7,6 +7,8 @@ public class BoolExpresions extends AST {
     private String BOOLEAN_SIGNS;
     private Expression expression2;
     private BoolExpresions boolExpresion;
+    private int linenum;
+    private int childrennum;
 
     public Expression getExpression1() {
         return expression1;
@@ -39,16 +41,34 @@ public class BoolExpresions extends AST {
     public void setBoolExpresion(BoolExpresions boolExpresion) {
         this.boolExpresion = boolExpresion;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if(this.boolExpresion!=null){
-            return "BoolExpresions{boolExpresion" +boolExpresion+"} \n";
+            return "BoolExpresions{boolExpresion" +boolExpresion
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
         return "BoolExpresions{" +
                 "expression1=" + expression1 +
                 ", BOOLEAN_SIGNS='" + BOOLEAN_SIGNS + '\'' +
-                ", expression2=" + expression2 +
+                ", expression2=" + expression2
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

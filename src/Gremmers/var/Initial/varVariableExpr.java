@@ -10,7 +10,8 @@ public class varVariableExpr extends AST {
     private NameN id ;
 
     private Expr expr;
-
+    private int linenum;
+    private int childrennum;
     public void setVarVaiableType(String type){
         this.type = type;
     }
@@ -35,13 +36,29 @@ public class varVariableExpr extends AST {
     public Expr getVarVaiableExpr(){
         return expr;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "varVariableExpr{" +
                 "type='" + type + '\'' +
                 ", id='" + id + '\'' +
-                ", expr=" + expr +
+                ", expr=" + expr
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

@@ -12,7 +12,8 @@ public class FunWithoutArg extends AST {
     private NameN name ;
     private List<Input> inputs = new ArrayList<Input>();
     private ReturnStatement returnStatement;
-
+    private int linenum;
+    private int childrennum;
     public String getType() {
         return type;
     }
@@ -46,13 +47,30 @@ public class FunWithoutArg extends AST {
         this.returnStatement = returnStatement;
     }
 
+    public int getLinenum() {
+        return linenum;
+    }
+
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "FunWithoutArg{" +
                 "type='" + type + '\'' +
                 ", name=" + name +
                 ", inputs=" + inputs +
-                ", returnStatement=" + returnStatement +
+                ", returnStatement=" + returnStatement
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

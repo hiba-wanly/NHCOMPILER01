@@ -11,7 +11,8 @@ public class DoWhileStatement extends AST {
     private String doo;
     private List<Input> inn =new ArrayList<Input>();
     private WhileStatement whileStatement;
-
+    private int linenum;
+    private int childrennum;
     public String getDoo() {
         return doo;
     }
@@ -35,13 +36,29 @@ public class DoWhileStatement extends AST {
     public void setWhileStatement(WhileStatement whileStatement) {
         this.whileStatement = whileStatement;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "DoWhileStatement{" +
                 "doo='" + doo + '\'' +
                 ", inn=" + inn +
-                ", whileStatement=" + whileStatement +
+                ", whileStatement=" + whileStatement
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

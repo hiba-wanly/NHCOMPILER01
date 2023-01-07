@@ -5,6 +5,8 @@ import Gremmers.AST;
 public class CaseStatement extends AST {
     private CaseWithID caseid;
     private CaseWithNUM casenum;
+    private int linenum;
+    private int childrennum;
 
     public CaseWithID getCaseid() {
         return caseid;
@@ -21,15 +23,33 @@ public class CaseStatement extends AST {
     public void setCasenum(CaseWithNUM casenum) {
         this.casenum = casenum;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if(this.caseid!=null){
             return "CaseStatement{" +
-                    "caseid=" + caseid +  "} \n";
+                    "caseid=" + caseid
+                    + "line:"+linenum+"children:"+childrennum
+                    +  "} \n";
         }
         return "CaseStatement{" +
-                ", casenum=" + casenum +
+                ", casenum=" + casenum
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

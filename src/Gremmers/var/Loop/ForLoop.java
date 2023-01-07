@@ -18,7 +18,8 @@ public class ForLoop extends AST {
     private String plmi;
     private List<Input> inputs =new ArrayList<Input>();
 
-
+    private int linenum;
+    private int childrennum;
     public void setForf(String forf){
         this.forf = forf;
     }
@@ -82,7 +83,21 @@ public class ForLoop extends AST {
     public List<Input> getInputs(){
         return inputs;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "ForLoop{" +
@@ -95,7 +110,9 @@ public class ForLoop extends AST {
                 ", id2='" + id2 + '\'' +
                 ", id3='" + id3 + '\'' +
                 ", plmi='" + plmi + '\'' +
-                ", inputs=" + inputs +
+                ", inputs=" + inputs
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

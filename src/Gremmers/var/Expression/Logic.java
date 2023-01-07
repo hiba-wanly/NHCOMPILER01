@@ -9,7 +9,8 @@ public class Logic extends AST {
     private ArrayList<NestedLogic> nestedLogics = new ArrayList<>();
     private Logic logic;
     private ArrayList<NestedLogic2> nestedLogic2s = new ArrayList<>();
-
+    private int linenum;
+    private int childrennum;
 
     public BoolExpresions getBoolExpresion() {
         return boolExpresion;
@@ -42,17 +43,35 @@ public class Logic extends AST {
     public void setNestedLogic2s(ArrayList<NestedLogic2> nestedLogic2s) {
         this.nestedLogic2s = nestedLogic2s;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if(this.boolExpresion!=null){
             return "Logic{" +
                     "boolExpresion=" + boolExpresion +
-                    ", nestedLogics=" + nestedLogics +"} \n";
+                    ", nestedLogics=" + nestedLogics
+                    + "line:"+linenum+"children:"+childrennum
+                    +"} \n";
         }
         return "Logic{" +
                 ", logic=" + logic +
-                ", nestedLogic2s=" + nestedLogic2s +
+                ", nestedLogic2s=" + nestedLogic2s
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

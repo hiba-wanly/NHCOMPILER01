@@ -12,6 +12,8 @@ public class VoidWithArg extends AST {
     private NameN namee;
     private List<ArgumentFunctionType> argumentFunctionTypes = new ArrayList<ArgumentFunctionType>();
     private List<Input> inputs =new ArrayList<Input>();
+    private int linenum;
+    private int childrennum;
 
     public String getVoidd() {
         return voidd;
@@ -44,14 +46,30 @@ public class VoidWithArg extends AST {
     public void setInputs(List<Input> inputs) {
         this.inputs=inputs;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "VoidWithArg{" +
                 "voidd='" + voidd + '\'' +
                 ", namee=" + namee +
                 ", argumentFunctionTypes=" + argumentFunctionTypes +
-                ", inputs=" + inputs +
+                ", inputs=" + inputs
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

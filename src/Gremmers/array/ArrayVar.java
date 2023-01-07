@@ -7,7 +7,8 @@ public class ArrayVar extends AST {
     private String var;
     private NameN id;
     private ArrayBody arraybody;
-
+    private int linenum;
+    private int childrennum;
     public void setVar(String var){
         this.var = var;
     }
@@ -28,7 +29,21 @@ public class ArrayVar extends AST {
     public ArrayBody getArraybody(){
         return arraybody;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
 
     @Override
     public String toString() {
@@ -36,6 +51,7 @@ public class ArrayVar extends AST {
                 "var='" + var + '\'' +
                 ", id='" + id + '\'' +
                 ", arraybody=" + arraybody +
+                "line:"+linenum+"children:"+childrennum+
                 "} \n";
     }
 }

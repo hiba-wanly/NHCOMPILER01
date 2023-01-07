@@ -7,7 +7,8 @@ public class booleanP extends AST {
     private String TRUE;
 
     private String FALSE;
-
+    private int linenum;
+    private int childrennum;
     public String getTRUE() {
         return TRUE;
     }
@@ -23,15 +24,32 @@ public class booleanP extends AST {
     public void setFALSE(String FALSE) {
         this.FALSE = FALSE;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if(this.TRUE!=null){
             return "booleanP{" +
-                    "TRUE='" + TRUE + '\'' +"} \n";
+                    "TRUE='" + TRUE + '\'' +  "line:"+linenum+"children:"+childrennum+
+            "} \n";
         }
         return "booleanP{" +
-                ", FALSE='" + FALSE + '\'' +
+                ", FALSE='" + FALSE
+                + "line:"+linenum+"children:"+childrennum
+                + '\'' +
                 "} \n";
     }
 }

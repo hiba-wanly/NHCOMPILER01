@@ -7,6 +7,8 @@ import java.util.List;
 
 public class ArrayVarInt extends AST {
     private ArrayList<String> integers;
+    private int linenum;
+    private int childrennum;
 
     public ArrayVarInt() {
         this.integers = new ArrayList<>();
@@ -16,11 +18,26 @@ public class ArrayVarInt extends AST {
         this.integers.add(elem);
     }
 
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "ArrayVarInt{" +
                 "integers=" + integers +
+                "line:"+linenum+"children:"+childrennum+
                 "} \n";
     }
 }

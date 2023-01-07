@@ -9,7 +9,8 @@ import java.util.List;
 public class PrintText extends AST {
     private String prin;
     private List<Rule> rules = new ArrayList<Rule>();
-
+    private int linenum;
+    private int childrennum;
     public void setPrin(String prin){
         this.prin = prin;
     }
@@ -23,12 +24,28 @@ public class PrintText extends AST {
     public List<Rule> getRules(){
         return rules;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "PrintText{" +
                 "prin='" + prin + '\'' +
-                ", rules=" + rules +
+                ", rules=" + rules
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

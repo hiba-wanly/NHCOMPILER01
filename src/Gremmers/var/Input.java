@@ -19,6 +19,8 @@ public class Input extends AST {
     private PrintStatement printStatement;
     private SwitchStatement switchStatement;
     private TryCatchStatement tryCatchStatement;
+    private int linenum;
+    private int childrennum;
 
     public void setInitial(Initial initial){
         this.initial = initial;
@@ -68,40 +70,70 @@ public class Input extends AST {
     public TryCatchStatement getTryCatchStatement(){
         return tryCatchStatement;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if(this.initial!=null){
             return "Input{" +
-                    "initial=" + initial + "\n";
+                    "initial=" + initial
+                    + "line:"+linenum+"children:"+childrennum
+                    + "\n";
         }
         if(this.ifStatment!=null){
             return "Input{" +
-                    ", ifStatment=" + ifStatment + "\n";
+                    ", ifStatment=" + ifStatment
+                    + "line:"+linenum+"children:"+childrennum
+                    + "\n";
         }
         if(this.loop!=null){
             return "Input{" +
-                    ", loop=" + loop + "\n";
+                    ", loop=" + loop
+                    + "line:"+linenum+"children:"+childrennum
+                    + "\n";
         }
         if(this.doWhileStatement!=null){
             return "Input{" +
-                    ", doWhileStatement=" + doWhileStatement + "\n";
+                    ", doWhileStatement=" + doWhileStatement
+                    + "line:"+linenum+"children:"+childrennum
+                    + "\n";
         }
         if(this.whileStatement!=null){
             return "Input{" +
-                    ", whileStatement=" + whileStatement + "\n";
+                    ", whileStatement=" + whileStatement
+                    + "line:"+linenum+"children:"+childrennum
+                    + "\n";
         }
         if(this.printStatement!=null){
             return "Input{" +
-                    ", printStatement=" + printStatement + "\n";
+                    ", printStatement=" + printStatement
+                    + "line:"+linenum+"children:"+childrennum
+                    + "\n";
         }
         if(this.switchStatement!=null){
             return "Input{" +
-                    ", switchStatement=" + switchStatement + "\n";
+                    ", switchStatement=" + switchStatement
+                    + "line:"+linenum+"children:"+childrennum
+                    + "\n";
         }
         return "Input{" +
                 "initial=" + initial +
-                ", tryCatchStatement=" + tryCatchStatement +
+                ", tryCatchStatement=" + tryCatchStatement
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "\n";
     }
 }

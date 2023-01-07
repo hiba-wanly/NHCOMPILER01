@@ -11,7 +11,8 @@ public class ArrayType extends AST {
     private ArrayString arraystring;
 
     private ArrayFloat arrayfloat;
-
+    private int linenum;
+    private int childrennum;
     public void setArrayVar(ArrayVar arrayvar){
         this.arrayvar = arrayvar;
     }
@@ -43,19 +44,33 @@ public class ArrayType extends AST {
     public ArrayFloat getArrayFloat(){
         return arrayfloat;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if (this.arrayint!=null) {
-            return "\n ArrayVar{"+arrayint+"} \n";
+            return "\n ArrayVar{"+arrayint+"line:"+linenum+"children:"+childrennum+ "} \n";
         }
         if(this.arrayvar!=null)
-            return "\n ArrayVar{"+arrayvar+"} \n";
+            return "\n ArrayVar{"+arrayvar+"line:"+linenum+"children:"+childrennum+ "} \n";
 
         if (this.arraystring!=null) {
-            return "\n ArrayVar{"+arraystring+"} \n";
+            return "\n ArrayVar{"+arraystring+"line:"+linenum+"children:"+childrennum+ "} \n";
         }
-        return "\n ArrayVar{"+arrayfloat+"} \n";
+        return "\n ArrayVar{"+arrayfloat+"line:"+linenum+"children:"+childrennum+ "} \n";
 //        return "ArrayType{" +
 //                "arrayvar=" + arrayvar +
 //                ", arrayint=" + arrayint +

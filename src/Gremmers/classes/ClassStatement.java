@@ -11,7 +11,8 @@ public class ClassStatement extends AST {
     private String clas ;
     private NameN id ;
     private List<InputClasses> inputclasses = new ArrayList<InputClasses>();
-
+    private int linenum;
+    private int childrennum;
     public void setClas(String clas ){
         this.clas = clas;
     }
@@ -25,7 +26,21 @@ public class ClassStatement extends AST {
     public NameN getId(){
         return id;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     public void setInputclasses(List<InputClasses> inputclasses){
         this.inputclasses = inputclasses;
     }
@@ -40,6 +55,8 @@ public class ClassStatement extends AST {
                 "clas='" + clas + '\'' +
                 ", id='" + id + '\'' +
                 ", inputclasses=" + inputclasses +
+                "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

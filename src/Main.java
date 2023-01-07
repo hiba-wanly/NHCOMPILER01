@@ -30,8 +30,8 @@ public class Main {
 //            System.out.println("Prog:  ");
 //            System.out.println(prog);
 
-            System.out.println("SymbolTable:  ");
-            programVisitor.symbolTable.printSymbol();
+//            System.out.println("SymbolTable:  ");
+//            programVisitor.symbolTable.printSymbol();
 
 
 

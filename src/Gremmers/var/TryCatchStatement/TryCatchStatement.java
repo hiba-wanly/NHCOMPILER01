@@ -12,6 +12,8 @@ public class TryCatchStatement extends AST {
     private String catchh;
     private String idd;
     private ArrayList<Input> inp2;
+    private int linenum;
+    private int childrennum;
 
     public String getTryy() {
         return tryy;
@@ -52,7 +54,21 @@ public class TryCatchStatement extends AST {
     public void setInp2(ArrayList<Input> inp2) {
         this.inp2 = inp2;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "TryCatchStatement{" +
@@ -60,7 +76,9 @@ public class TryCatchStatement extends AST {
                 ", inp=" + inp +
                 ", catchh='" + catchh + '\'' +
                 ", idd='" + idd + '\'' +
-                ", inp2=" + inp2 +
+                ", inp2=" + inp2
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "\n";
     }
 }

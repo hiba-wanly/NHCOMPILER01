@@ -13,6 +13,8 @@ public class FunWithArg extends AST {
     private List<ArgumentFunctionType> argumentFunctionTypes =new ArrayList<ArgumentFunctionType>();
     private List<Input> inputs =new ArrayList<Input>();
     private ReturnStatement returnStatement;
+    private int linenum;
+    private int childrennum;
 
     public String getType() {
         return type;
@@ -54,7 +56,21 @@ public class FunWithArg extends AST {
     public void setReturnStatement(ReturnStatement returnStatement) {
         this.returnStatement = returnStatement;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "FunWithArg{" +
@@ -62,7 +78,9 @@ public class FunWithArg extends AST {
                 ", name=" + name +
                 ", argumentFunctionTypes=" + argumentFunctionTypes +
                 ", inputs=" + inputs +
-                ", returnStatement=" + returnStatement +
+                ", returnStatement=" + returnStatement
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

@@ -13,7 +13,8 @@ public class varVariableString extends AST {
     private  NameN id ;
 
     private List<Rule> rule = new ArrayList<Rule>();
-
+    private int linenum;
+    private int childrennum;
     public void setVarVaiableType(String type){
         this.type = type;
     }
@@ -38,13 +39,29 @@ public class varVariableString extends AST {
     public List<Rule> getVarVaiablerule(){
         return rule;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "varVariableString{" +
                 "type='" + type + '\'' +
                 ", id='" + id + '\'' +
-                ", rule=" + rule +
+                ", rule=" + rule
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }

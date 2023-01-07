@@ -11,7 +11,8 @@ public class Classes extends AST{
     private AbstractStatment abstractStatment;
 
     private ClassStatement classStatement;
-
+    private int linenum;
+    private int childrennum;
 
     public void setExtendsClass(ExtendsClass extendsClass){
         this.extendsClass = extendsClass;
@@ -38,15 +39,35 @@ public class Classes extends AST{
         return classStatement;
     }
 
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         if(this.extendsClass != null)
-            return "\n Body Classes {"+ extendsClass+"}\n";
+            return "\n Body Classes {"+ extendsClass
+                    + "line:"+linenum+"children:"+childrennum
+                    +"}\n";
         else if (this.abstractStatment != null)
-            return "\n Body Classes {"+ abstractStatment+"}\n";
+            return "\n Body Classes {"+ abstractStatment
+                    + "line:"+linenum+"children:"+childrennum
+                    +"}\n";
 //        else if (this.classStatement != null)
-            return "\n Body Classes {"+ classStatement+"}\n";
+            return "\n Body Classes {"+ classStatement
+                    + "line:"+linenum+"children:"+childrennum
+                    +"}\n";
 //        return "Classes{" +
 //                "extendsClass=" + extendsClass +
 //                ", abstractStatment=" + abstractStatment +

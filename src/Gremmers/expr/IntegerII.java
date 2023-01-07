@@ -4,7 +4,8 @@ import Gremmers.AST;
 
 public class IntegerII extends AST {
     private String num ;
-
+    private int linenum;
+    private int childrennum;
     public void setIntegerII(String num){
         this.num = num;
     }
@@ -12,11 +13,27 @@ public class IntegerII extends AST {
     public String getIntegerII(){
         return this.num;
     }
+    public int getLinenum() {
+        return linenum;
+    }
 
+    public void setLinenum(int linenum) {
+        this.linenum = linenum;
+    }
+
+    public int getChildrennum() {
+        return childrennum;
+    }
+
+    public void setChildrennum(int childrennum) {
+        this.childrennum = childrennum;
+    }
     @Override
     public String toString() {
         return "Integer{" +
-                "num=" + num +
+                "num=" + num
+                + "line:"+linenum+"children:"+childrennum
+                +
                 "} \n";
     }
 }
