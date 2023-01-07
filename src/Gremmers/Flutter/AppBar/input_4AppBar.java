@@ -12,7 +12,15 @@ public class input_4AppBar extends AST {
     private TextClasses textClasses;
     private int numline;
     private int ChildrenCount ;
+    private String parent;
 
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -71,13 +79,14 @@ public class input_4AppBar extends AST {
     @Override
     public String toString() {
         return "input_4AppBar{" +
-                "BACHCOLOR='" + BACHCOLOR + '\'' +
-                ", COLOR='" + COLOR + '\'' +
-                ", color=" + color +
-                ", TITLE='" + TITLE + '\'' +
-                ", textClasses=" + textClasses +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "BACHCOLOR='" + BACHCOLOR + '\'' +"\n"+
+                ", COLOR='" + COLOR + '\'' +"\n"+
+                ", color=" + color +"\n"+
+                ", TITLE='" + TITLE + '\'' +"\n"+
+                ", textClasses=" + textClasses +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node"+parent+
                 "} \n";
     }
 }

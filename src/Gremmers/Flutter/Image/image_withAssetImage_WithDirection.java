@@ -15,7 +15,15 @@ public class image_withAssetImage_WithDirection extends AST {
     private List<imageDirection> attr_imageDirection = new ArrayList<imageDirection>();
     private int numline;
     private int ChildrenCount ;
+    private String parent;
 
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -73,13 +81,13 @@ public class image_withAssetImage_WithDirection extends AST {
     @Override
     public String toString() {
         return "image_withAssetImage_WithDirection{" +
-                "IMAGE='" + IMAGE + '\'' +
-                ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +
-                ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +
-                ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
-                ", attr_imageDirection=" + attr_imageDirection +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "IMAGE='" + IMAGE + '\'' +"\n"+
+                ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +"\n"+
+                ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +"\n"+
+                ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +"\n"+
+                ", attr_imageDirection=" + attr_imageDirection +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
                 "} \n";
     }
 }

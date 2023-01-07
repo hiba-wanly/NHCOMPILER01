@@ -12,7 +12,14 @@ public class text_rule extends AST {
     private List<Rule> rules = new ArrayList<Rule>();
     private int numline;
     private int ChildrenCount ;
+    private String parent;
+    public String getParent() {
+        return parent;
+    }
 
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -46,10 +53,11 @@ public class text_rule extends AST {
     @Override
     public String toString() {
         return "text_rule{" +
-                "TEXT='" + TEXT + '\'' +
-                ", rules=" + rules +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "TEXT='" + TEXT + '\'' +"\n"+
+                ", rules=" + rules +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node =" + parent +"\n"+
                 "} \n";
     }
 }

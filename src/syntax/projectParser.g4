@@ -329,7 +329,7 @@ extends_ClassStateFullwithinput_appBar : CLASS namen EXTENDS STATEFULLWIDGET CUR
                                    RETURN SCAFFOLD HLEFT APPBAR TOWPOINT APPBAR_CHILD HLEFT input_AppBar+ HRIGHT COMMA BODY TOWPOINT  flutterWidget+ HRIGHT CURLERIGHT CURLERIGHT  ;
 
 extends_ClassStateLesswithinput_appBar : CLASS namen EXTENDS STATELESSWIDGET CURLELEFT inputclass+ OVERRIDE BUILD_WIDGET CURLELEFT
-                                  RETURN SCAFFOLD HLEFT APPBAR TOWPOINT APPBAR_CHILD HLEFT input_AppBar+  BODY TOWPOINT  flutterWidget+ HRIGHT CURLERIGHT CURLERIGHT ;
+                                  RETURN SCAFFOLD HLEFT APPBAR TOWPOINT APPBAR_CHILD HLEFT input_AppBar+ HRIGHT COMMA BODY TOWPOINT  flutterWidget+ HRIGHT CURLERIGHT CURLERIGHT ;
 
 input_AppBar : input_1AppBar| input_2AppBar | input_3AppBar | input_4AppBar;
 

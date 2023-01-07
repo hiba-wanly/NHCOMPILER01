@@ -22,6 +22,15 @@ public class padding_only extends AST {
     private int numline;
     private int ChildrenCount ;
 
+    private String parent;
+
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -72,13 +81,14 @@ public class padding_only extends AST {
     @Override
     public String toString() {
         return "padding_only{" +
-                "PADDING='" + PADDING + '\'' +
-                ", PAD_ON='" + PAD_ON + '\'' +
-                ", attr_direction=" + attr_direction +
-                ", CHILD='" + CHILD + '\'' +
-                ", flutterWidget=" + flutterWidget +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "PADDING='" + PADDING + '\'' +"\n"+
+                ", PAD_ON='" + PAD_ON + '\'' +"\n"+
+                ", attr_direction=" + attr_direction +"\n"+
+                ", CHILD='" + CHILD + '\'' +"\n"+
+                ", flutterWidget=" + flutterWidget +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node"+parent+
                 "} \n";
     }
 }

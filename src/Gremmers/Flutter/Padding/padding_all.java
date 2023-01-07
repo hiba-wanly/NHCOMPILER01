@@ -16,7 +16,15 @@ public class padding_all extends AST {
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
     private int numline;
     private int ChildrenCount ;
+    private String parent;
 
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -73,13 +81,14 @@ public class padding_all extends AST {
     @Override
     public String toString() {
         return "padding_all{" +
-                "PADDING='" + PADDING + '\'' +
-                ", PAD_ALL='" + PAD_ALL + '\'' +
-                ", NUM_FLOAT='" + NUM_FLOAT + '\'' +
-                ", CHILD='" + CHILD + '\'' +
-                ", flutterWidget=" + flutterWidget +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "PADDING='" + PADDING + '\'' +"\n"+
+                ", PAD_ALL='" + PAD_ALL + '\'' +"\n"+
+                ", NUM_FLOAT='" + NUM_FLOAT + '\'' +"\n"+
+                ", CHILD='" + CHILD + '\'' +"\n"+
+                ", flutterWidget=" + flutterWidget +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node"+parent+
                 "} \n";
     }
 }

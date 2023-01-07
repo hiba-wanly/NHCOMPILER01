@@ -16,7 +16,15 @@ public class image_withAssetImage_WithDirection_fit extends AST {
     private imageFit imageFit;
     private int numline;
     private int ChildrenCount ;
+    private String parent;
 
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -82,14 +90,15 @@ public class image_withAssetImage_WithDirection_fit extends AST {
     @Override
     public String toString() {
         return "image_withAssetImage_WithDirection_fit{" +
-                "IMAGE='" + IMAGE + '\'' +
-                ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +
-                ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +
-                ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
-                ", attr_imageDirection=" + attr_imageDirection +
-                ", imageFit=" + imageFit +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "IMAGE='" + IMAGE + '\'' +"\n"+
+                ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +"\n"+
+                ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +"\n"+
+                ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +"\n"+
+                ", attr_imageDirection=" + attr_imageDirection +"\n"+
+                ", imageFit=" + imageFit +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node"+parent+
                 "} \n";
     }
 }

@@ -10,7 +10,15 @@ public class image_withAssetImage extends AST {
     private String IMAGE_INPUT_ASSET;
     private int numline;
     private int ChildrenCount ;
+    private String parent;
 
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -60,12 +68,13 @@ public class image_withAssetImage extends AST {
     @Override
     public String toString() {
         return "image_withAssetImage{" +
-                "IMAGE='" + IMAGE + '\'' +
-                ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +
-                ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +
-                ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "IMAGE='" + IMAGE + '\'' +"\n"+
+                ", IMAGE_CHILD='" + IMAGE_CHILD + '\'' +"\n"+
+                ", ASSETSIMAGE='" + ASSETSIMAGE + '\'' +"\n"+
+                ", IMAGE_INPUT_ASSET='" + IMAGE_INPUT_ASSET + '\'' +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node"+parent+
                 "} \n";
     }
 }

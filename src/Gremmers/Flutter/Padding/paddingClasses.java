@@ -12,6 +12,16 @@ public class paddingClasses extends AST {
     private int numline;
     private int ChildrenCount ;
 
+    private String left;
+
+
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -62,18 +72,18 @@ public class paddingClasses extends AST {
     public String toString() {
         if(this.attr_padding_all != null){
             return "paddingClasses{" +
-                    "attr_padding_all=" + attr_padding_all + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
+                    "attr_padding_all=" + attr_padding_all +"\n"+ "Line number " + numline+"\n"+ "children count = " + ChildrenCount+"\n"+ "left child"+left+ "}\n";
         }
         if(this.attr_padding_only != null){
             return "paddingClasses{" +
-                    " attr_padding_only=" + attr_padding_only + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
+                    " attr_padding_only=" + attr_padding_only +"\n"+ "Line number " + numline+"\n"+ "children count = " + ChildrenCount+"\n"+"left child"+left+ "}\n";
         }
         if(this.attr_padding_sym_horisantal_num_numFloat != null){
             return "paddingClasses{" +
-                    " attr_padding_sym_horisantal_num_numFloat=" + attr_padding_sym_horisantal_num_numFloat + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
+                    " attr_padding_sym_horisantal_num_numFloat=" + attr_padding_sym_horisantal_num_numFloat +"\n"+ "Line number " + numline+"\n"+ "children count = " + ChildrenCount+"left child"+left+ "}\n";
         }
         return "paddingClasses{" +
-                "attr_padding_sym_vertical_num_numFloat=" + attr_padding_sym_vertical_num_numFloat + "Line number " + numline+ "children count = " + ChildrenCount+
+                "attr_padding_sym_vertical_num_numFloat=" + attr_padding_sym_vertical_num_numFloat +"\n"+ "Line number " + numline+"\n"+ "children count = " + ChildrenCount+"left child"+left+
                 "} \n";
     }
 }

@@ -10,6 +10,16 @@ public class imageClasses extends AST {
     private image_withAssetImage_WithDirection_fit attr_image_withAssetImage_WithDirection_fit;
     private int numline;
     private int ChildrenCount ;
+    private String left;
+
+
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
 
     public int getChildrenCount() {
         return ChildrenCount;
@@ -61,16 +71,16 @@ public class imageClasses extends AST {
     public String toString() {
         if(this.attr_image_withAssetImage != null){
             return "imageClasses{" +
-            " attr_image_withAssetImage=" + attr_image_withAssetImage +"Line number " + numline+"children count = " + ChildrenCount+ "}\n";
+            " attr_image_withAssetImage=" + attr_image_withAssetImage + "\n" +"Line number " + numline+ "\n" +"children count = " +"\n" +  ChildrenCount+"\n" +"left child "+left+ "}\n";
         }
         if(this.attr_image_withAsset_Network_File != null){
-            return "imageClasses{" + "attr_image_withAsset_Network_File=" + attr_image_withAsset_Network_File +"Line number " + numline+"children count = " + ChildrenCount+ "}\n";
+            return "imageClasses{" + "attr_image_withAsset_Network_File=" + attr_image_withAsset_Network_File + "\n" +"Line number " +"\n" + numline+ "\n" +"children count = " + ChildrenCount+"\n" +"left child "+left+ "}\n";
         }
         if(this.attr_image_withAssetImage_WithDirection != null){
-            return "imageClasses{" + " attr_image_withAssetImage_WithDirection=" + attr_image_withAssetImage_WithDirection +"Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
+            return "imageClasses{" + " attr_image_withAssetImage_WithDirection=" + attr_image_withAssetImage_WithDirection +"\n" + "Line number " + numline+"\n" + "children count = " + ChildrenCount+"\n" +"left child "+left+ "}\n";
         }
         return "imageClasses{" +
-                " attr_image_withAssetImage_WithDirection_fit=" + attr_image_withAssetImage_WithDirection_fit + "Line number " + numline+ "children count = " + ChildrenCount+
+                " attr_image_withAssetImage_WithDirection_fit=" + attr_image_withAssetImage_WithDirection_fit +"\n" + "Line number " + numline+"\n" + "children count = " + ChildrenCount+"\n" +"left child "+left+
                 "} \n";
     }
 }

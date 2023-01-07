@@ -9,7 +9,15 @@ public class hight_AND_widthSizedBox extends AST {
     private String NUM_FLOAT;
     private int numline;
     private int ChildrenCount ;
+    private String parent;
 
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -51,11 +59,12 @@ public class hight_AND_widthSizedBox extends AST {
     @Override
     public String toString() {
         return "hight_AND_widthSizedBox{" +
-                "SIZEDBOX='" + SIZEDBOX + '\'' +
+                "SIZEDBOX='" + SIZEDBOX + '\'' +"\n"+
                 ", type ='" + type + '\'' +
-                ", NUM_FLOAT='" + NUM_FLOAT + '\'' +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                ", NUM_FLOAT='" + NUM_FLOAT + '\'' +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node " + parent+
                 "} \n";
     }
 }

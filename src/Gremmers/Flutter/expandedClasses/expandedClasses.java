@@ -8,6 +8,16 @@ public class expandedClasses extends AST {
     private int numline;
     private int ChildrenCount ;
 
+    private String left ;
+
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
+
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -33,10 +43,11 @@ public class expandedClasses extends AST {
 
     @Override
     public String toString() {
-        return "expandedClasses{" +
-                "attr_expanded_withCol_withRow=" + attr_expanded_withCol_withRow +
-                "Line number " + numline+
-                ", children count = " + ChildrenCount +
+        return "expandedClasses{" + "\n" +
+                "attr_expanded_withCol_withRow=" + attr_expanded_withCol_withRow + "\n" +
+                "Line number " + numline+ "\n" +
+                ", children count = " + ChildrenCount + "\n" +
+                ", left child " + left + "\n" +
                 "} \n";
     }
 }

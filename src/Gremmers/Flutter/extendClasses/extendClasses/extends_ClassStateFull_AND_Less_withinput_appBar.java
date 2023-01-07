@@ -26,7 +26,14 @@ public class extends_ClassStateFull_AND_Less_withinput_appBar extends AST {
     private List<FlutterWidget> flutterWidget = new ArrayList<FlutterWidget>();
     private int numline;
     private int ChildrenCount ;
+    private String parent;
+    public String getParent() {
+        return parent;
+    }
 
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -157,22 +164,22 @@ public class extends_ClassStateFull_AND_Less_withinput_appBar extends AST {
     @Override
     public String toString() {
         return "extends_ClassStateFull_AND_Less_withinput_appBar{" +
-                "CLASS='" + CLASS + '\'' +
-                ", ID='" + ID + '\'' +
-                ", extends " + EXTENDS + '\'' +
-                ", type ='" + type + '\'' +
-                ", inputClasses=" + inputClasses +
-                ", OVERRIDE='" + OVERRIDE + '\'' +
-                ", BUILD_WIDGET='" + BUILD_WIDGET + '\'' +
-                ", RETURN='" + RETURN + '\'' +
-                ", SCAFFOLD='" + SCAFFOLD + '\'' +
-                ", APPBAR='" + APPBAR + '\'' +
-                ", APPBAR_CHILD='" + APPBAR_CHILD + '\'' +
-                ", attr_input_AppBar=" + attr_input_AppBar +
-                ", BODY='" + BODY + '\'' +
-                ", flutterWidget=" + flutterWidget +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "CLASS='" + CLASS + '\'' +"\n"+
+                ", ID='" + ID + '\'' +"\n"+
+                ", extends " + EXTENDS + '\'' +"\n"+
+                ", type ='" + type + '\'' +"\n"+
+                ", inputClasses=" + inputClasses +"\n"+
+                ", OVERRIDE='" + OVERRIDE + '\'' +"\n"+
+                ", BUILD_WIDGET='" + BUILD_WIDGET + '\'' +"\n"+
+                ", RETURN='" + RETURN + '\'' +"\n"+
+                ", SCAFFOLD='" + SCAFFOLD + '\'' +"\n"+
+                ", APPBAR='" + APPBAR + '\'' +"\n"+
+                ", APPBAR_CHILD='" + APPBAR_CHILD + '\'' +"\n"+
+                ", attr_input_AppBar=" + attr_input_AppBar +"\n"+
+                ", BODY='" + BODY + '\'' +"\n"+
+                ", flutterWidget=" + flutterWidget +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
                 "} \n";
     }
 }

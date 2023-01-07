@@ -8,7 +8,14 @@ public class text_INPUT_D_Q_I extends AST {
     private String INPUT_D_Q_I ;
     private int numline;
     private int ChildrenCount ;
+    private String parent;
+    public String getParent() {
+        return parent;
+    }
 
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -41,11 +48,12 @@ public class text_INPUT_D_Q_I extends AST {
 
     @Override
     public String toString() {
-        return "text_INPUT_D_Q_I{" +
-                "TEXT='" + TEXT + '\'' +
-                ", INPUT_D_Q_I='" + INPUT_D_Q_I + '\'' +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+        return "text_INPUT_D_Q_I{" +"\n"+
+                "TEXT='" + TEXT + '\'' +"\n"+
+                ", INPUT_D_Q_I='" + INPUT_D_Q_I + '\'' +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node =" + parent +"\n"+
                 "} \n";
     }
 }

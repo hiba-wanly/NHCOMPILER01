@@ -11,6 +11,16 @@ public class input_AppBar extends AST {
     private int numline;
     private int ChildrenCount ;
 
+    private String left ;
+
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
+
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -62,17 +72,17 @@ public class input_AppBar extends AST {
     public String toString() {
         if(this.attr_input_1AppBar!=null)
             return "input_AppBar{" +
-                    "attr_input_1AppBar=" + attr_input_1AppBar + "Line number " + numline+ "children count = " + ChildrenCount + "} \n";
+                    "attr_input_1AppBar=" + attr_input_1AppBar +"\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount +"\n"+ "left child " + left+ "} \n";
         if(this.attr_input_2AppBar!=null)
             return "input_AppBar{" +
-                    ", attr_input_2AppBar=" + attr_input_2AppBar + "Line number " + numline+"children count = " + ChildrenCount +"} \n";
+                    ", attr_input_2AppBar=" + attr_input_2AppBar +"\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount + "\n"+ "left child " + left+"} \n";
 
        if(this.attr_input_3AppBar!=null)
            return "input_AppBar{" +
-                   ", attr_input_3AppBar=" + attr_input_3AppBar + "Line number " + numline+"children count = " + ChildrenCount+ "} \n";
+                   ", attr_input_3AppBar=" + attr_input_3AppBar + "\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount+ "\n"+"left child " + left+ "} \n";
         return "input_AppBar{" +
                 ", attr_input_4AppBar=" + attr_input_4AppBar +
-                "Line number " + numline+ "children count = " + ChildrenCount+
+                "Line number " + numline+ "children count = " + ChildrenCount+ "left child " + left+
                 "} \n";
     }
 }

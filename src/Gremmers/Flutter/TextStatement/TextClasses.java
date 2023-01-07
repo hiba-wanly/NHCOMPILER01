@@ -9,7 +9,16 @@ public class TextClasses extends AST {
     private  text_rule attr_text_rule;
     private int numline;
     private int ChildrenCount ;
+    private String left;
 
+
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -52,14 +61,14 @@ public class TextClasses extends AST {
     public String toString() {
         if(this.attr_text_INPUT_D_Q_I != null){
             return "TextClasses{" +
-                    "attr_text_INPUT_D_Q_I=" + attr_text_INPUT_D_Q_I + "Line number " + numline+ "children count = " + ChildrenCount+ "}\n";
+                    "attr_text_INPUT_D_Q_I=" + attr_text_INPUT_D_Q_I +"\n"+ "Line number " + numline+"\n"+ "children count = " + ChildrenCount+"\n"+ "left child"+left+ "}\n";
         }
         if(this.attr_text_INPUT_D_Q_N != null){
             return "TextClasses{" +
-                    "attr_text_INPUT_D_Q_N=" + attr_text_INPUT_D_Q_N + "Line number " + numline+ "children count = " + ChildrenCount+"}\n";
+                    "attr_text_INPUT_D_Q_N=" + attr_text_INPUT_D_Q_N +"\n"+ "Line number " + numline+"\n"+ "children count = " + ChildrenCount+ "\n"+ "left child"+left+"}\n";
         }
         return "TextClasses{" +
-                " attr_text_rule=" + attr_text_rule + "Line number " + numline+ "children count = " + ChildrenCount+
+                " attr_text_rule=" + attr_text_rule +"\n"+ "Line number " + numline+"\n"+ "children count = " + ChildrenCount+"\n"+ "left child"+left+
                 "} \n";
     }
 }

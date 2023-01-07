@@ -16,7 +16,14 @@ public class extends_ClassStatment_Withinput extends AST {
     private List<InputClasses> inputclasses = new ArrayList<InputClasses>();
     private int numline;
     private int ChildrenCount ;
+    private String parent;
+    public String getParent() {
+        return parent;
+    }
 
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -75,13 +82,14 @@ public class extends_ClassStatment_Withinput extends AST {
     @Override
     public String toString() {
         return "extends_ClassStatment_Withinput{" +
-                "CLASS='" + CLASS + '\'' +
-                ", ID='" + ID + '\'' +
-                ", extends " + EXTENDS + '\'' +
-                ", ID_ID='" + ID_ID + '\'' +
-                ", inputclasses=" + inputclasses +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "CLASS='" + CLASS + '\'' +"\n"+
+                ", ID='" + ID + '\'' +"\n"+
+                ", extends " + EXTENDS + '\'' +"\n"+
+                ", ID_ID='" + ID_ID + '\'' +"\n"+
+                ", inputclasses=" + inputclasses +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node =" + parent +"\n"+
                 "} \n";
     }
 }

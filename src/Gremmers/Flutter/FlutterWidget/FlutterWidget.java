@@ -16,7 +16,7 @@ import java.util.List;
 public class FlutterWidget extends AST {
 
     private Container attr_Container;
-    private Column attr_Column;
+    private Column attr_Column ;
     private Row attr_Row;
     private TextClasses  attr_TextClasses ;
     private SizedBoxClasses attr_SizedBoxClasses ;

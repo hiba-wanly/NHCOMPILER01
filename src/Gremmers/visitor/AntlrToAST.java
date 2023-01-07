@@ -2066,6 +2066,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public ExtendsClass visitExtendsClass(projectParser.ExtendsClassContext ctx) {
         System.out.println("visitExtendsClass");
         ExtendsClass extclas = new ExtendsClass();
+
         if(ctx.extends_ClassStateFull() != null){
             extclas.setAttr_extends_ClassStateFull_AND_Less(visitExtends_ClassStateFull(ctx.extends_ClassStateFull()));
             extclas.setLinenum(ctx.start.getLine());
@@ -2145,6 +2146,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStatment_Withinput visitExtends_ClassStatment_Withinput(projectParser.Extends_ClassStatment_WithinputContext ctx) {
         System.out.println("visitExtends_ClassStatment_Withinput");
         extends_ClassStatment_Withinput ee = new extends_ClassStatment_Withinput();
+        ee.setParent(ctx.getParent().start.getText());
+
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2166,6 +2169,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStatment_Withoutinput visitExtends_ClassStatment_Withoutinput(projectParser.Extends_ClassStatment_WithoutinputContext ctx) {
         System.out.println("visitExtends_ClassStatment_Withoutinput");
         extends_ClassStatment_Withoutinput ee = new extends_ClassStatment_Withoutinput();
+        ee.setParent(ctx.getParent().start.getText());
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2183,6 +2187,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less visitExtends_ClassStateFull(projectParser.Extends_ClassStateFullContext ctx) {
         System.out.println("visitExtends_ClassStateFull");
         extends_ClassStateFull_AND_Less ee = new extends_ClassStateFull_AND_Less();
+        ee.setParent(ctx.getParent().start.getText());
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2210,6 +2215,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less visitExtends_ClassStateLess(projectParser.Extends_ClassStateLessContext ctx) {
         System.out.println("visitExtends_ClassStateLess");
         extends_ClassStateFull_AND_Less ee = new extends_ClassStateFull_AND_Less();
+        ee.setParent(ctx.getParent().start.getText());
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2235,6 +2241,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less_WithAppBar visitExtends_ClassStateFull_WithAppBar(projectParser.Extends_ClassStateFull_WithAppBarContext ctx) {
         System.out.println("visitExtends_ClassStateFull_WithAppBar");
         extends_ClassStateFull_AND_Less_WithAppBar ee = new extends_ClassStateFull_AND_Less_WithAppBar();
+        ee.setParent(ctx.getParent().start.getText());
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2270,6 +2277,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less_WithAppBar visitExtends_ClassStateLess_WithAppBar(projectParser.Extends_ClassStateLess_WithAppBarContext ctx) {
         System.out.println("visitExtends_ClassStateLess_WithAppBar");
         extends_ClassStateFull_AND_Less_WithAppBar ee = new extends_ClassStateFull_AND_Less_WithAppBar();
+        ee.setParent(ctx.getParent().start.getText());
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2304,6 +2312,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less_withinput visitExtends_ClassStateFullwithinput(projectParser.Extends_ClassStateFullwithinputContext ctx) {
         System.out.println("visitExtends_ClassStateFullwithinput");
         extends_ClassStateFull_AND_Less_withinput ee = new extends_ClassStateFull_AND_Less_withinput();
+        ee.setParent(ctx.getParent().start.getText());
+
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2336,6 +2346,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less_withinput visitExtends_ClassStateLesswithinput(projectParser.Extends_ClassStateLesswithinputContext ctx) {
         System.out.println("visitExtends_ClassStateLesswithinput");
         extends_ClassStateFull_AND_Less_withinput ee = new extends_ClassStateFull_AND_Less_withinput();
+        ee.setParent(ctx.getParent().start.getText());
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2369,6 +2380,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less_withinput_appBar visitExtends_ClassStateFullwithinput_appBar(projectParser.Extends_ClassStateFullwithinput_appBarContext ctx) {
         System.out.println("visitExtends_ClassStateFullwithinput_appBar");
         extends_ClassStateFull_AND_Less_withinput_appBar ee = new extends_ClassStateFull_AND_Less_withinput_appBar();
+        ee.setParent(ctx.getParent().start.getText());
+
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2408,6 +2421,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public extends_ClassStateFull_AND_Less_withinput_appBar visitExtends_ClassStateLesswithinput_appBar(projectParser.Extends_ClassStateLesswithinput_appBarContext ctx) {
         System.out.println("visitExtends_ClassStateLesswithinput_appBar");
         extends_ClassStateFull_AND_Less_withinput_appBar  ee = new extends_ClassStateFull_AND_Less_withinput_appBar();
+        ee.setParent(ctx.getParent().start.getText());
+
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen()));
         ee.setEXTENDS(ctx.EXTENDS().toString().trim());
@@ -2447,6 +2462,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public input_AppBar visitInput_AppBar(projectParser.Input_AppBarContext ctx) {
         System.out.println("visitInput_AppBar");
         input_AppBar input = new input_AppBar();
+        input.setLeft(ctx.getChild(0).getText());
         if(ctx.input_1AppBar() != null ){
             input.setinput_1AppBar(visitInput_1AppBar(ctx.input_1AppBar()));
             input.setNumline(ctx.start.getLine());
@@ -2545,6 +2561,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public TextClasses visitTexeStatement(projectParser.TexeStatementContext ctx) {
         System.out.println("visitTexeStatement");
         TextClasses t = new TextClasses();
+        t.setLeft(ctx.getChild(0).getText());
         if(ctx.text_INPUT_D_Q_I() != null ){
             t.settext_INPUT_D_Q_I(visitText_INPUT_D_Q_I(ctx.text_INPUT_D_Q_I()));
             t.setNumline(ctx.start.getLine());
@@ -2573,6 +2590,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public text_INPUT_D_Q_N visitText_INPUT_D_Q_N(projectParser.Text_INPUT_D_Q_NContext ctx) {
         System.out.println("visitText_INPUT_D_Q_N");
         text_INPUT_D_Q_N textInputDQN = new  text_INPUT_D_Q_N();
+        textInputDQN.setParent(ctx.getParent().start.getText());
+
         textInputDQN.setTEXT(ctx.TEXT().toString().trim());
         textInputDQN.setINPUT_D_Q_N(ctx.INPUT_D_Q_N().toString().trim());
         textInputDQN.setNumline(ctx.start.getLine());
@@ -2588,6 +2607,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public text_INPUT_D_Q_I visitText_INPUT_D_Q_I(projectParser.Text_INPUT_D_Q_IContext ctx) {
         System.out.println("visitText_INPUT_D_Q_I");
         text_INPUT_D_Q_I textInputDQN = new  text_INPUT_D_Q_I();
+        textInputDQN.setParent(ctx.getParent().start.getText());
+
         textInputDQN.setTEXT(ctx.TEXT().toString().trim());
         textInputDQN.setINPUT_D_Q_I(ctx.INPUT_D_Q_I().toString().trim());
         textInputDQN.setNumline(ctx.start.getLine());
@@ -2602,6 +2623,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public text_rule visitText_rule(projectParser.Text_ruleContext ctx) {
         System.out.println("visitText_rule");
         text_rule textRule = new text_rule();
+        textRule.setParent(ctx.getParent().start.getText());
+        ;
         textRule.setTEXT(ctx.TEXT().toString().trim());
         for (int i =0 ; i< ctx.rule_().size() ; i++){
             if(ctx.rule_(i) != null){
@@ -2619,7 +2642,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public SizedBoxClasses visitSizedBox(projectParser.SizedBoxContext ctx) {
         System.out.println("visitSizedBox");
         SizedBoxClasses sized = new SizedBoxClasses();
-
+        sized.setLeft(ctx.getChild(0).getText());
         if(ctx.hight_SizedBox() != null){
             sized.sethight_AND_widthSizedBox(visitHight_SizedBox(ctx.hight_SizedBox()));
             sized.setNumline(ctx.start.getLine());
@@ -2655,6 +2678,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public hight_AND_widthSizedBox visitHight_SizedBox(projectParser.Hight_SizedBoxContext ctx) {
         System.out.println("visitHight_SizedBox");
         hight_AND_widthSizedBox hw = new hight_AND_widthSizedBox();
+        hw.setParent(ctx.getParent().start.getText());
         hw.setSIZEDBOX(ctx.SIZEDBOX().toString().trim());
         hw.setType(ctx.HIGHT().toString().trim());
         hw.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
@@ -2669,6 +2693,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public hight_AND_widthSizedBox visitWidth_SizedBox(projectParser.Width_SizedBoxContext ctx) {
         System.out.println("visitWidth_SizedBox");
         hight_AND_widthSizedBox hw = new hight_AND_widthSizedBox();
+        hw.setParent(ctx.getParent().start.getText());
         hw.setSIZEDBOX(ctx.SIZEDBOX().toString().trim());
         hw.setType(ctx.WIDTH().toString().trim());
         hw.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
@@ -2683,6 +2708,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public widthHight_SizedBox visitWidthHight_SizedBox(projectParser.WidthHight_SizedBoxContext ctx) {
         System.out.println("visitWidthHight_SizedBox");
         widthHight_SizedBox widthHight_sizedBox = new widthHight_SizedBox();
+        widthHight_sizedBox.setParent(ctx.getParent().start.getText());
         widthHight_sizedBox.setWIDTH(ctx.WIDTH().toString().trim());
         widthHight_sizedBox.setNUM_FLOAT_WIDTH(ctx.getChild(4).toString().trim());
         widthHight_sizedBox.setHIGHT(ctx.HIGHT().toString().trim());
@@ -2698,6 +2724,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public widthHight_SizedBox visitHightWidth_SizedBox(projectParser.HightWidth_SizedBoxContext ctx) {
         System.out.println("visitHightWidth_SizedBox");
         widthHight_SizedBox widthHight_sizedBox = new widthHight_SizedBox();
+        widthHight_sizedBox.setParent(ctx.getParent().start.getText());
+
         widthHight_sizedBox.setHIGHT(ctx.HIGHT().toString().trim());
         widthHight_sizedBox.setNUM_FLOAT_HIGHT(ctx.getChild(4).toString().trim());
         widthHight_sizedBox.setWIDTH(ctx.WIDTH().toString().trim());
@@ -2733,6 +2761,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public imageClasses visitImageState(projectParser.ImageStateContext ctx) {
         System.out.println("visitImageState");
         imageClasses im = new imageClasses();
+        im.setLeft(ctx.getChild(0).getText());
         if(ctx.image_withAsset() != null){
             im.setimage_withAsset_Network_File(visitImage_withAsset(ctx.image_withAsset()));
             im.setNumline(ctx.start.getLine());
@@ -2783,6 +2812,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public image_withAssetImage visitImage_withAssetImage(projectParser.Image_withAssetImageContext ctx) {
         System.out.println("visitImage_withAssetImage");
         image_withAssetImage imageWithAssetImage = new image_withAssetImage();
+        imageWithAssetImage.setParent(ctx.getParent().start.getText());
         imageWithAssetImage.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetImage.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
         imageWithAssetImage.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
@@ -2801,6 +2831,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public image_withAssetImage_WithDirection visitImage_withAssetImage_WithDirection(projectParser.Image_withAssetImage_WithDirectionContext ctx) {
         System.out.println("visitImage_withAssetImage_WithDirection");
         image_withAssetImage_WithDirection imageWithAssetImageWithDirection = new image_withAssetImage_WithDirection();
+        imageWithAssetImageWithDirection.setParent(ctx.getParent().start.getText());
         imageWithAssetImageWithDirection.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetImageWithDirection.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
         imageWithAssetImageWithDirection.setIMAGE_INPUT_ASSET(ctx.IMAGE_INPUT_ASSET().toString().trim());
@@ -2822,6 +2853,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public image_withAssetImage_WithDirection_fit visitImage_withAssetImage_WithDirection_fit(projectParser.Image_withAssetImage_WithDirection_fitContext ctx) {
         System.out.println("visitImage_withAssetImage_WithDirection_fit");
         image_withAssetImage_WithDirection_fit imageWithAssetImageWithDirectionFit = new image_withAssetImage_WithDirection_fit();
+        imageWithAssetImageWithDirectionFit.setParent(ctx.getParent().start.getText());
         imageWithAssetImageWithDirectionFit.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetImageWithDirectionFit.setIMAGE_CHILD(ctx.IMAGE_CHILD().toString().trim());
         imageWithAssetImageWithDirectionFit.setASSETSIMAGE(ctx.ASSETSIMAGE().toString().trim());
@@ -2845,6 +2877,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public image_withAsset_Network_File visitImage_withAsset(projectParser.Image_withAssetContext ctx) {
         System.out.println("visitImage_withAsset");
         image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
+        imageWithAssetNetworkFile.setParent(ctx.getParent().start.getText());
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.ASSET().toString().trim());
         imageWithAssetNetworkFile.setNumline(ctx.start.getLine());
@@ -2861,6 +2894,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public image_withAsset_Network_File visitImage_withNetWoek(projectParser.Image_withNetWoekContext ctx) {
         System.out.println("visitImage_withNetWoek");
         image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
+        imageWithAssetNetworkFile.setParent(ctx.getParent().start.getText());
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.NETWORK().toString().trim());
         imageWithAssetNetworkFile.setNumline(ctx.start.getLine());
@@ -2877,6 +2911,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public image_withAsset_Network_File visitImage_withFile(projectParser.Image_withFileContext ctx) {
         System.out.println("visitImage_withFile");
         image_withAsset_Network_File imageWithAssetNetworkFile = new image_withAsset_Network_File();
+        imageWithAssetNetworkFile.setParent(ctx.getParent().start.getText());
         imageWithAssetNetworkFile.setIMAGE(ctx.IMAGE().toString().trim());
         imageWithAssetNetworkFile.setType(ctx.FILE().toString().trim());
         imageWithAssetNetworkFile.setNumline(ctx.start.getLine());
@@ -2952,6 +2987,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public expandedClasses visitExpandedStatment(projectParser.ExpandedStatmentContext ctx) {
         System.out.println("visitExpandedStatment");
         expandedClasses e = new expandedClasses();
+        e.setLeft(ctx.getChild(0).getText());
         if(ctx.expanded_withCol() != null){
             e.setAttr_expanded_withCol_withRow(visitExpanded_withCol(ctx.expanded_withCol()));
             e.setNumline(ctx.start.getLine());
@@ -3000,7 +3036,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public paddingClasses visitPaddingStatement(projectParser.PaddingStatementContext ctx) {
         System.out.println("visitPaddingStatement");
         paddingClasses padding = new paddingClasses();
-
+        padding.setLeft(ctx.getChild(0).getText());
         if(ctx.padding_all() != null){
             padding.setpadding_all(visitPadding_all(ctx.padding_all()));
             padding.setNumline(ctx.start.getLine());
@@ -3039,6 +3075,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public padding_all visitPadding_all(projectParser.Padding_allContext ctx) {
         System.out.println("visitPadding_all");
         padding_all paddingAll = new padding_all();
+        paddingAll.setParent(ctx.getParent().start.getText());
         paddingAll.setPADDING(ctx.PADDING().toString().trim());
         paddingAll.setPAD_ALL(ctx.PAD_ALL().toString().trim());
         paddingAll.setNUM_FLOAT(ctx.NUM_FLOAT().toString().trim());
@@ -3058,6 +3095,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public padding_sym_vertical_num_numFloat visitPadding_sym_vertical_num(projectParser.Padding_sym_vertical_numContext ctx) {
         System.out.println("visitPadding_sym_vertical_num");
         padding_sym_vertical_num_numFloat nn = new padding_sym_vertical_num_numFloat();
+        nn.setParent(ctx.getParent().start.getText());
         nn.setPADDING(ctx.PADDING().toString().trim());
         nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
         nn.setNUM(ctx.NUM().toString().trim());
@@ -3079,6 +3117,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public padding_sym_vertical_num_numFloat visitPadding_sym_vertical_numFloat(projectParser.Padding_sym_vertical_numFloatContext ctx) {
         System.out.println("visitPadding_sym_vertical_numFloat");
         padding_sym_vertical_num_numFloat nn = new padding_sym_vertical_num_numFloat();
+        nn.setParent(ctx.getParent().start.getText());
         nn.setPADDING(ctx.PADDING().toString().trim());
         nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
         nn.setNUM(ctx.NUM_FLOAT().toString().trim());
@@ -3101,6 +3140,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public padding_sym_horisantal_num_numFloat visitPadding_sym_horisantal_num(projectParser.Padding_sym_horisantal_numContext ctx) {
         System.out.println("visitPadding_sym_horisantal_num");
         padding_sym_horisantal_num_numFloat nn = new padding_sym_horisantal_num_numFloat();
+        nn.setParent(ctx.getParent().start.getText());
         nn.setPADDING(ctx.PADDING().toString().trim());
         nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
         nn.setNUM(ctx.NUM().toString().trim());
@@ -3121,6 +3161,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public padding_sym_horisantal_num_numFloat visitPadding_sym_horisantal_numFloat(projectParser.Padding_sym_horisantal_numFloatContext ctx) {
         System.out.println("visitPadding_sym_horisantal_numFloat");
         padding_sym_horisantal_num_numFloat nn = new padding_sym_horisantal_num_numFloat();
+        nn.setParent(ctx.getParent().start.getText());
         nn.setPADDING(ctx.PADDING().toString().trim());
         nn.setPAD_SYM(ctx.PAD_SYM().toString().trim());
         nn.setNUM(ctx.NUM_FLOAT().toString().trim());
@@ -3141,6 +3182,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public padding_only visitPadding_only(projectParser.Padding_onlyContext ctx) {
         System.out.println("visitPadding_only");
         padding_only paddingOnly = new padding_only();
+        paddingOnly.setParent(ctx.getParent().start.getText());
         paddingOnly.setPADDING(ctx.PADDING().toString().trim());
         paddingOnly.setPAD_ON(ctx.PAD_ON().toString().trim());
         paddingOnly.setCHILD(ctx.CHILD().toString().trim());
@@ -3588,6 +3630,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public input_1AppBar visitInput_1AppBar(projectParser.Input_1AppBarContext ctx) {
         System.out.println("visitInput_1AppBar");
         input_1AppBar input1AppBar = new input_1AppBar();
+        input1AppBar.setParent(ctx.getParent().start.getText());
         input1AppBar.setTITLE(ctx.TITLE().toString().trim());
         input1AppBar.setTextClasses(visitTexeStatement(ctx.texeStatement()));
         input1AppBar.setNumline(ctx.start.getLine());
@@ -3603,6 +3646,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public input_2AppBar visitInput_2AppBar(projectParser.Input_2AppBarContext ctx) {
         System.out.println("visitInput_2AppBar");
         input_2AppBar input2AppBar = new input_2AppBar();
+        input2AppBar.setParent(ctx.getParent().start.getText());
         input2AppBar.setBACHCOLOR(ctx.BACHCOLOR().toString().trim());
         input2AppBar.setCOLOR(ctx.COLOR().toString().trim());
         input2AppBar.setColor(visitColor(ctx.color()));
@@ -3618,6 +3662,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public input_3AppBar visitInput_3AppBar(projectParser.Input_3AppBarContext ctx) {
         System.out.println("visitInput_3AppBar");
         input_3AppBar input3AppBar = new input_3AppBar();
+        input3AppBar.setParent(ctx.getParent().start.getText());
         input3AppBar.setTITLE(ctx.TITLE().toString().trim());
         input3AppBar.setTextClasses(visitTexeStatement(ctx.texeStatement()));
         input3AppBar.setBACHCOLOR(ctx.BACHCOLOR().toString().trim());
@@ -3635,6 +3680,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
     public input_4AppBar visitInput_4AppBar(projectParser.Input_4AppBarContext ctx) {
         System.out.println("visitInput_4AppBar");
         input_4AppBar input4AppBar = new input_4AppBar();
+        input4AppBar.setParent(ctx.getParent().start.getText());
         input4AppBar.setBACHCOLOR(ctx.BACHCOLOR().toString().trim());
         input4AppBar.setCOLOR(ctx.COLOR().toString().trim());
         input4AppBar.setColor(visitColor(ctx.color()));

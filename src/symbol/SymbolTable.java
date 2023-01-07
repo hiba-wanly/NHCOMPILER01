@@ -23,10 +23,10 @@ public class SymbolTable {
 //            System.out.println("forrrrrrrrrrrrrrr");
             if(symbolRows.get(i)!=null){
                 System.out.println("Symbol : "+i);
-                System.out.print("Symbol Type: "+symbolRows.get(i).getType()+ "  ");
-                System.out.print("Symbol Name: "+symbolRows.get(i).getName() + "  ");
-                System.out.print("Symbol Value: "+symbolRows.get(i).getValue()+ "  ");
-                System.out.print("Line Number: " +symbolRows.get(i).getNumline()+"  ");
+                System.out.print("Symbol Type: "+symbolRows.get(i).getType()+ "\n ");
+                System.out.print("Symbol Name: "+symbolRows.get(i).getName() + " \n ");
+                System.out.print("Symbol Value: "+symbolRows.get(i).getValue()+ "\n  ");
+                System.out.print("Line Number: " +symbolRows.get(i).getNumline()+" \n ");
                 System.out.println();
                 System.out.println("___________________________");
             }

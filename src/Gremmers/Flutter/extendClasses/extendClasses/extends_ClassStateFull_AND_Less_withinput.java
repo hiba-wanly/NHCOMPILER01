@@ -24,7 +24,14 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
     private List<InputClasses> inputClasses = new ArrayList<InputClasses>();
     private int numline;
     private int ChildrenCount ;
+    private String parent;
+    public String getParent() {
+        return parent;
+    }
 
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -131,19 +138,20 @@ public class extends_ClassStateFull_AND_Less_withinput extends AST {
     @Override
     public String toString() {
         return "extends_ClassStateFull_AND_Less_withinput{" +
-                "CLASS='" + CLASS + '\'' +
-                ", ID='" + ID + '\'' +
-                ", extends " + EXTENDS + '\'' +
-                ", type ='" + type + '\'' +
-                ", OVERRIDE='" + OVERRIDE + '\'' +
-                ", BUILD_WIDGET='" + BUILD_WIDGET + '\'' +
-                ", RETURN='" + RETURN + '\'' +
-                ", SCAFFOLD='" + SCAFFOLD + '\'' +
-                ", BODY='" + BODY + '\'' +
-                ", flutterWidget=" + flutterWidget +
-                ", inputClasses=" + inputClasses +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+                "CLASS='" + CLASS + '\'' +"\n"+
+                ", ID='" + ID + '\'' +"\n"+
+                ", extends " + EXTENDS + '\'' +"\n"+
+                ", type ='" + type + '\'' +"\n"+
+                ", OVERRIDE='" + OVERRIDE + '\'' +"\n"+
+                ", BUILD_WIDGET='" + BUILD_WIDGET + '\'' +"\n"+
+                ", RETURN='" + RETURN + '\'' +"\n"+
+                ", SCAFFOLD='" + SCAFFOLD + '\'' +"\n"+
+                ", BODY='" + BODY + '\'' +"\n"+
+                ", flutterWidget=" + flutterWidget +"\n"+
+                ", inputClasses=" + inputClasses +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node =" + parent +"\n"+
                 "} \n";
     }
 }

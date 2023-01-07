@@ -11,6 +11,16 @@ public class image_withAsset_Network_File extends AST {
     private int numline;
     private int ChildrenCount ;
 
+    private String parent;
+
+    public String getParent() {
+        return parent;
+    }
+
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
+
     public int getChildrenCount() {
         return ChildrenCount;
     }
@@ -44,11 +54,12 @@ public class image_withAsset_Network_File extends AST {
 
     @Override
     public String toString() {
-        return "image_withAsset_Network_File{" +
-                "IMAGE='" + IMAGE + '\'' +
-                ", TYPE ='" + type + '\'' +
-                ", Line number " + numline+
-                ", children count = " + ChildrenCount +
+        return "image_withAsset_Network_File{" +"\n"+
+                "IMAGE='" + IMAGE + '\'' +"\n"+
+                ", TYPE ='" + type + '\'' +"\n"+
+                ", Line number " + numline+"\n"+
+                ", children count = " + ChildrenCount +"\n"+
+                ", parent node"+parent+
                 "} \n";
     }
 }
