@@ -1,0 +1,95 @@
+class nan extends StatelessWidget {
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+    appBar : AppBar(
+     title : Text(" Compiler Test "),
+               backgroundColor : Colors.red,
+            ),
+      body : Column(
+          children :[
+              Padding( padding : const EdgeInsets.all(12.0),
+              child: Row (
+                children :[
+                    Expanded(
+                    child: Column(
+                        children: [
+                            Column(children: [
+                            Text("Product 1"),
+                            SizedBox(height: 8.9,),
+                            Image(image :AssetImage("assets/burger.jpg"),
+                                width: 70,
+                                height: 60,
+                              ),
+                            SizedBox(height: 15.0,),
+                            Padding(
+                              padding : const EdgeInsets.all(25.0),
+                              child : Text(" This is Product name is Burger and it is a delicious "),
+                            ),
+                          ]
+                          ),
+                        ]
+                        ),
+                    ),
+                    SizedBox(
+                      width: 50.8,
+                    ),
+                  Column(
+                        children :[
+                          TextButton(
+                            child: Column (children:[
+                              Text( "Product 1 "),
+                              SizedBox( height : 6.6, ),
+                              Container(child: Image (
+                                  image: AssetImage ("assets/burger.jpg" ),
+                                  width: 70,
+                                  height: 60,
+                                  fit : BoxFit.fill,
+                               ),
+                              ),
+                            ]
+                            ),
+                            onPressed: (){}
+                          ),
+                         SizedBox(
+                            height: 55.0,
+                          ),
+                          TextButton(
+                            child: Column (children:[
+                              Text( "Product 2"),
+                              SizedBox( height : 6.6, ),
+                              Container(child: Image (
+                                  image: AssetImage ("assets/jelo.jpg" ),
+                                  width: 70,
+                                  height: 60,
+                                  fit : BoxFit.fill,
+                                 ),
+                              ),
+                            ]),
+                            onPressed: (){}
+                          ),
+                          SizedBox(
+                            height: 55.9,
+                          ),
+                          TextButton(
+                            child: Column (children:[
+                              Text( "Product 3"),
+                              SizedBox( height : 6.6, ),
+                              Container(child: Image (
+                                  image: AssetImage ("assets/juice.jpg" ),
+                                  width: 70,
+                                  height: 60,
+                                  fit : BoxFit.fill,
+                                 ),
+                              ),
+                            ]),
+                            onPressed: (){}
+                          ),
+                          ]),
+                ]),
+              ),
+         ]
+      ),
+      )
+  }
+}
