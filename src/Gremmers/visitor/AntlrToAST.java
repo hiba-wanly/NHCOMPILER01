@@ -2370,32 +2370,26 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.imageHight_DF() != null){
             image.setimageHight_AND_Width_DF(visitImageHight_DF(ctx.imageHight_DF()));
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageHight "," Float  ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.imageWidth_DF() != null){
             image.setimageHight_AND_Width_DF(visitImageWidth_DF(ctx.imageWidth_DF()));
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidth "," Float  ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.imageHightWidth_DF() != null){
             image.setimageHightWidth_Reverse_DF(visitImageHightWidth_DF(ctx.imageHightWidth_DF()));
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageHightWidth_F "," Float  ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.imageWidthHight_DF() != null){
             image.setimageHightWidth_Reverse_DF(visitImageWidthHight_DF(ctx.imageWidthHight_DF()));
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidthHight_F "," Float  ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.imageHightWidth_DN() != null){
             image.setimageHightWidth_Reverse_DN(visitImageHightWidth_DN(ctx.imageHightWidth_DN()));
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageHightWidth_N "," Num  ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.imageWidthHight_DN() != null){
             image.setimageHightWidth_Reverse_DN(visitImageWidthHight_DN(ctx.imageWidthHight_DN()));
             createSymbolRow(" Flutter Widget -> ImageDirection "," imageWidthHight_F "," Num  ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
 
 
@@ -2411,7 +2405,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         imagefit.setFILL(ctx.FILL().toString().trim());
 
         createSymbolRow(" ImageFit "," BoxFit "," Fill  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
 
         return imagefit;
     }
@@ -2423,12 +2416,14 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         expandedClasses e = new expandedClasses();
         if(ctx.expanded_withCol() != null){
             e.setAttr_expanded_withCol_withRow(visitExpanded_withCol(ctx.expanded_withCol()));
+            createSymbolRow("Flutter Widget -> Expanded "," Wiget Components ","  Row  ",ctx.start.getLine());
+
         }
         if(ctx.expanded_withRow() != null){
             e.setAttr_expanded_withCol_withRow(visitExpanded_withRow(ctx.expanded_withRow()));
+            createSymbolRow("Flutter Widget -> Expanded "," Wiget Components "," Column   ",ctx.start.getLine());
+
         }
-        createSymbolRow("Flutter Widget -> Expanded "," Wiget Components "," COlumn / Row  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return e;
     }
 
@@ -2441,7 +2436,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         nn.setColumn(visitColStatemenst(ctx.colStatemenst()));
 
         createSymbolRow(" Expanded "," expanded col "," ColumnStatement  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2453,7 +2447,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         nn.setCHILD(ctx.CHILD().toString().trim());
         nn.setRow(visitRowStatement(ctx.rowStatement()));
         createSymbolRow(" Expanded "," expanded row "," rowStatement  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2481,7 +2474,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             padding.setpadding_sym_vertical_num_numFloat(visitPadding_sym_vertical_numFloat(ctx.padding_sym_vertical_numFloat()));
         }
         createSymbolRow("Flutter widget -> Padding "," Wiget Components "," List of padding type  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return padding;
     }
 
@@ -2499,7 +2491,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow(" Padding "," Padding all "," Float  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return paddingAll;
     }
     @Override
@@ -2517,7 +2508,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow(" Padding "," Padding Symmatric vertical"," Num  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2536,7 +2526,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow(" Padding "," Padding Symmatric vertical"," Float  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return nn;
 
     }
@@ -2556,7 +2545,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow(" Padding "," Padding Symmatric horisantal"," Num  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2575,7 +2563,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow(" Padding "," Padding Symmatric horisantal"," Float  ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
         return nn;
     }
 
@@ -2597,7 +2584,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             }
         }
         createSymbolRow(" Padding  "," padding only "," List of direction type ",ctx.start.getLine());
-        this.symbolTable.printSymbol();
 
 
         return paddingOnly;
@@ -2610,84 +2596,68 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.top_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitTop_direction_FLOAT(ctx.top_direction_FLOAT()));
             createSymbolRow("Flutter widget -> Padding "," top direction  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.right_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitRight_direction_FLOAT(ctx.right_direction_FLOAT()));
             createSymbolRow("Flutter widget -> Padding "," right direction  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.left_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitLeft_direction_FLOAT(ctx.left_direction_FLOAT()));
             createSymbolRow("Flutter widget -> Padding "," left direction  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.bottom_direction_FLOAT() != null ){
             d.setDirections_direction_FLOAT(visitBottom_direction_FLOAT(ctx.bottom_direction_FLOAT()));
             createSymbolRow("Flutter widget -> Padding "," bottom direction  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
 
         if(ctx.top_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitTop_direction_FLOAT_D(ctx.top_direction_FLOAT_D()));
             createSymbolRow("Flutter widget -> Padding "," top direction+  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.right_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitRight_direction_FLOAT_D(ctx.right_direction_FLOAT_D()));
             createSymbolRow("Flutter widget -> Padding "," right direction+  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.left_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitLeft_direction_FLOAT_D(ctx.left_direction_FLOAT_D()));
             createSymbolRow("Flutter widget -> Padding "," left direction+  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.bottom_direction_FLOAT_D() != null ){
             d.setDirections_direction_FLOAT_D(visitBottom_direction_FLOAT_D(ctx.bottom_direction_FLOAT_D()));
             createSymbolRow("Flutter widget -> Padding "," bottom direction+  ","  Float ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
 
         if(ctx.top_direction_NUM() != null){
             d.setDirections_direction_NUM(visitTop_direction_NUM(ctx.top_direction_NUM()));
             createSymbolRow("Flutter widget -> Padding "," top direction  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.right_direction_NUM() != null){
             d.setDirections_direction_NUM(visitRight_direction_NUM(ctx.right_direction_NUM()));
             createSymbolRow("Flutter widget -> Padding "," right direction  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.left_direction_NUM() != null){
             d.setDirections_direction_NUM(visitLeft_direction_NUM(ctx.left_direction_NUM()));
             createSymbolRow("Flutter widget -> Padding "," left direction  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.bottom_direction_NUM() != null){
             d.setDirections_direction_NUM(visitBottom_direction_NUM(ctx.bottom_direction_NUM()));
             createSymbolRow("Flutter widget -> Padding "," bottom direction  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.top_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitTop_direction_NUM_D(ctx.top_direction_NUM_D()));
             createSymbolRow("Flutter widget -> Padding "," top direction+  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.right_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitRight_direction_NUM_D(ctx.right_direction_NUM_D()));
             createSymbolRow("Flutter widget -> Padding "," right direction+  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.left_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitLeft_direction_NUM_D(ctx.left_direction_NUM_D()));
             createSymbolRow("Flutter widget -> Padding "," left direction+  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
         if(ctx.bottom_direction_NUM_D() != null){
             d.setDirections_direction_NUM_D(visitBottom_direction_NUM_D(ctx.bottom_direction_NUM_D()));
             createSymbolRow("Flutter widget -> Padding "," bottom direction+  ","  Num ",ctx.start.getLine());
-            this.symbolTable.printSymbol();
         }
 
 
