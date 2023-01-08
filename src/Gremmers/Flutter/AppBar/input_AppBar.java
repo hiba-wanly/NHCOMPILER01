@@ -12,6 +12,7 @@ public class input_AppBar extends AST {
     private int ChildrenCount ;
 
     private String left ;
+    private String sibling;
 
     public String getLeft() {
         return left;
@@ -68,21 +69,30 @@ public class input_AppBar extends AST {
         this.attr_input_4AppBar = attr_input_4AppBar;
     }
 
+
+    public String getSibling() {
+        return sibling;
+    }
+
+    public void setSibling(String sibling) {
+        this.sibling = sibling;
+    }
+
     @Override
     public String toString() {
         if(this.attr_input_1AppBar!=null)
             return "input_AppBar{" +
-                    "attr_input_1AppBar=" + attr_input_1AppBar +"\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount +"\n"+ "left child " + left+ "} \n";
+                    "attr_input_1AppBar=" + attr_input_1AppBar +"\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount +"\n"+ "left child " + left+ "sibling"+sibling+"} \n";
         if(this.attr_input_2AppBar!=null)
             return "input_AppBar{" +
-                    ", attr_input_2AppBar=" + attr_input_2AppBar +"\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount + "\n"+ "left child " + left+"} \n";
+                    ", attr_input_2AppBar=" + attr_input_2AppBar +"\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount + "\n"+ "left child " + left+"sibling"+sibling+"} \n";
 
        if(this.attr_input_3AppBar!=null)
            return "input_AppBar{" +
-                   ", attr_input_3AppBar=" + attr_input_3AppBar + "\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount+ "\n"+"left child " + left+ "} \n";
+                   ", attr_input_3AppBar=" + attr_input_3AppBar + "\n"+ "Line number " + numline+ "\n"+"children count = " + ChildrenCount+ "\n"+"left child " + left+"sibling"+sibling+ "} \n";
         return "input_AppBar{" +
                 ", attr_input_4AppBar=" + attr_input_4AppBar +
-                "Line number " + numline+ "children count = " + ChildrenCount+ "left child " + left+
+                "Line number " + numline+ "children count = " + ChildrenCount+ "left child " + left+"sibling"+sibling+
                 "} \n";
     }
 }

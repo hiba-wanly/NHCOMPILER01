@@ -17,6 +17,8 @@ public class ClassStatement extends AST {
 
     private String parenttt;
 
+    private String left;
+
     public void setClas(String clas ){
         this.clas = clas;
     }
@@ -60,6 +62,14 @@ public class ClassStatement extends AST {
         return parenttt;
     }
 
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
+
     public void setParenttt(String parent) {
         this.parenttt = parent;
     }
@@ -72,6 +82,7 @@ public class ClassStatement extends AST {
                 "line:"+linenum+"children:"+childrennum
                 +
                 "parent :" +parenttt+
+                "left:"+left+
                 "} \n";
     }
 }

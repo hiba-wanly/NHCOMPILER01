@@ -15,6 +15,8 @@ public class VoidWithArg extends AST {
     private int linenum;
     private int childrennum;
     private String parentt;
+
+    private String left;
     public String getVoidd() {
         return voidd;
     }
@@ -70,6 +72,14 @@ public class VoidWithArg extends AST {
         this.parentt = parentt;
     }
 
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
+
     @Override
     public String toString() {
         return "VoidWithArg{" +
@@ -79,6 +89,7 @@ public class VoidWithArg extends AST {
                 ", inputs=" + inputs
                 + "line:"+linenum+"children:"+childrennum
                 +"parent:" + parentt+
+                "left:"+left+
                 "} \n";
     }
 }

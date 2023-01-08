@@ -15,6 +15,8 @@ public class FunWithoutArg extends AST {
     private int linenum;
     private int childrennum;
     private String parentt;
+
+    private String left;
     public String getType() {
         return type;
     }
@@ -73,6 +75,14 @@ public class FunWithoutArg extends AST {
         this.parentt = parentt;
     }
 
+    public String getLeft() {
+        return left;
+    }
+
+    public void setLeft(String left) {
+        this.left = left;
+    }
+
     @Override
     public String toString() {
         return "FunWithoutArg{" +
@@ -82,6 +92,7 @@ public class FunWithoutArg extends AST {
                 ", returnStatement=" + returnStatement
                 + "line:"+linenum+"children:"+childrennum
                 +"pareent" +parentt+
+                "left:"+left+
                 "} \n";
     }
 }

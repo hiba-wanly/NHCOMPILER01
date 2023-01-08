@@ -1265,7 +1265,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         if(ctx.inputI() != null){
             for(int i=0;i<ctx.inputI().size();i++){
                 if(ctx.inputI(i) != null){
-                    trystat.getInp2().add((visitInputI(ctx.inputI(i))));
+                    trystat.getInp().add((visitInputI(ctx.inputI(i))));
                 }}
         }
         trystat.setLinenum(ctx.start.getLine());
@@ -1719,7 +1719,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         VoidWithoutArg voidd = new VoidWithoutArg();
         voidd.setViodd(ctx.VOID().toString().trim());
         voidd.setNamee(visitNamen(ctx.namen()));
-
+        voidd.setLeft(ctx.getChild(0).getText());
         for (int i=0;i<ctx.inputI().size(); i++){
             if(ctx.inputI(i) != null){
                 voidd.getInp().add((visitInputI(ctx.inputI(i))));
@@ -1736,6 +1736,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithoutArg fun = new FunWithoutArg();
         fun.setType(ctx.INT().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.inputI().size();i++){
             if(ctx.inputI(i) != null){
                 fun.getInputs().add((visitInputI(ctx.inputI(i))));
@@ -1754,6 +1755,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithoutArg fun = new FunWithoutArg();
         fun.setType(ctx.STRING().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.inputI().size();i++){
             if(ctx.inputI(i) != null){
                 fun.getInputs().add((visitInputI(ctx.inputI(i))));
@@ -1772,6 +1774,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithoutArg fun = new FunWithoutArg();
         fun.setType(ctx.DOUBLE().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.inputI().size();i++){
             if(ctx.inputI(i) != null){
                 fun.getInputs().add((visitInputI(ctx.inputI(i))));
@@ -1790,6 +1793,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithoutArg fun = new FunWithoutArg();
         fun.setType(ctx.FLOAT().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.inputI().size();i++){
             if(ctx.inputI(i) != null){
                 fun.getInputs().add((visitInputI(ctx.inputI(i))));
@@ -1808,6 +1812,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         VoidWithArg voidd = new VoidWithArg();
         voidd.setVoidd(ctx.VOID().toString().trim());
         voidd.setNamee(visitNamen(ctx.namen()));
+        voidd.setLeft(ctx.getChild(0).getText());
         for (int i=0;i<ctx.argumentFunctionType().size(); i++){
             if(ctx.argumentFunctionType(i) != null){
                 voidd.getArgumentFunctionTypes().add((visitArgumentFunctionType(ctx.argumentFunctionType(i))));
@@ -1828,6 +1833,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithArg fun = new FunWithArg();
         fun.setType(ctx.INT().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.argumentFunctionType().size();i++){
             if(ctx.argumentFunctionType(i) != null){
                 fun.getArgumentFunctionTypes().add((visitArgumentFunctionType(ctx.argumentFunctionType(i))));
@@ -1849,6 +1855,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithArg fun = new FunWithArg();
         fun.setType(ctx.STRING().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.argumentFunctionType().size();i++){
             if(ctx.argumentFunctionType(i) != null){
                 fun.getArgumentFunctionTypes().add((visitArgumentFunctionType(ctx.argumentFunctionType(i))));
@@ -1870,6 +1877,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithArg fun = new FunWithArg();
         fun.setType(ctx.DOUBLE().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.argumentFunctionType().size();i++){
             if(ctx.argumentFunctionType(i) != null){
                 fun.getArgumentFunctionTypes().add((visitArgumentFunctionType(ctx.argumentFunctionType(i))));
@@ -1891,6 +1899,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         FunWithArg fun = new FunWithArg();
         fun.setType(ctx.FLOAT().toString().trim());
         fun.setName(visitNamen(ctx.namen()));
+        fun.setLeft(ctx.getChild(0).getText());
         for(int i=0;i<ctx.argumentFunctionType().size();i++){
             if(ctx.argumentFunctionType(i) != null){
                 fun.getArgumentFunctionTypes().add((visitArgumentFunctionType(ctx.argumentFunctionType(i))));
@@ -2033,10 +2042,12 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ClassStatement clas = new ClassStatement();
         clas.setClas(ctx.CLASS().toString().trim());
         clas.setId(visitNamen(ctx.namen()));
+        clas.setLeft(ctx.getChild(0).getText());
         for(int i=0; i<ctx.inputclass().size() ; i++){
 //            System.out.println("iii"+i);
             if(ctx.inputclass(i) != null){
                 clas.getInputclasses().add(visitInputclass(ctx.inputclass(i)));
+
 //             clas.getInputclasses().add(visitInputclass(ctx.inputclass().get(i)));
             }
         }
@@ -2463,6 +2474,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         System.out.println("visitInput_AppBar");
         input_AppBar input = new input_AppBar();
         input.setLeft(ctx.getChild(0).getText());
+//        System.out.println("______________999999999999999999999");
+//        input.setSibling(ctx.getChild(1).getText());
         if(ctx.input_1AppBar() != null ){
             input.setinput_1AppBar(visitInput_1AppBar(ctx.input_1AppBar()));
             input.setNumline(ctx.start.getLine());
